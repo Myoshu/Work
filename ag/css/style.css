@@ -91,9 +91,16 @@ a, a:hover, a:focus {
 	.mainNavigation .navbar-nav .active a::after {
 		display: none;
 	}
+	.mainNavigation .navbar-nav {
+		min-width: 175px;
+	}
+	.sub-nav-tabs {
+		min-width: 150px;
+	}
 	.sub-nav-tabs li {
 		float: none;
 		display: block;
+		margin-right: 0px;
 	}
 }
 
@@ -975,6 +982,11 @@ main {
 	border-style: solid;
 	border-width: 0 10px 15px 10px;
 	border-color: transparent transparent #fff transparent;
+}
+@media screen and (max-width: 1170px) {
+	#ui-datepicker-div:before {
+		display: none;
+	}
 }
 .ui-helper-clearfix:before {
 	display: block;
