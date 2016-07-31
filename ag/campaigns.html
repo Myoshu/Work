@@ -11,12 +11,19 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css" />
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/chart.css">
 
 	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$("#date-from, #date-to").datepicker();
+		});
+	</script>
 </head>
 <body>
 	<section class="container-fluid">
@@ -74,10 +81,12 @@
 				<div class="tab-pane active" id="overview-tab"> <!--Overview-->
 					<div class="campaings-wrap">
 						<h2>Campaigns</h2>
-						<button class="new-button">
-							<img src="images/new_cp.png" />
-							New Campaign
-						</button>
+						<a href="new-campaign.html">
+							<button class="new-button">
+								<img src="images/new_cp.png" />
+								New Campaign
+							</button>
+						</a>
 						<div class="stats-info row clear">
 							<div class="col-xs-12 col-md-4">
 								<div class="campaign-stat">
@@ -418,6 +427,64 @@
 											</div>
 										</div>
 										<div class="tab-pane row" id="edit-tab">
+											<div class="col-xs-12 col-sm-6">
+												<div class="cd-header">
+													<img src="images/cp-info.png" alt="Info" />
+													<p>Info</p>
+												</div>
+												<div class="cd-data row">
+													<div class="col-xs-12 col-sm-3">
+														<p>Name</p>
+													</div>
+													<div class="col-xs-12 col-sm-8 clear-padding">
+														<input type="text" value="1. Tommy Hilfiger Store Campaign" id="cp-name"/>
+													</div>
+												</div>
+												<div class="cd-data row">
+													<div class="col-xs-12 col-sm-3">
+														<p>Description</p>
+													</div>
+													<div class="col-xs-12 col-sm-8 clear-padding">
+														<textarea type="text" id="cp-description"/>In-Store Promotions for Hilfiger Club Members</textarea>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-6">
+												<div class="cd-header">
+													<img src="images/cp-timing.png" alt="Timing" />
+													<p>Timing</p>
+												</div>
+												<div class="cd-data row">
+													<div class="col-xs-12 col-md-3">
+														<p>Valid</p>
+													</div>
+													<div class="timing col-xs-12 col-md-9">
+														<div class="col-xs-5">
+															<input value="" id="date-from"/>
+															<img src="images/calendar.svg" />
+														</div>
+														<p class="col-xs-1">To</p>
+														<div class="col-xs-5">
+															<input value="" id="date-to"/>
+															<img src="images/calendar.svg" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cp-edit-wrap">
+												<div class="cp-edit-buttons col-xs-12 col-sm-6">
+													<div class="col-sm-offset-3">
+														<button class="gray-button" id="cp-save">
+															<img src="images/cp-check.png" />
+															Save Changes
+														</button>
+														<button class="gray-button" id="cp-delete">
+															<img src="images/cp-delete.png" />
+															Delete Campaign
+														</button>
+													</div>
+												</div>
+											</div>
 										</div>
 										<div class="tab-pane row" id="logs-tab">
 										</div>
@@ -425,10 +492,12 @@
 
 									<div class="campaign-messages">
 										<h2>Messages</h2>
-										<button class="new-button">
-											<img src="images/new_cp.png" />
-											New Message
-										</button>
+										<a href="push-messages.html">
+											<button class="new-button">
+												<img src="images/new_cp.png" />
+												New Message
+											</button>
+										</a>
 										<div class="clear row">
 											<div class="cp-message col-xs-12 col-sm-6 col-lg-4">
 												<div class="message">
@@ -563,5 +632,11 @@
 			</div>
 	    </section>
 	</main>
+	<script>
+	/*Changing the color of the save button after editing campaign details*/
+		$("#cp-name, #cp-description, .timing input").on("input", function() {
+			$("#cp-save").css("background", "#63d0ec");
+		});
+	</script>
 </body>
 </html>

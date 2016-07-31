@@ -1146,10 +1146,6 @@ main {
 #new-tab .cd-data textarea::-webkit-input-placeholder, #edit-tab .cd-data textarea::-webkit-input-placeholder {
 	color: #716f6e;
 }
-#new-tab .timing input {
-	width: 40%;
-    display: inline;
-}
 #new-tab .timing p {
 	padding: 10px;
 	font-size: 15px;

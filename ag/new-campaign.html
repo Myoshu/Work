@@ -12,12 +12,19 @@
 	<link rel="stylesheet" href="css/font-awesome.min.css" />
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/chart.css">
 
 	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$("#date-from, #date-to").datepicker();
+		});
+	</script>
 </head>
 <body>
 	<section class="container-fluid">
@@ -78,10 +85,12 @@
 							<div class="col-xs-12 cd-wrap">
 								<div class="campaign-details">
 									<h2>New Campaign</h2>
-									<button class="cp-back">
-										<img src="images/cp-back.png" />
-										<p>Back</p>
-									</button>
+									<a href="campaigns.html">
+										<button class="cp-back">
+											<img src="images/cp-back.png" />
+											<p>Back</p>
+										</button>
+									</a>
 									<ul class="campaign-menu clear" id="tabs" data-tabs="tabs">
 										<li class="active">
 											<a href="#new-tab" data-toggle="tab">
@@ -124,9 +133,15 @@
 														<p>Valid</p>
 													</div>
 													<div class="timing col-xs-12 col-md-12 col-lg-10">
-														<input class="" type="date" value="" />
-														<p class="">To</p>
-														<input class="" type="date" value="" />
+														<div class="col-xs-5">
+															<input value="" id="date-from"/>
+															<img src="images/calendar.svg" />
+														</div>
+														<p class="col-xs-1">To</p>
+														<div class="col-xs-5">
+															<input value="" id="date-to"/>
+															<img src="images/calendar.svg" />
+														</div>
 													</div>
 												</div>
 											</div>
@@ -156,7 +171,7 @@
 	<script>
 		/*Changing the color of the button after inserting the name for the campaign*/
 		$("#cp-name").on("input", function() {
-			$("#cp-create").css("background", "#28afe4");
+			$("#cp-create").css("background", "#63d0ec");
 
 			if(!$("#cp-name").val()) {
 				$("#cp-create").css("background", "#989798");
