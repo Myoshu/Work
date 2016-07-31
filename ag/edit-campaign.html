@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="author" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/chart.css">
+
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$("#date-from, #date-to").datepicker();
+		});
+	</script>
+</head>
+<body>
+	<section class="container-fluid">
+		<div class="mainNavigation"> <!--main navigation-->
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="index.html">Dashboard</a>
+							</li>
+							<li>
+								<a href="reporting.html">Reporting</a>
+							</li>
+							<li class="active">
+								<a href="push-messages.html">Campaigns</a>
+							</li>
+							<li>
+								<a href="#">Stores</a>
+							</li>
+							<li>
+								<a href="#">Beacons</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<nav class="sub-menu">
+			<ul id="tabs" class="sub-nav-tabs" data-tabs="tabs"> <!--sub navigation-->
+	            <li class="active">
+	                <a href="#overview-tab" data-toggle="tab">
+	                    <p>Overview</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#message-tab" data-toggle="tab">
+	                    <p>Message Setup</p>
+	                </a>
+	            </li>     
+	        </ul>
+	    </nav>
+	</section>
+	<main class="overview">
+		<section class="container">
+			<div class="tab-content">
+				<div class="tab-pane active" id="overview-tab"> <!--Overview-->
+					<div class="campaings-wrap">
+						<h2>Campaigns</h2>
+						<button class="new-button">
+							<img src="images/new_cp.png" />
+							New Campaign
+						</button>
+						<div class="stats-info row clear">
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state green"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state green"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state red"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state red"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state red"></div>
+										<h3>Kampagne X: Juli 2016</h3>
+										<p></p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">12</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state red"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state red"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state red"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state red"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state green"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat active-cp">
+									<div class="cp-header">
+										<div class="cp-state green"></div>
+										<h3>Kampagne X: Juli 2016</h3>
+										<p></p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<div class="campaign-stat">
+									<div class="cp-header">
+										<div class="cp-state red"></div>
+										<h3>Kampagne 0: Lokale Pushnachrichten</h3>
+										<p>Pushnachrichten und Gutscheine, die in Store-Nähe ...</p>
+									</div>
+									<div class="cp-info">
+										<div class="row">
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Messages:</p>
+												<p class="cp-data-val" id="nofMessages">2</p>
+											</div>
+											<div class="cp-data col-xs-12 col-sm-4">
+												<p>Days left:</p>
+												<p class="cp-data-val" id="noDays">Unlimited</p>
+											</div>
+											<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--ON DESKTOP -> after three campaigns goes campaign details for those three campaigns-->
+							<!--ON MOBILE -> after each campaign are campaign details for that campaign-->
+							<div class="col-xs-12 cd-wrap">
+								<div class="campaign-details">
+									<h2>1. Tommy Hilfiger Store Campaign</h2>
+									<button class="cp-back">
+										<img src="images/cp-back.png" />
+										<p>Back</p>
+									</button>
+									<ul class="campaign-menu clear" id="tabs" data-tabs="tabs">
+										<li>
+											<a href="#view-tab" data-toggle="tab">
+												<img src="images/cp-view.png" alt="View Item" />
+												View Item
+											</a>
+										</li>
+										<li class="active">
+											<a href="#edit-tab" data-toggle="tab">
+												<img src="images/cp-edit.png" alt="Edit Item" />
+												Edit Item
+											</a>
+										</li>
+										<li>
+											<a href="#logs-tab" data-toggle="tab">
+												<img src="images/cp-logs.png" alt="Logs" />
+												Logs
+											</a>
+										</li>
+									</ul>
+									<div class="tab-content">
+										<div class="tab-pane row" id="view-tab">
+											<div class="col-xs-12 col-sm-6">
+												<div class="cd-header">
+													<img src="images/cp-info.png" alt="Info" />
+													<p>Info</p>
+												</div>
+												<div class="cd-data row">
+													<div class="col-xs-12 col-sm-3">
+														<p>Name</p>
+													</div>
+													<div class="col-xs-12 col-sm-8">
+														<input class="text-upper" type="text" value="Kampagne X: Juli 2016" readonly />
+													</div>
+												</div>
+												<div class="cd-data row">
+													<div class="col-xs-12 col-sm-3">
+														<p>Description</p>
+													</div>
+													<div class="col-xs-12 col-sm-8">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-6">
+												<div class="cd-header">
+													<img src="images/cp-timing.png" alt="Timing" />
+													<p>Timing</p>
+												</div>
+												<div class="cd-data row">
+													<div class="col-xs-12 col-sm-3">
+														<p>Valid</p>
+													</div>
+													<div class="timing col-xs-12 col-sm-9">
+														<div class="col-xs-12 col-sm-6">
+															<p class="pull-left">From</p>
+															<input class="pull-left" type="date" value="" readonly />
+														</div>
+														<div class="col-xs-12 col-sm-6">
+															<p class="pull-left">To</p>
+															<input class="pull-left" type="date" value="" readonly />
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane active row" id="edit-tab">
+											<div class="col-xs-12 col-sm-6">
+												<div class="cd-header">
+													<img src="images/cp-info.png" alt="Info" />
+													<p>Info</p>
+												</div>
+												<div class="cd-data row">
+													<div class="col-xs-12 col-sm-3">
+														<p>Name</p>
+													</div>
+													<div class="col-xs-12 col-sm-8 clear-padding">
+														<input type="text" value="1. Tommy Hilfiger Store Campaign" id="cp-name"/>
+													</div>
+												</div>
+												<div class="cd-data row">
+													<div class="col-xs-12 col-sm-3">
+														<p>Description</p>
+													</div>
+													<div class="col-xs-12 col-sm-8 clear-padding">
+														<textarea type="text" id="cp-description"/>In-Store Promotions for Hilfiger Club Members</textarea>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-12 col-sm-6">
+												<div class="cd-header">
+													<img src="images/cp-timing.png" alt="Timing" />
+													<p>Timing</p>
+												</div>
+												<div class="cd-data row">
+													<div class="col-xs-12 col-md-3">
+														<p>Valid</p>
+													</div>
+													<div class="timing col-xs-12 col-md-9">
+														<div class="col-xs-5">
+															<input value="" id="date-from"/>
+															<img src="images/calendar.svg" />
+														</div>
+														<p class="col-xs-1">To</p>
+														<div class="col-xs-5">
+															<input value="" id="date-to"/>
+															<img src="images/calendar.svg" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="cp-edit-wrap">
+												<div class="cp-edit-buttons col-xs-12 col-sm-6">
+													<div class="col-sm-offset-3">
+														<button class="gray-button" id="cp-save">
+															<img src="images/cp-check.png" />
+															Save Changes
+														</button>
+														<button class="gray-button" id="cp-delete">
+															<img src="images/cp-delete.png" />
+															Delete Campaign
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="tab-pane row" id="logs-tab">
+										</div>
+									</div>
+
+									<div class="campaign-messages">
+										<h2>Messages</h2>
+										<button class="new-button">
+											<img src="images/new_cp.png" />
+											New Message
+										</button>
+										<div class="clear row">
+											<div class="cp-message col-xs-12 col-sm-6 col-lg-4">
+												<div class="message">
+													<div class="col-xs-6">
+														<img class="img-responsive" src="images/iphone.png" />
+													</div>
+													<div class="col-xs-6 pull-right">
+														<h3>01. Luftig, leichte Styles</h3>
+														<p>Die neue Denim-Kollektion: luftig-leichte Styles für relaxte Stunden!</p>
+													</div>
+												</div>
+												<div class="cp-info">
+													<div class="row">
+														<div class="cp-data col-xs-12 col-sm-4">
+															<p>Message Type:</p>
+															<p class="cp-data-val" id="">Notification</p>
+														</div>
+														<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+													</div>
+												</div>
+											</div>
+											<div class="cp-message col-xs-12 col-sm-6 col-lg-4">
+												<div class="message">
+													<div class="col-xs-6">
+														<img class="img-responsive" src="images/iphone.png" />
+													</div>
+													<div class="col-xs-6 pull-right">
+														<h3>01. Luftig, leichte Styles</h3>
+														<p>Die neue Denim-Kollektion: luftig-leichte Styles für relaxte Stunden!</p>
+													</div>
+												</div>
+												<div class="cp-info">
+													<div class="row">
+														<div class="cp-data col-xs-12 col-sm-4">
+															<p>Message Type:</p>
+															<p class="cp-data-val" id="">Notification</p>
+														</div>
+														<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+													</div>
+												</div>
+											</div>
+											<div class="cp-message col-xs-12 col-sm-6 col-lg-4">
+												<div class="message">
+													<div class="col-xs-6">
+														<img class="img-responsive" src="images/iphone.png" />
+													</div>
+													<div class="col-xs-6 pull-right">
+														<h3>01. Luftig, leichte Styles</h3>
+														<p>Die neue Denim-Kollektion: luftig-leichte Styles für relaxte Stunden!</p>
+													</div>
+												</div>
+												<div class="cp-info">
+													<div class="row">
+														<div class="cp-data col-xs-12 col-sm-4">
+															<p>Message Type:</p>
+															<p class="cp-data-val" id="">Voucher</p>
+														</div>
+														<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+													</div>
+												</div>
+											</div>
+											<div class="cp-message col-xs-12 col-sm-6 col-lg-4">
+												<div class="message">
+													<div class="col-xs-6">
+														<img class="img-responsive" src="images/iphone.png" />
+													</div>
+													<div class="col-xs-6 pull-right">
+														<h3>01. Luftig, leichte Styles</h3>
+														<p>Die neue Denim-Kollektion: luftig-leichte Styles für relaxte Stunden!</p>
+													</div>
+												</div>
+												<div class="cp-info">
+													<div class="row">
+														<div class="cp-data col-xs-12 col-sm-4">
+															<p>Message Type:</p>
+															<p class="cp-data-val" id="">Notification</p>
+														</div>
+														<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+													</div>
+												</div>
+											</div>
+											<div class="cp-message col-xs-12 col-sm-6 col-lg-4">
+												<div class="message">
+													<div class="col-xs-6">
+														<img class="img-responsive" src="images/iphone.png" />
+													</div>
+													<div class="col-xs-6 pull-right">
+														<h3>01. Luftig, leichte Styles</h3>
+														<p>Die neue Denim-Kollektion: luftig-leichte Styles für relaxte Stunden!</p>
+													</div>
+												</div>
+												<div class="cp-info">
+													<div class="row">
+														<div class="cp-data col-xs-12 col-sm-4">
+															<p>Message Type:</p>
+															<p class="cp-data-val" id="">Notification</p>
+														</div>
+														<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+													</div>
+												</div>
+											</div>
+											<div class="cp-message col-xs-12 col-sm-6 col-lg-4">
+												<div class="message">
+													<div class="col-xs-6">
+														<img class="img-responsive" src="images/iphone.png" />
+													</div>
+													<div class="col-xs-6 pull-right">
+														<h3>01. Luftig, leichte Styles</h3>
+														<p>Die neue Denim-Kollektion: luftig-leichte Styles für relaxte Stunden!</p>
+													</div>
+												</div>
+												<div class="cp-info">
+													<div class="row">
+														<div class="cp-data col-xs-12 col-sm-4">
+															<p>Message Type:</p>
+															<p class="cp-data-val" id="">Notification</p>
+														</div>
+														<img class="cp-edit" src="images/edit_button.png" alt="edit" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /Overview-->
+
+			<div class="tab-pane" id="message-tab"> <!--Message Setup-->
+			</div>
+	    </section>
+	</main>
+	<script>
+	/*Changing the color of the save button after editing campaign details*/
+		$("#cp-name, #cp-description, .timing input").on("input", function() {
+			$("#cp-save").css("background", "#28afe4");
+		});
+	</script>
+</body>
+</html>

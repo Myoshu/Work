@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="author" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/chart.css">
+
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<section class="container-fluid">
+		<div class="mainNavigation"> <!--main navigation-->
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="index.html">Dashboard</a>
+							</li>
+							<li>
+								<a href="reporting.html">Reporting</a>
+							</li>
+							<li>
+								<a href="push-messages.html">Push Messages</a>
+							</li>
+							<li>
+								<a href="#">Settings</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<nav class="sub-menu">
+			<ul id="tabs" class="sub-nav-tabs" data-tabs="tabs"> <!--sub navigation-->
+	            <li class="active">
+	                <a href="#overview-tab" data-toggle="tab">
+	                    <p>Overview</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#campaigns-tab" data-toggle="tab">
+	                    <p>Campaigns</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#logs-tab" data-toggle="tab">
+	                    <p>Logs</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#metrics-tab" data-toggle="tab">
+	                    <p>Metrics</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#devices-tab" data-toggle="tab">
+	                    <p>Devices</p>
+	                </a>
+	            </li>
+	            <li>
+	                <a href="#stores-tab" data-toggle="tab">
+	                    <p>Stores</p>
+	                </a>
+	            </li>             
+	        </ul>
+	    </nav>
+	</section>
+	<main class="overview">
+		<section class="container">
+			<div class="tab-content">
+				<div class="tab-pane active" id="overview-tab"> <!--Overview-->
+					<div class="left-side col-xs-12 col-sm-4 col-md-3 col-lg-2"> <!--left side-->
+						<div class="panel panel-default">  <!--Campaigns-->
+							<div class="panel-heading">Campaigns</div>
+							<div class="panel-body">
+								<div class="campaign-overview row">
+									<div class="col-xs-10">
+										<p class="heading">Summer Sale</p>
+										<p class="stat up">Jun 5-25, 2015</p>
+									</div>
+									<div class="col-xs-2">
+										<span><i class="fa fa-fw fa-angle-right"></i></span>
+									</div>
+								</div>
+								<div class="campaign-overview row">
+									<div class="col-xs-10">
+										<p class="heading">Summer Sale</p>
+										<p class="stat up">Jun 5-25, 2015</p>
+									</div>
+									<div class="col-xs-2">
+										<span><i class="fa fa-fw fa-angle-right"></i></span>
+									</div>
+								</div>
+								<div class="campaign-overview row">
+									<div class="col-xs-10">
+										<p class="heading">Summer Sale</p>
+										<p class="stat up">Jun 5-25, 2015</p>
+									</div>
+									<div class="col-xs-2">
+										<span><i class="fa fa-fw fa-angle-right"></i></span>
+									</div>
+								</div>
+								<div class="campaign-overview row">
+									<div class="col-xs-10">
+										<p class="heading">Summer Sale</p>
+										<p class="stat up">Jun 5-25, 2015</p>
+									</div>
+									<div class="col-xs-2">
+										<span><i class="fa fa-fw fa-angle-right"></i></span>
+									</div>
+								</div>
+								<!-- <div class="campaign-overview">
+									<p class="heading">Summer Sale</p>
+									<p class="date">Jun 5-25, 2015</p>
+									<span><i class="fa fa-fw fa-angle-right"></i></span>
+								</div> -->
+							</div>
+						</div>
+						<div class="panel panel-default">  <!--Store Revenue-->
+							<div class="panel-heading">Store Revenue Overview</div>
+							<div class="panel-body">
+								<div class="revenue-overview row">
+									<div class="col-xs-10">
+										<p class="heading pull-left">Berlin</p>
+										<p class="stat up pull-right">+1.8%</p>
+									</div>
+									<div class="col-xs-2">
+										<span><i class="fa fa-fw fa-angle-right"></i></span>
+									</div>
+								</div>
+								<div class="revenue-overview row">
+									<div class="col-xs-10">
+										<p class="heading pull-left">Vienna</p>
+										<p class="stat up pull-right">+1.8%</p>
+									</div>
+									<div class="col-xs-2">
+										<span><i class="fa fa-fw fa-angle-right"></i></span>
+									</div>
+								</div>
+								<div class="revenue-overview row">
+									<div class="col-xs-10">
+										<p class="heading pull-left">Prague</p>
+										<p class="stat down pull-right">-0.8%</p>
+									</div>
+									<div class="col-xs-2">
+										<span><i class="fa fa-fw fa-angle-right"></i></span>
+									</div>
+								</div>
+								<div class="revenue-overview row">
+									<div class="col-xs-10">
+										<p class="heading pull-left">Paris</p>
+										<p class="stat na pull-right">N/A</p>
+									</div>
+									<div class="col-xs-2">
+										<span><i class="fa fa-fw fa-angle-right"></i></span>
+									</div>
+								</div>								
+							</div>
+							<div class="panel-footer">See all Stores</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-8 col-md-9 col-lg-10"> <!--right side-->
+						<div class="overview-time-sets"> <!--time sets-->
+							<nav class="panel panel-default">
+								<div class="panel-heading">
+									<ul class="nav navbar-nav">
+										<li>
+											<a href="">Show:</a>
+										</li>
+										<li class="active">
+											<a href="#">Today</a>
+										</li>
+										<li>
+											<a href="#">This Week</a>
+										</li>
+										<li>
+											<a href="#">Last 7 Days</a>
+										</li>
+										<li>
+											<a href="#">This Month</a>
+										</li>
+										<li>
+											<a href="#">Last 30 Days</a>
+										</li>
+										<li>
+											<a href="#">Last Year</a>
+										</li>
+									</ul>
+									<ul class="nav navbar-nav pull-right">
+										<button type="button" class="btn btn-default">Print</button>
+										<button type="button" class="btn btn-default">Export</button>
+									</ul>
+								</div>
+							</nav>
+						</div>
+						<div class="stats-info row">
+							<div class=" col-xs-12 col-md-6 col-lg-4">
+								<div class="info-stat">
+									<div class="row">
+										<p class="data col-xs-6">31,722€</p>
+										<div class="col-xs-6">
+											<p class="name">Revenue</p>
+											<p class="time">10 minutes ago</p>
+										</div>
+										<div class="add">
+											<p>+</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class=" col-xs-12 col-md-6 col-lg-4">
+								<div class="info-stat">
+									<div class="row">
+										<p class="data col-xs-6">209,40€</p>
+										<div class="col-xs-6">
+											<p class="name">Avg. Basket Value</p>
+											<p class="time">10 minutes ago</p>
+										</div>
+										<div class="add">
+											<p>+</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class=" col-xs-12 col-md-6 col-lg-4">
+								<div class="info-stat">
+									<div class="row">
+										<p class="data col-xs-6">31,722€</p>
+										<div class="col-xs-6">
+											<p class="name">Revenue</p>
+											<p class="time">10 minutes ago</p>
+										</div>
+										<div class="add">
+											<p>+</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class=" col-xs-12 col-md-6 col-lg-4">
+								<div class="info-stat">
+									<div class="row">
+										<p class="data col-xs-6">31,722€</p>
+										<div class="col-xs-6">
+											<p class="name">Revenue</p>
+											<p class="time">10 minutes ago</p>
+										</div>
+										<div class="add">
+											<p>+</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class=" col-xs-12 col-md-6 col-lg-4">
+								<div class="info-stat">
+									<div class="row">
+										<p class="data col-xs-6">31,722€</p>
+										<div class="col-xs-6">
+											<p class="name">Revenue</p>
+											<p class="time">10 minutes ago</p>
+										</div>
+										<div class="add">
+											<p>+</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class=" col-xs-12 col-md-6 col-lg-4">
+								<div class="info-stat">
+									<div class="row">
+										<p class="data col-xs-6">31,722€</p>
+										<div class="col-xs-6">
+											<p class="name">Revenue</p>
+											<p class="time">10 minutes ago</p>
+										</div>
+										<div class="add">
+											<p>+</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="overview-charts row">
+							<div class="chart col-xs-12 col-md-6">
+								<h4>Sales</h4>
+								<div class="js-graph"></div>
+							</div>
+							<div class="chart col-xs-12 col-md-6">
+								<h4>Revenue</h4>
+							</div>
+							<div class="chart col-xs-12 col-md-6">
+								<h4>Conversation Rates</h4>
+							</div>
+							<div class="chart col-xs-12 col-md-6">
+								<h4>Devices</h4>
+							</div>	
+						</div>
+					</div>
+				</div> <!-- /Overview-->
+
+				<div class="tab-pane" id="campaigns-tab"> <!--Campaigns-->
+				</div>
+				<div class="tab-pane" id="logs-tab"> <!--Campaigns-->
+				</div>
+				<div class="tab-pane" id="metrics-tab"> <!--Campaigns-->
+				</div>
+				<div class="tab-pane" id="devices-tab"> <!--Campaigns-->
+				</div>
+				<div class="tab-pane" id="stores-tab"> <!--Campaigns-->
+				</div>
+			</div>
+	    </section>
+	</main>
+	<script src="d3/d3.min.js"></script>
+	<script src="js/chart.js"></script>
+</body>
+</html>
