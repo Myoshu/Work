@@ -1191,4 +1191,12 @@ main {
 	.cp-edit-buttons {
 		margin-left: 0px;
 	}
-} 
+}
+
+/*ADMIN SECTION*/
+.user-manager.customers-info {
+	width: 100%;
+}
+.user-manager a {
+	color: #63d0ec;
+}
