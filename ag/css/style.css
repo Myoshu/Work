@@ -705,6 +705,7 @@ main {
     box-sizing: border-box;
     display: block;
     background: #fff;
+    cursor: pointer;
 }
 .layout-images-toggle i {
     position: absolute;
@@ -863,6 +864,7 @@ main {
 .cp-info .cp-edit {
 	float: right;
 	margin-right: 22px;
+	cursor: pointer;
 }
 .cd-wrap {
 	padding-right: 15px !important;
