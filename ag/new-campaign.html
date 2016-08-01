@@ -8,7 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/font-awesome.min.css" />
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
@@ -16,15 +15,11 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/chart.css">
 
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/jquery-ui.js"></script>
-	<script>
-		$(function() {
-			$("#date-from, #date-to").datepicker();
-		});
-	</script>
+
+	<script src="js/script.js"></script>
 </head>
 <body>
 	<section class="container-fluid">
@@ -168,15 +163,7 @@
 			</div>
 	    </section>
 	</main>
-	<script>
-		/*Changing the color of the button after inserting the name for the campaign*/
-		$("#cp-name").on("input", function() {
-			$("#cp-create").css("background", "#63d0ec");
-
-			if(!$("#cp-name").val()) {
-				$("#cp-create").css("background", "#989798");
-			}
-		});
-	</script>
+	<script src="d3/d3.min.js"></script>
+	<script src="js/chart.js"></script>
 </body>
 </html>

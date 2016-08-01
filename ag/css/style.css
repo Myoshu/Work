@@ -960,11 +960,14 @@ main {
 	font-size: 14px;
 	padding-top: 5px;
 }
+.cd-data .timing .col-xs-5 {
+	padding: 0px;
+}
 .cd-data img {
 	position: absolute;
 	width: 16px;
 	height: 16px;
-	right: 20px;
+	right: 5px;
 	top: 0px;
 	padding: 7px 6px;
 	padding-left: 10px;
