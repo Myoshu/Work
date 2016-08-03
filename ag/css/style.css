@@ -461,6 +461,11 @@ main {
 	font-weight: 500;
 	width: 70%;
 }
+.user-info-wrap.edit-user input {
+	width: 100%;
+	border: 0px;
+	padding: 3px 0px;
+}
 .account-settings {
 	padding: 20px;
 }

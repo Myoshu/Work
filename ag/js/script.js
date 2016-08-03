@@ -17,7 +17,7 @@ function colorChange() {
 		$("#cp-save").css("background", "#63d0ec");
 	});
 
-	$("#acc-first-name, #acc-last-name, #acc-password").on("input", function() {
+	$(".acc-first-name, .acc-last-name, .acc-password, .acc-role, .acc-email, .acc-state").on("input", function() {
 		$("#cp-save").css("background", "#63d0ec");
 	});
 

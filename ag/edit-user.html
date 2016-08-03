@@ -61,37 +61,51 @@
 		<div class="container">
 			<p class="tab-heading">Edit User</p>
 			<div class="col-xs-12 col-md-6">
-				<div class="user-info-wrap">
+				<div class="user-info-wrap edit-user">
 					<h3 class="heading">Max Mustermann</h3>
 					<div class="info">
 						<div class="col-xs-12">
 							<table class="table">
 								<tr>
 									<th>First Name</th>
-									<td>Max</td>
+									<td><input type="text" value="Max" class="acc-first-name" /></td>
 								</tr>
 								<tr>
 									<th>Last Name</th>
-									<td>Mustermann</td>
+									<td><input type="text" value="Mustermann" class="acc-last-name" /></td>
 								</tr>
 								<tr>
 									<th>E-mail</th>
-									<td>max@mustermann.com</td>
+									<td><input type="text" value="max@mustermann.com" class="acc-email" /></td>
 								</tr>
 								<tr>
 									<th>Role</th>
-									<td>Super Admin</td>
+									<td><input type="text" value="Super Admin" class="acc-role" /></td>
 								</tr>
 								<tr>
 									<th>State</th>
 									<td>
-										<select>
+										<select class="acc-state">
 											<option value="Enabled" selected="selected">Enabled</option>
 											<option value="Disabled">Disabled</option>
 										</select>
 									</td>
 								</tr>
 							</table>
+						</div>
+					</div>
+					<div class="cp-edit-wrap">
+						<div class="cp-edit-buttons col-xs-12">
+							<div class="pull-right">
+								<button class="gray-button" id="cp-save">
+									<img src="images/cp-check.png" />
+									Save Changes
+								</button>
+								<button class="gray-button" id="cp-delete">
+									<img src="images/cp-delete.png" />
+									Delete User
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
