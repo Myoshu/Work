@@ -262,8 +262,9 @@ main {
 	}
 }
 .info-stat .name {
-	font-size: 15px;
+	font-size: 17px;
 	font-weight: 500;
+	margin-top: 12px;
 }
 .info-stat .time {
 	font-size: 12px;
@@ -375,23 +376,24 @@ main {
 }
 .customers-info {
 	width: calc(100% - 45px);
+	overflow: hidden;
 }
 .customers-info .panel-heading {
 	background: #828a90;
 	color: #fff;
 	font-weight: 500;
 }
-.customer {
+.customers-info .panel-row {
 	padding: 10px 15px;
 	overflow: hidden;
 	border-bottom: 1px solid #f2f2f2;
 	font-size: 15px;
 }
-.customer.filtered {
+.customers-info .panel-row.filtered {
 	background: #f1f1f1;
 	color: #b4b3b6;
 }
-.customer.filtered>p:first-child {
+.customers-info .panel-row.filtered>p:first-child {
 	font-weight: 500;
 	color: #828a90;
 }
@@ -527,8 +529,12 @@ main {
 .message-wrap>div:first-child img {
 	max-width: 80%;
 }
+.message-wrap>div:last-child {
+	padding-right: 0px;
+}
 .message-wrap .message-info {
 	margin-top: 10px;
+	margin-bottom: 20px;
 }
 .message-wrap .message-info th {
 	font-weight: 400;
@@ -549,6 +555,27 @@ main {
 		width: 100%;
 	}
 }
+
+/*Reporting - Customers - Logs*/
+.logs-section {
+	margin-bottom: 20px;
+	overflow: hidden;
+	position: relative;
+	clear: both;
+}
+.logs-title {
+	margin-left: 15px;
+	text-transform: uppercase;
+	color: #666;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+#logs-tab .customers-info {
+	width: 100%;
+}
+
+
+
 /*Reporting - Messages*/
 .cp-messages-stats {
 	margin-bottom: 15px;
