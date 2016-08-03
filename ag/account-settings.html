@@ -59,42 +59,76 @@
 	</section>
 	<main>
 		<div class="container">
-			<p class="tab-heading">Edit User</p>
-			<div class="user-info-wrap col-xs-12 col-md-6">
-				<h3 class="heading">Max Mustermann</h3>
-				<div class="info">
-					<div class="col-xs-12">
-						<table class="table">
-							<tr>
-								<th>First Name</th>
-								<td>Max</td>
-							</tr>
-							<tr>
-								<th>Last Name</th>
-								<td>Mustermann</td>
-							</tr>
-							<tr>
-								<th>E-mail</th>
-								<td>max@mustermann.com</td>
-							</tr>
-							<tr>
-								<th>Role</th>
-								<td>Super Admin</td>
-							</tr>
-							<tr>
-								<th>State</th>
-								<td>
-									<select>
-										<option value="Enabled" selected="selected">Enabled</option>
-										<option value="Disabled">Disabled</option>
-									</select>
-								</td>
-							</tr>
-						</table>
+			<p class="tab-heading">Account Settings</p>
+			<div class="col-xs-12">
+				<div class="user-info-wrap account-settings">
+					<div class="info">
+						<div class="col-xs-12 col-sm-6">
+							<div class="cd-header">
+								<img src="images/personal.svg" alt="Personal">
+								<p>Personal</p>
+							</div>
+							<div class="cd-data">
+								<div class="col-xs-12 col-sm-3">
+									<p>Display Name</p>
+								</div>
+								<div class="col-xs-12 col-sm-8 clear-padding">
+									<input type="text" value="Anna Langenbach" readonly="readonly" />
+								</div>
+							</div>
+							<div class="cd-data">
+								<div class="col-xs-12 col-sm-3">
+									<p>First Name</p>
+								</div>
+								<div class="col-xs-12 col-sm-8 clear-padding">
+									<input type="text" value="Anna" id="acc-first-name">
+								</div>
+							</div>
+							<div class="cd-data">
+								<div class="col-xs-12 col-sm-3">
+									<p>Last Name</p>
+								</div>
+								<div class="col-xs-12 col-sm-8 clear-padding">
+									<input type="text" value="Langenbach" id="acc-last-name">
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6">
+							<div class="cd-header">
+								<img src="images/password.svg" alt="Password">
+								<p>Password</p>
+							</div>
+							<div class="cd-data">
+								<div class="col-xs-12 col-sm-3">
+									<p>E-mail</p>
+								</div>
+								<div class="col-xs-12 col-sm-8 clear-padding">
+									<input type="text" value="annalangenbach@beaconsmind.com" readonly="readonly" />
+								</div>
+							</div>
+							<div class="cd-data">
+								<div class="col-xs-12 col-sm-3">
+									<p>Password</p>
+								</div>
+								<div class="col-xs-12 col-sm-8 clear-padding">
+									<input type="password" value="12345" id="acc-password">
+								</div>
+							</div>
+						</div>
+						<div class="cp-edit-wrap">
+							<div class="cp-edit-buttons col-xs-12 col-sm-6">
+								<div class="col-sm-offset-3">
+									<button class="gray-button" id="cp-save">
+										<img src="images/cp-check.png" />
+										Save Changes
+									</button>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>
 	</main>
 	<script src="d3/d3.min.js"></script>
 	<script src="js/chart.js"></script>

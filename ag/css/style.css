@@ -345,6 +345,7 @@ main {
 	font-size: 30px;
 	font-weight: 300;
 	margin-bottom: 15px;
+	margin-left: 20px;
 }
 /*customers*/
 .customers nav .panel-heading {
@@ -460,6 +461,44 @@ main {
 	font-weight: 500;
 	width: 70%;
 }
+.account-settings {
+	padding: 20px;
+}
+.account-settings .info>div {
+	margin-top: 20px;
+}
+.account-settings img {
+	width: 16px;
+	height: 16px;
+}
+.account-settings input{
+	background: transparent;
+    border: 0px;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #dadada;
+    color: #716f6e;
+    min-height: 31px;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-family: "Open Sans", sans-serif;
+}
+.account-settings input:read-only {
+	background: #f0f0f0;
+}
+.account-settings .gray-button {
+	margin-left: 7px;
+}
+@media screen and (max-width: 768px) {
+	.account-settings .gray-button {
+		margin-left: 0px;
+	}
+}
+
+
+
 .table {
 	margin-bottom: 0px;
 }
@@ -1196,7 +1235,7 @@ main {
 	font-size: 15px;
     display: inline;
 }
-.campaign-details .gray-button {
+.gray-button {
 	font-weight: 500;
 	padding: 7px 16px;
 	padding-left: 12px;
@@ -1207,10 +1246,10 @@ main {
 	font-size: 14px;
 	margin-bottom: 20px;
 }
-.campaign-details .gray-button:hover {
+.gray-button:hover {
 	background: #878687;
 }
-.campaign-details .gray-button img {
+.gray-button img {
 	margin-right: 7px;
 }
 .cp-edit-wrap {

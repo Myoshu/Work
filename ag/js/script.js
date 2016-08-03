@@ -17,6 +17,10 @@ function colorChange() {
 		$("#cp-save").css("background", "#63d0ec");
 	});
 
+	$("#acc-first-name, #acc-last-name, #acc-password").on("input", function() {
+		$("#cp-save").css("background", "#63d0ec");
+	});
+
 	$("#edit-tab .timing input").on("change", function() {
 		$("#cp-save").css("background", "#63d0ec");
 	});
