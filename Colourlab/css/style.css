@@ -1,6 +1,12 @@
 @font-face {
     font-family: Circular;
     src: url(../fonts/Circular/CircularStd-Medium.otf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Circular;
+    src: url(../fonts/Circular/CircularStd-Bold.otf);
+    font-weight: bold;
 }
 @font-face {
     font-family: Circular;
@@ -24,6 +30,9 @@ h3 {
 	font-size: 24px;
 	-webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
+}
+ul {
+	-webkit-padding-start: 0px;
 }
 header {
 	position: relative;
@@ -56,10 +65,11 @@ header {
 	right: 0;
 	text-align: center;
 	margin-top: 70px;
+	z-index: 1;
 }
 .register {
 	font-family: "Circular";
-	font-weight: bolder;
+	font-weight: 600;
 	background: transparent;
 	width: 280px;
 	height: 60px;
@@ -75,17 +85,36 @@ header {
 	cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+	.logo {
+		position: relative;
+		margin: 0 auto;
+		top: 0;
+		background: #050000;
+		padding: 10px 0px;
+	}
+	.logo img {
+		width: 200px;
+	}
+	.register {
+		width: 150px;
+		font-size: 22px;
+	}
+}
+
 /*BANNER SECTION*/
 .banner-section {
 	background: url(../images/banner-background.png);
 	width: 100%;
-	height: 700px;
+	/*height: 700px;*/
 	background-position: 0px -300px;
 	text-align: center;
+	padding: 0px 15px 10% 15px;
+	box-sizing: border-box;
 }
 .banner-header {
 	color: #fff;
-	padding-top: 175px;
+	padding-top: 10%;
 	font-family: "Circular";
 	font-weight: bolder;
 	text-transform: uppercase;
@@ -112,6 +141,12 @@ header {
 	margin-top: 50px;
 }
 
+@media screen and (max-width: 1170px) {
+	.banner-text {
+		font-size: 25px;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	h1 {
 		font-size: 26px;
@@ -121,6 +156,7 @@ header {
 		font-size: 13px;
 	}
 	.banner-text {
+		width: 90%;
 		font-size: 20px;
 	}
 }
@@ -129,39 +165,46 @@ header {
 .features-section {
 	background: url(../images/features-background.png);
 	width: 100%;
-	height: 700px;
 	text-align: center;
+	padding: 5% 0 7% 0;
+	box-sizing: border-box;
 }
-.features {
-	width: 52.3%;
+.features-section ul > li:nth-child(4n + 1) {
+    margin-left: 0;
+}
+.features-section ul {
+    width: 55%;
     margin: 0 auto;
-    padding-top: 130px;
-    position: relative;
-    overflow: hidden;
 }
-.features div {
-	width: 158px;
-	height: 160px;
-	margin-right: 120px;
-	float: left;
-	margin-bottom: 60px;
+.features-section ul > li {
+    display: inline-block;
+    width: 16%;
+    margin-left: 8%;
+    margin-top: 4%;
+    vertical-align: top;
+}
+.features-section ul > li svg {
+    fill: #fff;
+    padding: 4%;
+}
+.features-section ul > li:hover svg {
+	fill: #00b7eb;
+}
 
-}
-.features div img {
-	width: 100%;
-}
-.features div:nth-child(4) , .features div:last-child {
-	margin-right: 0px;
+@media screen and (max-width: 768px) {
+	.features-section ul {
+		width: 80%;
+	}
 }
 
 /*FOOTER*/
 footer {
-	padding-top: 150px;
-	height: 500px;
+	padding: 5% 0 5% 0;
 	background: #050000;
 	color: #878787;
 	font-family: "Circular";
 	text-align: center;
+	box-sizing: border-box;
 }
 .back-to-top {
 	margin: 0 auto;
@@ -169,17 +212,22 @@ footer {
 	text-transform: uppercase;
 	cursor: pointer;
 }
+.back-to-top img {
+	width: 5%;
+	min-width: 40px;
+}
 .copyright {
 	width: 60%;
-	padding-top: 100px;
+	padding-top: 5%;
 	color: #878787;
 	margin: 0 auto;
+	font-size: 18px;
 }
 .copyright:after {
 	content: "";
 	position: absolute;
 	border-bottom: 1px solid #878787;
-	width: 40%;
+	width: 43%;
 	margin: 0 auto;
 	left: 0;
 	right: 0;
@@ -189,4 +237,13 @@ footer {
 }
 .social span {
 	padding: 0 5px;
+}
+
+@media screen and (max-width: 768px) {
+	footer {
+		padding: 50px 0;
+	}
+	.copyright {
+		font-size: 15px;
+	}
 }
