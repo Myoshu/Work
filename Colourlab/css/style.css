@@ -190,6 +190,9 @@ header {
 .features-section ul > li:hover svg {
 	fill: #00b7eb;
 }
+.feature {
+	visibility: hidden;
+}
 
 @media screen and (max-width: 768px) {
 	.features-section ul {
@@ -246,4 +249,15 @@ footer {
 	.copyright {
 		font-size: 15px;
 	}
+}
+
+.fadeIn {
+    -webkit-animation: animate_show 1s;
+    animation: animate_show 1s;
+    visibility: visible !important;
+}
+
+@-webkit-keyframes animate_show{
+    0%{opacity:0}
+    100%{opacity:1}
 }
