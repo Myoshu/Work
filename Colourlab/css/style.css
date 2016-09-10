@@ -168,6 +168,7 @@ header {
 	text-align: center;
 	padding: 5% 0 7% 0;
 	box-sizing: border-box;
+	background-size: cover;
 }
 .features-section ul > li:nth-child(4n + 1) {
     margin-left: 0;
