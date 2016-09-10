@@ -88,17 +88,22 @@ header {
 @media screen and (max-width: 768px) {
 	.logo {
 		position: relative;
-		margin: 0 auto;
+		margin: 0;
+		text-align: left;
 		top: 0;
 		background: #050000;
-		padding: 10px 0px;
+		padding: 10px 0px 5px 0px;
+
 	}
 	.logo img {
-		width: 200px;
+		width: 100px;
+		margin-left: 15px;
 	}
 	.register {
 		width: 150px;
 		font-size: 22px;
+		bottom: 30px;
+		height: 40px;
 	}
 }
 
