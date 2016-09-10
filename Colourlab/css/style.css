@@ -36,21 +36,16 @@ ul {
 }
 header {
 	position: relative;
+	margin-bottom: -1px;
 }
 .vimeo-video {
 	text-align: center;
 }
 .video-wrap {
-	position: relative;
-	padding-bottom: 54.75%;
-	padding-top: 25px;
-	height: 0;
-	margin: 0 auto;
+	width: 100%;
+    height: 56.25vw;
 }
 .video-wrap iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
 }
@@ -88,8 +83,6 @@ header {
 @media screen and (max-width: 768px) {
 	.logo {
 		margin: 0;
-		text-align: left;
-
 	}
 	.logo img {
 		width: 100px;

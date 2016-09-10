@@ -1,0 +1,16 @@
+.video-wrap {
+	/*position: relative;
+	padding-bottom: 54.75%;
+	padding-top: 25px;
+	height: 0;
+	margin: 0 auto;*/
+	width: 100vw;
+    height: 56.25vw;
+}
+.video-wrap iframe {
+	/*position: absolute;
+	top: 0;
+	left: 0;*/
+	width: 100%;
+	height: 100%;
+}
