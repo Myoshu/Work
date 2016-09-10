@@ -7,19 +7,24 @@ $(window).on('load', function(){
 });
 
 function showImages(el) {
-    var windowHeight = $(window).height();
-    $(el).each(function(){
-        var thisPos = $(this).offset().top;
+	if($(window).width()>768) {
+	    var windowHeight = $(window).height();
 
-        var topOfWindow = $(window).scrollTop();
-        if (topOfWindow + windowHeight - 100 > thisPos) {
-            $(this).addClass("fadeIn");
-        }
-    });
+	    $(el).each(function(){
+	        var thisPos = $(this).offset().top;
+
+	        var topOfWindow = $(window).scrollTop();
+	        if (topOfWindow + windowHeight - 100 > thisPos) {
+	            $(this).addClass("fadeIn");
+	        }
+	    });
+	} else {
+		$(el).css("visibility", "visible");
+	}
 }
 
 $(document).ready(function(){
-    showImages('.load');
+	showImages('.load');
 });
 
 $(window).scroll(function() {
