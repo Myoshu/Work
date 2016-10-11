@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Connected Loans</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- bxSlider CSS file -->
+    <!-- Fonts Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Custome Css -->
+    <link rel="stylesheet" href="css/popup_style.css">
+    <!-- Resource style -->
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- Responsive Css -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>-->
+    <script src="js/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/modernizr.js"></script><!-- Modernizr -->
+    <script type="text/javascript">
+	      $(document).ready(function(){
+                $(window).bind('scroll', function() {
+                    var navHeight = 40; // custom nav height
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
+                });
+            });
+            $(function() {
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        $(document).ready(function(){
+            $(".button a").click(function(){
+                $(".overlay").slideToggle(400);
+				
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+            });
+        });
+        $('.overlay').on('click', function(){
+            $(".overlay").slideToggle(400);   
+            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+            open = false;
+        });
+    </script>
+    </head>
+    <body>
+<div id="notp-menu" class="container-fluid">
+      <div class="row">
+    <div class="top_bar">
+          <div class="col-md-8 col-sm-6 col-xs-8">
+        <div class="logo2"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+      </div>
+          <div class="col-md-4 col-sm-6 col-xs-4">
+        <div class="phone_area">
+              <div class="phone_nmbr">
+            <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div>
+            <h4>03&nbsp;8696&nbsp;6300</h4>
+          </div>
+              <div class="login_area logout"> <a href="#">Logout</a> </div>
+            </div>
+      </div>
+        </div>
+  </div>
+    </div>
+<div id="services" class="services doc">
+      <div class="container">
+    <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-12">
+        <div class="home_loan_left doc">
+              <ul>
+            <li><a class="document" href="document_center_step_1.html">
+              <div class="img"></div>
+              <span>Document Centre</span></a></li>
+            <li class="active"><a class="about" href="document_center_step_2.html">
+              <div class="img"></div>
+              <span>About You</span></a></li>
+            <li><a class="msg" href="document_center_step_3.html">
+              <div class="img"></div>
+              <span>Messages</span></a></li>
+            <li><a class="loan_set" href="document_center_step_4.html">
+              <div class="img"></div>
+              <span>Your Loan Status</span></a></li>
+          </ul>
+            </div>
+      </div>
+          <div class="col-md-9 col-sm-9 col-xs-12">
+        <div class="progress_status">
+              <h3>Your Home Loan Progress</h3>
+              <ul class="status">
+            <li class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="process_cricule compeleted"></div>
+                  <a href="#">Application</a>
+                  <div class="compeleted_border"></div>
+                </li>
+            <li class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="process_cricule active"></div>
+                  <a href="#">Approval</a></li>
+            <li class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="process_cricule"></div>
+                  <a href="#">Loan Documents</a></li>
+            <li class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="process_cricule"></div>
+                  <a href="#">Settlements</a></li>
+          </ul>
+              <div class="border_doc"></div>
+            </div>
+        <div class="importent">
+              <div class="import_right status_bar">
+            <ul>
+                  <li><a href="#">Please update employment details for Philip Briggs.</a><a href="#0" class="cd-popup-trigger employ_detail">Please complete</a></li>
+                  <li><a href="#">Please Provide details of the security property.</a><a href="#0" class="cd-popup-trigger security_property">Please complete</a></li>
+                  <li><a href="#">Please complete your asset & liability details.</a><a href="#0" class="cd-popup-trigger liability_details">Please complete</a></li>
+                  <!--<li><a href="#">View the application summary.</a><a href="#0" class="cd-popup-trigger application_summary">Please complete</a></li>-->
+                </ul>
+          </div>
+            </div>
+        <div class="importent">
+              <div class="import_right">
+            <ul>
+                  <li><a href="#">View the application summary</a><a class="import_img step_2" href="#"><img src="images/arrow.png" alt="arrow"></a></li>
+                </ul>
+          </div>
+            </div>
+      </div>
+        </div>
+  </div>
+    </div>
+<div class="popup">
+<div id="employ_detail" class="cd-popup" role="alert">
+      <div class="cd-popup-container">
+    <div class="loan_form employment">
+          <h3>Employment Details - Philip Briggs</h3>
+          <form>
+        <ul>
+              <p>Plese provide your employment details</p>
+              <li>
+            <label>Employment Status</label>
+            <select>
+                  <option>PAYG</option>
+                  <option>Lorem</option>
+                  <option>Ipsum</option>
+                </select>
+          </li>
+              <li>
+            <label style="margin-top:8px">Do you own a company car?</label>
+            <div class="button_yes"><a class="active" href="#">Yes</a><a href="#">No</a></div>
+          </li>
+              <li>
+            <label>Employer Name</label>
+            <input type="text">
+          </li>
+              <li>
+            <label>Occupation</label>
+            <input type="text">
+          </li>
+              <li>
+            <label>Employment Category</label>
+            <input type="text">
+          </li>
+              <li class="length">
+            <label>Length of Employment</label>
+            <input type="text">
+            <span>Years</span>
+            <input type="text">
+            <span>Months</span></li>
+              <li>
+            <label>Income Type</label>
+            <input type="text">
+          </li>
+              <li>
+            <label>Income Frequency</label>
+            <input type="text">
+          </li>
+              <li>
+            <label>Income Amount (gross)</label>
+            <input type="text" placeholder="$">
+          </li>
+            </ul>
+        <div class="submit right_button">
+              <input type="submit" value="Submit">
+            </div>
+        <div class="submit lft_button">
+              <input type="submit" value="Cancel">
+            </div>
+      </form>
+        </div>
+    <ul class="cd-buttons">
+        </ul>
+    <a href="#0" class="cd-popup-close img-replace">Close</a> </div>
+    </div>
+<div id="security_property" class="cd-popup" role="alert">
+      <div class="cd-popup-container">
+    <div class="loan_form employment">
+          <h3>Security property details</h3>
+          <form>
+        <ul>
+              <p>Please Provide details of the property/s you are offering as security for this loan.</p>
+              <li>
+            <label>Security property address</label>
+            <input type="text">
+          </li>
+              <li>
+            <label>Estimated value</label>
+            <input type="text" placeholder="$">
+          </li>
+              <li>
+            <label>Security property type</label>
+            <select>
+                  <option>Chose one...</option>
+                  <option>Lorem</option>
+                  <option>Ipsum</option>
+                </select>
+          </li>
+              <li>
+            <div class="alert alert-danger">This fields is required</div>
+          </li>
+              <li>
+            <label>Security property status</label>
+            <select>
+                  <option>Estabished</option>
+                  <option>Lorem</option>
+                  <option>Ipsum</option>
+                </select>
+          </li>
+              <li>
+            <label>Occupancy type</label>
+            <select>
+                  <option>Investment</option>
+                  <option>Lorem</option>
+                  <option>Ipsum</option>
+                </select>
+          </li>
+              <li>
+            <hr>
+          </li>
+            </ul>
+        <div class="submit right_button">
+              <input type="submit" value="Cancel">
+            </div>
+        <div class="submit lft_button">
+              <input type="submit" value="Submit">
+            </div>
+      </form>
+        </div>
+    <ul class="cd-buttons">
+        </ul>
+    <a href="#0" class="cd-popup-close img-replace">Close</a> </div>
+    </div>
+<div id="liability_details" class="cd-popup" role="alert">
+      <div class="cd-popup-container">
+    <div class="loan_form employment">
+          <h3>Assets & Liability</h3>
+          <form>
+        <div class="row">
+              <div class="col-lg-12">
+            <div class="row">
+                  <div class="col-sm-12 col-lg-4">
+                <div class="panel panel-success">
+                      <div class="panel-heading hd-panel">
+                    <h3 class="panel-title pull-left he-hd">Assets</h3>
+                    <a class="pull-right btn btn-success add-hd">Add</a> </div>
+                      <div class="panel-body assdt_box">
+                    <div class="row">
+                          <div class="col-xs-6 col-sm-4">
+                        <label>Assets type</label>
+                      </div>
+                          <div class="col-xs-6 col-sm-8">
+                        <label>Value</label>
+                      </div>
+                        </div>
+                    <div class="row">
+                          <div class="col-xs-4">
+                        <div class="asset-left">
+                              <select class="form-control">
+                            <option>Home</option>
+                                <option>Investment</option>
+                                <option>Car</option>
+                                <option>Cash</option>
+                                <option>Furniture </option>
+                                <option>Superannuation </option>
+                                <option>Shares</option>
+                                <option>Other</option>
+                                <option>Genuine Savings</option>
+                          </select>
+                            </div>
+                      </div>
+                          <div class="col-xs-5 col-sm-6">
+                        <div class="asset-right">
+                              <div class="form-group">
+                            <div class="input-group">
+                                  <div class="input-group-addon">$</div>
+                                  <input type="text" class="form-control" placeholder="0">
+                                </div>
+                          </div>
+                            </div>
+                      </div>
+                          <div class="col-xs-2">
+                        <button type="submit" class="btn btn-success">X</button>
+                      </div>
+                        </div>
+                    <div class="row">
+                          <div class="col-xs-4">
+                        <div class="asset-left">
+                              <select class="form-control">
+                            <option>Home</option>
+                                <option>Investment</option>
+                                <option>Car</option>
+                                <option>Cash</option>
+                                <option>Furniture </option>
+                                <option>Superannuation </option>
+                                <option>Shares</option>
+                                <option>Other</option>
+                                <option>Genuine Savings</option>
+                          </select>
+                            </div>
+                      </div>
+                          <div class="col-xs-5 col-sm-6">
+                        <div class="asset-right">
+                              <div class="form-group">
+                            <div class="input-group">
+                                  <div class="input-group-addon">$</div>
+                                  <input type="text" class="form-control" placeholder="0">
+                                </div>
+                          </div>
+                            </div>
+                      </div>
+                          <div class="col-xs-2">
+                        <button type="submit" class="btn btn-success">X</button>
+                      </div>
+                        </div>
+                    <div class="row">
+                          <div class="col-xs-4">
+                        <div class="asset-left">
+                              <select class="form-control">
+                           <option>Home</option>
+                                <option>Investment</option>
+                                <option>Car</option>
+                                <option>Cash</option>
+                                <option>Furniture </option>
+                                <option>Superannuation </option>
+                                <option>Shares</option>
+                                <option>Other</option>
+                                <option>Genuine Savings</option>
+                          </select>
+                            </div>
+                      </div>
+                          <div class="col-xs-5 col-sm-6">
+                        <div class="asset-right">
+                              <div class="form-group">
+                            <div class="input-group">
+                                  <div class="input-group-addon">$</div>
+                                  <input type="text" class="form-control" placeholder="0">
+                                </div>
+                          </div>
+                            </div>
+                      </div>
+                          <div class="col-xs-2">
+                        <button type="submit" class="btn btn-success">X</button>
+                      </div>
+                        </div>
+                    <div class="row">
+                          <div class="col-xs-4">
+                        <div class="asset-left">
+                              <select class="form-control">
+                           <option>Home</option>
+                                <option>Investment</option>
+                                <option>Car</option>
+                                <option>Cash</option>
+                                <option>Furniture </option>
+                                <option>Superannuation </option>
+                                <option>Shares</option>
+                                <option>Other</option>
+                                <option>Genuine Savings</option>
+                          </select>
+                            </div>
+                      </div>
+                          <div class="col-xs-5 col-sm-6">
+                        <div class="asset-right">
+                              <div class="form-group">
+                            <div class="input-group">
+                                  <div class="input-group-addon">$</div>
+                                  <input type="text" class="form-control" placeholder="0">
+                                </div>
+                          </div>
+                            </div>
+                      </div>
+                          <div class="col-xs-2">
+                        <button type="submit" class="btn btn-success">X</button>
+                      </div>
+                        </div>
+                    <div class="row">
+                          <div class="col-xs-4">
+                        <div class="asset-left">
+                          <select class="form-control">
+                                <option>Home</option>
+                                <option>Investment</option>
+                                <option>Car</option>
+                                <option>Cash</option>
+                                <option>Furniture </option>
+                                <option>Superannuation </option>
+                                <option>Shares</option>
+                                <option>Other</option>
+                                <option>Genuine Savings</option>
+
+                          </select>
+                            </div>
+                      </div>
+                          <div class="col-xs-5 col-sm-6">
+                        <div class="asset-right">
+                              <div class="form-group">
+                            <div class="input-group">
+                                  <div class="input-group-addon">$</div>
+                                  <input type="text" class="form-control" placeholder="0">
+                                </div>
+                          </div>
+                            </div>
+                      </div>
+                          <div class="col-xs-2">
+                        <button type="submit" class="btn btn-success">X</button>
+                      </div>
+                        </div>
+                    
+                    <div class="row">
+                          <div class="col-xs-4">
+                        <div class="asset-left">
+                              <select class="form-control">
+                            <option>Home</option>
+                                <option>Investment</option>
+                                <option>Car</option>
+                                <option>Cash</option>
+                                <option>Furniture </option>
+                                <option>Superannuation </option>
+                                <option>Shares</option>
+                                <option>Other</option>
+                                <option>Genuine Savings</option>
+                          </select>
+                            </div>
+                      </div>
+                          <div class="col-xs-5 col-sm-6">
+                        <div class="asset-right">
+                              <div class="form-group">
+                            <div class="input-group">
+                                  <div class="input-group-addon">$</div>
+                                  <input type="text" class="form-control" placeholder="0">
+                                </div>
+                          </div>
+                            </div>
+                      </div>
+                          <div class="col-xs-2">
+                        <button type="submit" class="btn btn-success">X</button>
+                      </div>
+                        </div>
+                  </div>
+                    </div>
+              </div>
+                  <div class="col-sm-12 col-lg-8">
+                <div class="panel panel-success">
+                      <div class="panel-heading hd-panel">
+                    <h3 class="panel-title pull-left he-hd">Liability</h3>
+                    <a class="pull-right btn btn-success add-hd">Add</a> </div>
+                      <div class="panel-body">
+                      <div class="table-responsive">
+                    <table class="table liabilaty-tb">
+                          <thead>
+                        	<tr>
+                              <th class="l-t-th">Liability Type</th>
+                              <th class="l-th">Lender</th>
+                              <th class="l-th">Owning/Limit</th>
+                              <th class="l-t-th">Monthly Repayment</th>
+                              <th class="l-th">Interest Only</th>
+                              <th class="l-th">Refinance</th>
+                            </tr>
+                        <tbody>
+                            <tr>
+                              <td><select class="form-control">
+                            <option>Homeloan </option>
+                                <option>Investment</option>
+                                <option>Car loan</option>
+                                <option>Personal loan</option>
+                                <option>Credit card  </option>
+                                <option>Rent </option>
+                                <option>Child Maintenance </option>
+                                <option>Other</option>
+                                
+                          </select></td>
+                              <td><input type="text" class="form-control" placeholder="0"> </td>
+                              <td><div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div></td>
+                              <td><div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div></td>
+                              <td class="chectd"><input type="checkbox" value=""></td>
+                              <td class="chectd"><input type="checkbox" value=""></td>
+                            </tr>
+                        </tbody>
+                            
+                      </thead>
+                        </table>
+                        </div>
+                  </div>
+                    </div>
+              </div>
+                  <div class="col-sm-12 col-lg-8">
+                <div class="panel panel-success">
+                      <div class="panel-heading hd-panel">
+                    <h3 class="panel-title pull-left he-hd">Living Expenses</h3>
+                    <a class="pull-right btn btn-success add-hd">Monthly Expense</a> </div>
+                      <div class="panel-body">
+                    <div class="col-md-8">
+                          <div class="asset-left">
+                        <label>Basic Living Costs (Food, utilities etc)</label>
+                      </div>
+                        </div>
+                    <div class="col-md-4">
+                          <div class="asset-right">
+                        <div class="form-group">
+                              <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                    <div class="col-md-8">
+                          <div class="asset-left">
+                        <label>Childcare and/or School Fees</label>
+                      </div>
+                        </div>
+                    <div class="col-md-4">
+                          <div class="asset-right">
+                        <div class="form-group">
+                              <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                    <div class="col-md-8">
+                          <div class="asset-left">
+                        <label>Private Health Cover </label>
+                      </div>
+                        </div>
+                    <div class="col-md-4">
+                          <div class="asset-right">
+                        <div class="form-group">
+                              <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                    <div class="col-md-8">
+                          <div class="asset-left">
+                        <label>Travel and/or Transport Expenses</label>
+                      </div>
+                        </div>
+                    <div class="col-md-4">
+                          <div class="asset-right">
+                        <div class="form-group">
+                              <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                    <div class="col-md-8">
+                          <div class="asset-left">
+                        <label>Insurance Premiums</label>
+                      </div>
+                        </div>
+                    <div class="col-md-4">
+                          <div class="asset-right">
+                        <div class="form-group">
+                              <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                    <div class="col-md-8">
+                          <div class="asset-left">
+                        <label>Mobile, Internet and TV Expenses</label>
+                      </div>
+                        </div>
+                    <div class="col-md-4">
+                          <div class="asset-right">
+                        <div class="form-group">
+                              <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                    <div class="col-md-8">
+                          <div class="asset-left">
+                        <label>Other Living Expenses</label>
+                      </div>
+                        </div>
+                    <div class="col-md-4">
+                          <div class="asset-right">
+                        <div class="form-group">
+                              <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                  </div>
+                    </div>
+              </div>
+                </div>
+          </div>
+            </div>
+        <div class="col-xs-12">
+              <div class="row">
+            <div class="well">
+               <div class="row">
+                	<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                      <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                          <div class="row">
+                        <label>Total assets</label>
+                      </div>
+                        </div>
+                    <div class="col-lg-5 col-md-6">
+                          <div class="row">
+                        <div class="form-group">
+                              <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" placeholder="0">
+                          </div>
+                            </div>
+                      </div>
+                        </div>
+                    <div class="clearfix"></div>
+                    <div class="alert alert-danger">Assets must be greater then 0</div>
+                  </div>
+                 	</div>
+                <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12">
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    	<div class="asset-left">
+                          <label>Total Liability</label>
+                        </div>
+                  	  </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="asset-right">
+                          <div class="form-group">
+                        <div class="input-group">
+                              <div class="input-group-addon">$</div>
+                              <input type="text" class="form-control" placeholder="0">
+                            </div>
+                      </div>
+                        </div>
+                  </div>
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="asset-right">
+                          <div class="form-group">
+                        <div class="input-group">
+                              <div class="input-group-addon">$</div>
+                              <input type="text" class="form-control" placeholder="0">
+                            </div>
+                      </div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+                </div>
+            <div class="clearfix"></div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <div class="row">
+                <div class="col-xs-4">
+                      <div class="row">
+                    <label>Surplus</label>
+                    <br>
+                    <br>
+                  </div>
+                    </div>
+                <div class="col-xs-5">
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input type="text" class="form-control" placeholder="0">
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+                <div class="col-xs-12">
+                      <div class="row"> 
+                      	<small>(Total assets less total liability)</small> 
+                      </div>
+                    </div>	
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12"><div>
+            <div class="clearfix"></div>
+              </div>
+                </div>
+          </div>
+              <div class="col-xs-12">
+            <div class="row">
+                  
+                
+              </div>
+                </div>
+          </div>
+              <div class="clearfix"></div>
+              <hr>
+              <div class="submit right_button">
+            <input type="submit" value="Cancel">
+          </div>
+              <div class="submit lft_button">
+            <input type="submit" value="Submit">
+          </div>
+            </div>
+      </form>
+          <ul class="cd-buttons">
+      </ul>
+          <a href="#0" class="cd-popup-close img-replace">Close</a> </div>
+  </div>
+    </div>
+<div id="application_summary" class="cd-popup" role="alert">
+      <div class="cd-popup-container">
+    <div class="loan_form employment">
+          <h3>Employment Details - Philip Briggs</h3>
+          <form>
+        <ul>
+              <p>Plese provide your employment details</p>
+              <li>
+            <label>Employment Status</label>
+            <select>
+                  <option>PAYG</option>
+                  <option>Lorem</option>
+                  <option>Ipsum</option>
+                </select>
+          </li>
+              <li>
+            <label style="margin-top:8px">Do you own a company car?</label>
+            <div class="button_yes"><a class="active" href="#">Yes</a><a href="#">No</a></div>
+          </li>
+              <li>
+            <label>Employer Name</label>
+            <input type="text">
+          </li>
+              <li>
+            <label>Occupation</label>
+            <input type="text">
+          </li>
+              <li>
+            <label>Employment Category</label>
+            <input type="text">
+          </li>
+              <li class="length">
+            <label>Length of Employment</label>
+            <input type="text">
+            <span>Years</span>
+            <input type="text">
+            <span>Months</span></li>
+              <li>
+            <label>Income Type</label>
+            <input type="text">
+          </li>
+              <li>
+            <label>Income Frequency</label>
+            <input type="text">
+          </li>
+              <li>
+            <label>Income Amount (gross)</label>
+            <input type="text" placeholder="$">
+          </li>
+            </ul>
+        <div class="submit right_button">
+              <input type="submit" value="Submit">
+            </div>
+        <div class="submit lft_button">
+              <input type="submit" value="Cancel">
+            </div>
+      </form>
+        </div>
+    <ul class="cd-buttons">
+        </ul>
+    <a href="#0" class="cd-popup-close img-replace">Close</a> </div>
+    </div>
+</div>    
+<script src="js/main.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.event.move.js"></script>
+</body>
+</html>

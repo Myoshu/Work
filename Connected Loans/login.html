@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Connected Loans</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- bxSlider CSS file -->
+    <!-- Fonts Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <!-- Custome Css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+     <!-- Responsive Css -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	      $(document).ready(function(){
+                $(window).bind('scroll', function() {
+                    var navHeight = 40; // custom nav height
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
+                });
+            });
+            $(function() {
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        $(document).ready(function(){
+            $(".button a").click(function(){
+                $(".overlay").slideToggle(400);
+				
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+            });
+        });
+        $('.overlay').on('click', function(){
+            $(".overlay").slideToggle(400);   
+            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+            open = false;
+        });
+    </script>
+</head>
+    <body>
+        <div id="loginpg" class="container-fluid top-hd">
+                <div class="row">
+                    <div class="top_bar">
+                        
+                        <div class="logo_top col-md-8 col-sm-8 col-xs-8">
+                            <div class="logo pull-left"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+                        </div>
+                        <div class="apply_area col-md-4 col-sm-4 col-xs-4">
+                            <div class="phone_area">
+                                <div class="phone_nmbr">
+                                    <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div>
+                                    <h4>03&nbsp;8696&nbsp;6300</h4>
+                                </div>
+                                <div class="login_area">
+                                    <a href="http://connectedloans.com.au/home_loan.html">Apply</a>
+                                    <a href="http://connectedloans.com.au/login.html">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="banner login">
+            <img src="images/banner_bg.jpg">
+            <div class="mask"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="banner_text login">
+                        <h3>Your Account</h3>
+                        <div class="input_field info information">
+                            <input type="text" placeholder="Login Name">
+                            <input type="text" placeholder="Password">
+                            <a href="http://connectedloans.com.au/document_center_step_1.html">Login</a>
+                            <div class="forget">
+                                <a href="#">Forgot password?</a>
+                                <p> No account yet? <a href="#">Apply now!</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.event.move.js"></script>
+    </body>
+</html>

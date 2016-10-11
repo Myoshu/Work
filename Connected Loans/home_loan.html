@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Connected Loans</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- bxSlider CSS file -->
+    <!-- Fonts Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <!-- Custome Css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+     <!-- Responsive Css -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	      $(document).ready(function(){
+                $(window).bind('scroll', function() {
+                    var navHeight = 40; // custom nav height
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
+                });
+            });
+            $(function() {
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        $(document).ready(function(){
+            $(".button a").click(function(){
+                $(".overlay").slideToggle(400);
+				
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+            });
+        });
+        $('.overlay').on('click', function(){
+            $(".overlay").slideToggle(400);   
+            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+            open = false;
+        });
+    </script>
+</head>
+    <body>
+        <div id="notp-menu" class="container-fluid no-login">
+            <div class="row">
+            	<div class="top_bar login">
+                <div class="top_logo col-md-8 col-sm-6 col-xs-10">
+                    <div class="logo2"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+                </div>
+                <div class="apply_area col-md-4 col-sm-6 col-xs-2">
+                    <div class="phone_area">
+                        <div class="phone_nmbr">
+                            <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div> <h4>03&nbsp;8696&nbsp;6300</h4>
+                      	</div>
+                        <!--<div class="login_area">
+                            <a href="#">Apply</a>
+                            <a href="#">Login</a>
+                        </div>-->
+                  	</div>
+              	</div>
+            </div>
+          	</div>
+       	</div>
+        <div id="services" class="services home_loan">
+        	<div class="lef-div hidden-xs hidden-sm hidden-md">
+            
+            		<div class="progress-bar-div">
+                         <p>Progress</p>
+                         <div class="progress">
+                                <div style="width:20%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar" class="progress-bar">
+                                    <span class="sr-only">20% Complete</span>
+                                  </div>
+                                </div>
+                     </div>
+            
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="home_loan_left home_loan">
+                                <ul>
+                                    <li><a class="active" href="home_loan.html">Home Loan <span><img src="images/arrow-right.png"></span></a></li>
+                                    <li><a href="applicants.html">Applicants</a></li>
+                                    <li><a href="income.html">Income</a></li>
+                                    <li><a href="liabilities.html">Liabilities</a></li>
+                                    <li><a href="confirm.html">Confirm</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        	<div class="container-fluid">
+            	<div class="row">
+                	<div class="col-md-4 col-sm-4 col-xs-12">
+                    	
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                    
+                    	<div class="progress-bar-div hidden-lg">
+                         <p>Progress</p>
+                         <div class="progress">
+                                <div style="width:20%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar">
+                                    <span class="sr-only">25% Complete</span>
+                                  </div>
+                                </div>
+                     </div>
+                    
+                    	<div class="loan_form">
+                        	<h2>Home loan</h2>
+                            <p><strong>It’s really easy to apply for a loan with us! This stage usually takes 3 minutes to complete!</strong></p>
+                        	<form action="applicants.html">
+                            	<ul>
+                                	<li><label>First Name</label><input type="text"></li>
+                                    <li><label>Surname</label><input type="text"></li>
+                                    <li><label>Phone Number</label><input type="text"></li>
+                                    <li><label>Email Address<span>*</span></label><input type="emial"></li>
+                                    <li><label>What is the purpose of this loan?</label>
+                                    	<select>
+                                        	<option>Buying</option>
+                                            <option>Refinancing</option>
+                                            <option>Buliding</option>
+                                      	</select>
+                                  	</li>
+                                    <li><label>Have you found a home to purchase?</label>
+                                    	<div class="button_yes"><a class="active" href="#">Yes</a><a href="#">No</a></div>
+                                  	</li>
+                                    <li><label>How much do you owe on your current homeloan?</label><input type="text" placeholder="$"></li>
+                                    <li><label>How much would you like to borrow? </label><input type="text" placeholder="$"></li>
+                                    <li><label>What is the estimated value of your property?</label><input type="text" placeholder="$"></li>
+                                    <li><label>What will the property be used for? </label><select>
+                                        	<option>Live-in</option>
+                                            <option>Investment</option>
+                                      	</select></li>
+                                        
+                                        
+                                    <!--<li><label>Have you found a home to purchase?</label>
+                                    	<div class="button_yes"><a class="active" href="#">Yes</a><a href="#">No</a></div>
+                                  	</li>
+                                    <li><label>How much is your current home loan?</label><input type="text" placeholder="$"></li>
+                                    <li><label>How much will you borrow?</label><input type="text" placeholder="$"></li>
+                                    <li><label>How much is your home worth?</label><input type="text" placeholder="$"></li>-->
+                                </ul>
+                                <div class="submit">
+                                	<input type="submit" value="Next">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.event.move.js"></script>
+    </body>
+</html>

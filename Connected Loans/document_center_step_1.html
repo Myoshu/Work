@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Connected Loans</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- bxSlider CSS file -->
+    <!-- Fonts Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <!-- Custome Css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+     <!-- Responsive Css -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	      $(document).ready(function(){
+                $(window).bind('scroll', function() {
+                    var navHeight = 40; // custom nav height
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
+                });
+            });
+            $(function() {
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        $(document).ready(function(){
+            $(".button a").click(function(){
+                $(".overlay").slideToggle(400);
+				
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+            });
+        });
+        $('.overlay').on('click', function(){
+            $(".overlay").slideToggle(400);   
+            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+            open = false;
+        });
+    </script>
+</head>
+<body>
+    <div id="notp-menu" class="container-fluid">
+        <div class="row">
+            <div class="top_bar">
+                <div class="top_logo col-md-8 col-sm-6 col-xs-8">
+                    <div class="logo2"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+                </div>
+                <div class="apply_area col-md-4 col-sm-6 col-xs-4">
+                    <div class="phone_area">
+                        <div class="phone_nmbr">
+                            <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div> <h4>03&nbsp;8696&nbsp;6300</h4>
+                      	</div>
+                        <div class="login_area logout">
+                            <a href="#">Logout</a>
+                        </div>
+                  	</div>
+              	</div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="services" class="services doc">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                
+                	 
+                
+                    <div class="home_loan_left doc">
+                    	
+                       <!-- <p>Progress</p>
+                    	<div class="progress">
+                        	<div class="progress-bar" role="progressbar" aria-valuenow="70"
+                              aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                                <span class="sr-only">25% Complete</span>
+                              </div>
+                            </div>
+                    	-->
+                        <ul>
+                            <li class="active"><a class="document" href="document_center_step_1.html"><div class="img"></div><span>Document Centre</span></a></li>
+                            <li><a class="about" href="document_center_step_2.html"><div class="img"></div><span>About You</span></a></li>
+                            <li><a class="msg" href="document_center_step_3.html"><div class="img"></div><span>Messages</span></a></li>
+                            <li><a class="loan_set" href="document_center_step_4.html"><div class="img"></div><span>Your Loan Status</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="progress_status">
+                        <h3>Your Home Loan Progress</h3>
+                        <ul class="status">
+                            <li class="col-md-3 col-sm-3 col-xs-3"><div class="process_cricule compeleted"></div><a href="#">Application</a><div class="compeleted_border"></div></li>
+                            <li class="col-md-3 col-sm-3 col-xs-3"><div class="process_cricule active"></div><a href="#">Approval</a></li>
+                            <li class="col-md-3 col-sm-3 col-xs-3"><div class="process_cricule"></div><a href="#">Loan Documents</a></li>
+                            <li class="col-md-3 col-sm-3 col-xs-3"><div class="process_cricule"></div><a href="#">Settlements</a></li>
+                        </ul>
+                        <div class="border_doc"></div>
+                    </div>
+                    <div class="document_table">
+                	<h3>Fast track your home loan approval.<br>Please upload the following documents for home loan approval:</h3>
+                    <div class="doc_table">
+                            <table width="100%">
+                                <tr>
+                                    <td class="left"><span>Two (2) Payslips</span><p>Consecutive, to confirm your income and employment, with the most recent payslip being no more than 4 weeks old.</p></td>
+                                    <td class="center">
+                                    	<div class="buttons_file">
+                                            <div class="doc_btn left_btn">
+                                                <input type="file"/>
+                                                <span>Upload</span>
+                                            </div>
+                                            <div class="doc_btn center_btn">
+                                                <input type="file"/>
+                                                <span>Add another<br>document</span>
+                                            </div>
+                                            <div class="doc_btn right_btn">
+                                                <input type="file"/>
+                                                <span><img src="images/camera.png" alt="camera"></span>
+                                            </div>
+                                    	</div>
+                                        <p><span>payslip1.pdf</span>Uploaded by Philip on 03/03/16 at 10:34 AM</p>
+                                   	</td>
+                                    <td class="last">Awaiting document</td>
+                                </tr>
+                                <tr>
+                                    <td class="left"><span>Three (3) Months Statements</span><p>Showing your salary paid by your employer and other income. An internet transaction history with your name and account number is acceptable, where the latest transaction should be no more than 4 weeks old. If you have income paid to more than one account, please provide statements for all accounts. Please do not delete transactions.</p></td>
+                                    <td class="center"><div class="buttons_file">
+                                            <div class="doc_btn left_btn">
+                                                <input type="file"/>
+                                                <span>Upload</span>
+                                            </div>
+                                            <div class="doc_btn center_btn">
+                                                <input type="file"/>
+                                                <span>Add another<br>document</span>
+                                            </div>
+                                            <div class="doc_btn right_btn">
+                                                <input type="file"/>
+                                                <span><img src="images/camera.png" alt="camera"></span>
+                                            </div>
+                                    	</div></td>
+                                    <td class="last">Document accepted</td>
+                                </tr>
+                                <tr>
+                                    <td class="left"><span>Lorem ipsum</span><p>Sed hendrerit porta metus vitae fermentum. Vivamus malesuada tempor convallis. Duis tempus orci quis purus dignissim, vel euismod metus volutpat. Maecenas eu orci risus. </p></td>
+                                    <td class="center">
+                                    	<div class="buttons_file">
+                                            <div class="doc_btn print">
+                                                    <input type="file"/>
+                                                    <span><img src="images/print.png" alt="camera"></span>
+                                                </div>
+                                            <div class="doc_btn left_btn">
+                                                <input type="file"/>
+                                                <span>Upload</span>
+                                            </div>
+                                            <div class="doc_btn center_btn">
+                                                <input type="file"/>
+                                                <span>Add another<br>document</span>
+                                            </div>
+                                            <div class="doc_btn right_btn">
+                                                <input type="file"/>
+                                                <span><img src="images/camera.png" alt="camera"></span>
+                                            </div>
+                                    	</div>
+                                   	</td>
+                                    <td class="last itlic">Sed mollis diam a mollis venenatis. Suspendisse sagittis magna in justo ornare egestas. In molestie ut mauris ut pharetra. Pellentesque vehicula imperdiet justo, eu faucibus quam laoreet in. Phasellus cursus luctus luctus.</td>
+                                </tr>
+                                
+                            </table>
+						</div>
+                	</div>
+                    <div class="importent">
+                    	<div class="col-md-3">
+                            <div class="import_left">
+                                <p>Important documents for you to read:</p>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="import_right">
+                                <ul>
+                                    <li><a href="#">Our Privacy Guide</a><a class="import_img" href="#"><img src="images/arrow.png" alt="arrow"></a></li>
+                                    <li><a href="#">Our Credit Guide</a><a class="import_img" href="#"><img src="images/arrow.png" alt="arrow"></a></li>
+                                    <li><a href="#">Our Credit Assessment</a><a class="import_img" href="#"><img src="images/arrow.png" alt="arrow"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons import">
+                    <a class="mobile" href="#">
+                    	<p>One of our expert lenders will call you<br>9:30 AM - 10:10 AM Thursday February 18th</p>
+                   	</a>
+                    <a class="calender" href="#">
+                    	<p>Book another time</p>
+                   	</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.event.move.js"></script>
+</body>
+</html>

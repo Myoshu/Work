@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Connected Loans</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- bxSlider CSS file -->
+    <!-- Fonts Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <!-- Custome Css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+     <!-- Responsive Css -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	      $(document).ready(function(){
+                $(window).bind('scroll', function() {
+                    var navHeight = 40; // custom nav height
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
+                });
+            });
+            $(function() {
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        $(document).ready(function(){
+            $(".button a").click(function(){
+                $(".overlay").slideToggle(400);
+				
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+            });
+        });
+        $('.overlay').on('click', function(){
+            $(".overlay").slideToggle(400);   
+            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+            open = false;
+        });
+		
+		
+		
+		    $(document).ready(function(){
+        //Check to see if the window is top if not then display button
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.scrollToTop').fadeIn();
+            } else {
+                $('.scrollToTop').fadeOut();
+            }
+        });
+        //Click event to scroll to top
+        $('.scrollToTop').click(function(){
+            $('html, body').animate({scrollTop : 0},1000);
+            return false;
+        });
+    });
+$(document).ready(function() {
+	var top_hd = $(".top-hd").height();
+	var heii =$(window).height();
+	var heigi = heii - top_hd;
+	$('.banner').height(heigi);
+	$(window).resize(function(){
+	var top_hd = $(".top-hd").height();
+    var heii =$(window).height();
+	var heigi = heii - top_hd;
+	$('.banner').height(heigi);
+	});
+	var scrn_height = $(window).height();
+	var scrn_width = $(window).width();
+	if(scrn_height > scrn_width){
+		$('.banner').css('background-image', 'url(images/index.jpg)');
+	}
+	$(window).resize(function(){
+		var scrn_height = $(window).height();
+		var scrn_width = $(window).width();
+		if(scrn_height > scrn_width){
+			$('.banner').css('background-image', 'url(images/index.jpg)');
+		}else{
+
+
+			$('.banner').css('background-image', 'url(images/banner_bg.jpg)');
+			}
+	});
+	
+});
+/*******************************************/
+$(document).ready(function(e) {
+    $('.m_menu_li > a').click(function(event) {
+	var menu_li =  $(this).closest(".m_menu_li").find('.mob_menu_sub');
+	if(menu_li.hasClass('active')){
+		menu_li.removeClass('active');
+		}else{
+			menu_li.addClass('active');
+			}
+	var has_li =  $(this).closest(".m_menu_li");
+	if(has_li.hasClass('close_menu')){
+		has_li.removeClass('close_menu');
+		has_li.addClass('open_menu');
+		}else{
+			has_li.removeClass('open_menu');
+			has_li.addClass('close_menu');
+			}
+  	});
+	
+	$(".in-mob-btn-menu").click(function(){
+		$('.mobile-menu-main').fadeIn(200);
+		setTimeout(function(){
+			$(".mobile-menu-iner").css({"margin-left":"0"});
+		},250);
+	});
+	$(".mobile-menu-iner-right").click(function(){
+		if($(window).width() > 500){
+		$(".mobile-menu-iner").css({"margin-left":"-50%"});
+		}else{
+			$(".mobile-menu-iner").css({"margin-left":"-60%"});
+			}
+		
+		setTimeout(function(){
+			$('.mobile-menu-main').fadeOut(200);
+		},550);
+	});
+});
+/*******************************************/
+$(document).ready(function(e) {
+    $("#top-header-menu > li").hover(function(){
+		$(this).addClass("active");
+		} , function(){
+		$(this).removeClass("active");	
+		});
+});
+/*******************************************fa-angle-double-right*/
+$(document).ready(function(e) {
+    /*$("body").on("click",".SdBr_main > a", function(e){
+		e.preventDefault();
+		$(".SdBr_main").removeClass("active");
+		$(".SdBr_main > a").removeClass("active");
+		$(this).addClass("active");
+		$(this).closest(".SdBr_main").addClass("active");
+		
+	});*/
+	$("body").on("click",".SdBr_main > a", function(e){
+		e.preventDefault();
+		if($(this).closest(".SdBr_main").hasClass("side_bar_has_sub")){
+			if($(this).closest(".SdBr_main").hasClass("active")){
+			
+			$(this).find("i").removeClass("fa-angle-double-down");
+			$(this).find("i").addClass("fa-angle-double-right");
+			
+			$(this).closest(".SdBr_main").find("#side_nav_iner").slideUp();
+			$(this).closest(".SdBr_main").removeClass("active");
+		}else{
+			
+			$(this).find("i").removeClass("fa-angle-double-right");
+			$(this).find("i").addClass("fa-angle-double-down");
+			
+			$(this).closest(".SdBr_main").find("#side_nav_iner").slideDown();
+			$(this).closest(".SdBr_main").addClass("active");
+			}	
+		}else{
+		$(".SdBr_main").removeClass("active");
+		$(".SdBr_main > a").removeClass("active");
+		$(this).addClass("active");
+		$(this).closest(".SdBr_main").addClass("active");	
+		}
+		
+		
+	});
+	///////////////////////*1*/
+	$("body").on("click",".SdBr_main_js_1", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_1").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_1").addClass("active");
+	});
+	///////////////////////*1*/
+	
+	///////////////////////*2*/
+	$("body").on("click",".SdBr_main_js_2", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_2").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_2").addClass("active");
+	});
+	///////////////////////*2*/
+	
+	///////////////////////*3*/
+	$("body").on("click",".SdBr_main_js_3", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_3").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_3").addClass("active");
+	});
+	///////////////////////*3*/
+	
+	///////////////////////*4*/
+	$("body").on("click",".SdBr_main_js_4", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_4").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_4").addClass("active");
+	});
+	///////////////////////*4*/
+	
+	///////////////////////*5*/
+	$("body").on("click",".SdBr_main_js_5", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_5").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_5").addClass("active");
+	});
+	///////////////////////*5*/
+	
+	///////////////////////*6*/
+	$("body").on("click",".SdBr_main_js_6", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_6").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_6").addClass("active");
+	});
+	///////////////////////*6*/
+	
+	///////////////////////*7*/
+	$("body").on("click",".SdBr_main_js_7", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_7").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_7").addClass("active");
+	});
+	///////////////////////*7*/
+	
+	///////////////////////*8*/
+	$("body").on("click",".SdBr_main_js_8", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_8").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_8").addClass("active");
+	});
+	///////////////////////*8*/
+	
+	///////////////////////*9*/
+	$("body").on("click",".SdBr_main_js_9", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_9").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_9").addClass("active");
+	});
+	///////////////////////*9*/
+	
+	///////////////////////*10*/
+	$("body").on("click",".SdBr_main_js_10", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_10").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_10").addClass("active");
+	});
+	///////////////////////*10*/
+	
+	///////////////////////*11*/
+	$("body").on("click",".SdBr_main_js_11", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_11").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_11").addClass("active");
+	});
+	///////////////////////*11*/
+	///////////////////////*12*/
+	$("body").on("click",".SdBr_main_js_12", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_12").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_12").addClass("active");
+	});
+	///////////////////////*12*/
+	///////////////////////*13*/
+	$("body").on("click",".SdBr_main_js_13", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_13").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_13").addClass("active");
+	});
+	///////////////////////*13*/
+	///////////////////////*14*/
+	$("body").on("click",".SdBr_main_js_14", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_14").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_14").addClass("active");
+	});
+	///////////////////////*14*/
+	///////////////////////*15*/
+	$("body").on("click",".SdBr_main_js_15", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_15").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_15").addClass("active");
+	});
+	///////////////////////*15*/
+	
+	$("body").on("click",".section_part_iner > h2",function(){
+
+		if($(this).closest(".section_part_iner").hasClass("active")){
+			$(".section_part_body").slideUp();
+			$(".section_part_iner").removeClass("active");
+			$(".section_part_iner > h2 .fa").removeClass("fa-minus").addClass("fa-plus");
+			
+			$(this).closest(".section_part_iner").find(".section_part_body").slideUp();
+			$(this).find(".fa").removeClass("fa-minus").addClass("fa-plus");
+			}
+			else{
+				
+			$(".section_part_body").slideUp();
+			$(".section_part_iner").removeClass("active");
+			$(".section_part_iner > h2 .fa").removeClass("fa-minus").addClass("fa-plus");	
+	
+			$(this).closest(".section_part_iner").addClass("active");
+			$(this).closest(".section_part_iner").find(".section_part_body").slideDown();
+			$(this).find(".fa").removeClass("fa-plus").addClass("fa-minus");
+			}
+	});
+	
+	$("body").on("click",".second_in_mob_menu .fa-bars",function(){
+		if($(".second_nav_br").hasClass("act")){
+			$(".second_nav_br").removeClass("act");
+			}else{
+				$(".second_nav_br").addClass("act");
+				}
+	});
+	$("body").on("click",".moboverlay",function(){
+		if($(".second_nav_br").hasClass("act")){
+			$(".second_nav_br").removeClass("act");
+			}
+	});
+	
+	if(window.location.hash === "#1"){
+    	$(".SdBr_main_js_1").trigger("click");
+ 	}
+	if(window.location.hash === "#2"){
+    	$(".SdBr_main_js_2").trigger("click");
+ 	}
+	if(window.location.hash === "#3"){
+    	$(".SdBr_main_js_3").trigger("click");
+ 	}
+	if(window.location.hash === "#4"){
+    	$(".SdBr_main_js_4").trigger("click");
+ 	}
+	if(window.location.hash === "#5"){
+    	$(".SdBr_main_js_5").trigger("click");
+ 	}
+	if(window.location.hash === "#6"){
+    	$(".SdBr_main_js_6").trigger("click");
+ 	}
+	if(window.location.hash === "#7"){
+    	$(".SdBr_main_js_7").trigger("click");
+ 	}
+	if(window.location.hash === "#8"){
+    	$(".SdBr_main_js_8").trigger("click");
+ 	}
+	if(window.location.hash === "#9"){
+    	$(".SdBr_main_js_9").trigger("click");
+ 	}
+	if(window.location.hash === "#10"){
+    	$(".SdBr_main_js_10").trigger("click");
+ 	}
+	if(window.location.hash === "#11"){
+    	$(".SdBr_main_js_11").trigger("click");
+ 	}
+	if(window.location.hash === "#12"){
+    	$(".SdBr_main_js_12").trigger("click");
+ 	}
+	if(window.location.hash === "#13"){
+    	$(".SdBr_main_js_13").trigger("click");
+ 	}
+	if(window.location.hash === "#14"){
+    	$(".SdBr_main_js_14").trigger("click");
+ 	}
+	if(window.location.hash === "#15"){
+    	$(".SdBr_main_js_15").trigger("click");
+ 	}
+	
+	$(".col-nav-ul.has-sub-menu > li").hover(function(){
+		$(this).addClass("active");
+	},function(){
+		$(this).removeClass("active");
+		});
+	
+	$("body").on("click",".has_wrap_sub > a",function(){
+		if($(this).closest(".has_wrap_sub").hasClass("active")){
+			$(this).closest(".has_wrap_sub").removeClass("active");
+			}else{
+				$(".has_wrap_sub").removeClass("active");
+				$(this).closest(".has_wrap_sub").addClass("active");
+				}
+		
+		
+	});
+	$(".has_class_sub > a").click(function(){
+		$(this).closest(".has_class_sub").find(".slideupdown-nav").slideToggle();	
+	});
+});
+    </script>
+<style>
+
+.col-nav-ul.has-sub-menu > li.active > .sub-menu-nav {
+	display:block;
+}
+.second_nav_br {
+    background-image: url("images/bgnavimg.png");
+	background-position: center bottom;
+	background-repeat:no-repeat;
+	background-position:center;
+    display: inline-block;
+    height: 147px;
+    width: 100%;
+	margin-top: -60px;
+}
+#top-header-menu {
+    float: left;
+    height: 53px;
+    margin-top: 94px;
+    position: relative;
+    width: 100%;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+13,e8e8e8+100 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 13%, rgba(232,232,232,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 13%,rgba(232,232,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 13%,rgba(232,232,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
+
+
+
+}
+#top-header-menu > li {
+    float: left;
+    height: 53px;
+    padding: 10px 25px;
+	border-left: 1px solid #eee;  
+}
+#top-header-menu > li:last-child {
+    border-right: 1px solid #eee;
+}
+.sub-nav-top {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 2px 6px 5px -3px #ccc;
+    display: none;
+    left: 0;
+    padding: 15px;
+    position: absolute;
+    top: 53px;
+    width: 100%;
+    z-index: 99;
+}
+.active .sub-nav-top{
+	display:block;
+}
+.navcont{
+	text-align:center;
+}
+#top-header-menu > li > a {
+    color: #6a7c84;
+    float: left;
+    font-size: 20px;
+    padding-top: 5px;
+    width: 100%;
+	
+}
+#top-header-menu > li > a:hover{
+	text-decoration:none;
+}
+
+.Home_item_li {
+    width: 180px;
+}
+.Homeloans_item_li {
+    width: 235px;
+}
+.Calculators_item_li {
+    width: 235px;
+}
+.Resources_item_li {
+    width: 225px;
+}
+.Company_item_li {
+    width: 205px;
+}
+#top-header-menu > li > a > span {
+    float: left;
+    margin-left: -5px;
+    margin-right: 5px;
+    margin-top: -5px;
+    position: relative;
+}
+#top-header-menu > li:hover , #top-header-menu > li.active-item {
+    background: #fff;
+    height: 61px;
+    margin-top: -8px;
+    padding-top: 17px;
+	border-top:1px solid #eee;
+	border-right:1px solid #eee;
+	border-bottom:1px solid #fff;
+}
+.sub-nav-top > li {
+    float: left;
+    width: 100%;
+}
+.col-nav-ul {
+    float: left;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+.sub-menu-nav {
+    display: none;
+    float: right;
+    padding-left: 15%;
+    position: absolute;
+    right: -95%;
+    top: 0;
+    width: 100%;
+	background:#fff;
+    z-index: 9;
+}
+.sub-menu-nav > li {
+    border-bottom: 1px dashed #ccc;
+    float: left;
+    padding: 5px 0;
+    width: 100%;
+}
+.col-nav-ul > li {
+    border-bottom: 1px dashed #ccc;
+    float: left;
+    padding: 5px;
+    width: 100%;
+	font-size:14px;
+}
+.col-nav-ul > li a:hover {
+     color:#000;
+	 text-decoration:none;
+}
+.col-nav-ul.img-nav-ul > li {
+    border-bottom: medium none;
+	position:relative;
+}
+#top-header-menu .img-nav-ul h2 {
+    float: left;
+    font-size: 17px;
+    font-weight: bold;
+    width: 100%;
+}
+.col-nav-ul > li a i {
+    margin-right: 10px;
+}
+.how_we_img {
+    float: left;
+    width: 100%;
+}
+.tolkto {
+    color: #fff;
+    float: right;
+    margin-right: 0;
+    margin-top: -110px;
+    padding-right: 10px;
+    text-align: right;
+    width: 100%;
+}
+.tolphone {
+    color: #fff;
+    float: right;
+    font-family: fantasy;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: -89px;
+    padding-right: 10px;
+    text-align: right;
+    text-shadow: 1px 1px 1px #7e7e7e;
+    width: 100%;
+}
+.get-afree-btn {
+    background: #f67837 none repeat scroll 0 0;
+    border-bottom: 3px solid #da5c1b;
+    border-radius: 5px;
+    color: #fff;
+    float: right;
+    font-size: 17px;
+    margin-right: 10px;
+    margin-top: -46px;
+    padding: 5px 15px;
+}
+.col-nav-ul > li a.get-afree-btn:hover {
+	background:#ff8443;
+    color: #fff;
+	text-decoration:none;
+}
+@media(max-width:1200px){
+	.Home_item_li {
+    width: 150px;
+	}
+	.Homeloans_item_li {
+    width: 205px;
+	}
+	.Calculators_item_li {
+    width: 200px;
+	}
+	.Resources_item_li {
+    width: 195px;
+	}
+	.Company_item_li {
+    width: 190px; 
+	}
+}
+@media(max-width:979px){
+	.tolkto{display:none;}
+	.second_nav_br {
+    height: 127px;
+	background-image:none;
+	}
+	#top-header-menu {
+    height: 42px;
+    margin-top: 78px;
+    position: relative;
+    width: 710px;
+	}
+	#top-header-menu > li:hover, #top-header-menu > li.active-item{
+    height: 50px;
+    margin-top: -6px;
+    padding-top: 12px;
+	}
+	#top-header-menu > li {
+    height: 42px;
+    padding: 7px 15px;
+	}
+	#top-header-menu > li > a {
+	font-size:15px;	
+	}
+	#top-header-menu > li > a img {
+    margin-top: 4px;
+    width: 20px;
+	}
+	.Home_item_li {
+    width: 105px;
+	}
+	.Homeloans_item_li {
+    width: 150px;
+	}
+	.Calculators_item_li {
+    width: 155px;
+	}
+	.Resources_item_li {
+    width: 155px;
+	}
+	.Company_item_li {
+    width: 145px;
+	}
+	#top-header-menu > li:hover {
+    height: 48px;
+    margin-top: -6px;
+    padding-top: 12px;
+	}
+	.sub-nav-top {
+    top: 40px;
+	}
+	.tolphone {
+    font-size: 17px;
+    margin-top: -71px;
+    padding-right: 12px;
+    width: 100%;
+	}
+	.get-afree-btn {
+    font-size: 14px;
+    margin-right: 10px;
+    margin-top: -40px;
+    padding: 5px 10px;
+	}
+	.tolkto {
+    font-size: 11px;
+    line-height: 1;
+    margin-right: 0;
+    margin-top: -85px;
+    padding-right: 10px;
+    width: 90%;
+	}
+}
+.second_in_mob_menu {
+    background: #f8f8f8;
+    border-radius: 5px;
+    color: #018fce;
+    cursor: pointer;
+
+    display: none;
+    font-size: 18px;
+    left: -51px;
+    line-height: 1;
+    padding: 5px 10px;
+    position: absolute;
+    top: 95px;
+}
+.breadcrombarc {
+    padding-top: 10px;
+	padding-bottom: 10px;
+}
+#side_nav_main {
+    background: #f9f9f9 none repeat scroll 0 0;
+    float: left;
+    width: 100%;
+}
+#side_nav_iner{
+	display:none;
+}
+.SdBr_main {
+    float: left;
+    width: 100%;
+}
+.SdBr_main > a {
+    border:1px solid #dfdfdf;
+	border-bottom:none;
+    float: left;
+    padding: 10px;
+    width: 100%;
+}
+.SdBr_main:last-child > a {
+    border-bottom: 1px solid #dfdfdf;
+}
+.SdBr_main > a i {
+    float: right;
+	margin-top:3px;
+}
+.SdBr_main > a:hover , .SdBr_main.active > a {
+    background: #26ade7 none repeat scroll 0 0;
+    border-color: #007db7;
+    box-shadow: 0 0 5px #007db7 inset;
+    color: #fff;
+    text-decoration: none;
+}
+.SdBr_main > a:focus {
+	text-decoration:none;
+}
+.container_box{
+	padding-bottom:20px;
+}
+#side_nav_iner {
+    background: #fdfdfd none repeat scroll 0 0;
+    border: 1px solid #f7f7f7;
+    float: left;
+    padding: 0 10px;
+    width: 100%;
+	border-bottom:none;
+}
+
+
+.SectionDGN {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px #eee;
+    float: left;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 100%;
+	display:none;
+	opacity:0;
+	transition:0.3s;
+}
+.SectionDGN.active{
+	display:block;
+	opacity:1;
+}
+.Section_iner_DGN {
+    float: left;
+    width: 100%;
+}
+.Section_iner_DGN > h2 {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+13,e8e8e8+100 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 13%, rgba(232,232,232,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 13%,rgba(232,232,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 13%,rgba(232,232,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
+    border-top: 1px solid #e9e9e9;
+    float: left;
+    font-size: 18px;
+    margin: 0;
+    padding: 11px 15px;
+    width: 100%;
+	cursor:pointer;
+}
+.Section_iner_DGN:last-child > h2{
+	border-bottom: 1px solid #ccc;
+}
+.Section_iner_DGN > h2 i {
+    float: right;
+}
+.section_part_body {
+    color: #929292;
+    display: none;
+    float: left;
+    padding: 10px;
+    width: 100%;
+}
+/*.Section_iner_DGN.active .section_part_body{
+	display:block; 
+}*/
+.Section_iner_DGN > h2:hover {
+    background: #f9f9f9 none repeat scroll 0 0;
+    color: #26ade8;
+}
+.Section_iner_DGN.active > h2 {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border-bottom: 1px solid #eee;
+    color: #26ade8;
+}
+/*----------------------------*/
+.container_box h1, .container_box h2, .container_box h3, .container_box h4, .container_box h5, .container_box h6 {
+    color: #22a7e1;
+}
+.nosidebar_con ul {
+    list-style: inside none disc;
+    margin: 20px;
+    padding-left: 15px;
+}
+.nosidebar_con ul li {
+    margin-bottom: 10px;
+}
+.nosidebar_con .form-horizontal{
+	margin-top:25px;
+}
+.SdBr_main > a{
+	padding:10px 20px 10px 10px;
+	position:relative;	
+	}
+	.SdBr_main > a i{
+	position:absolute;
+	top:10px;
+	right:10px;	
+	}
+.SectionDGN h1{
+	margin-top:0;	
+	}
+.sidebar-nav-in-mob { display:none;}
+@media(max-width:767px){
+	.second_nav_br {
+    background: #fff none repeat scroll 0 0;
+    height: 100%;
+    margin: 0;
+    position: fixed;
+    right: -270px;
+    top: 0;
+    width: 270px;
+    z-index: 99;
+	transition:0.4s;
+	}
+	.second_nav_br.act{ right:0;}
+	.second_nav_br .navcont {
+	border-left: 1px solid #eee;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+	padding: 25px 0;
+	overflow-y:auto;
+	background:#fff;
+	}
+	#top-header-menu {
+    border-left:none;
+    float: left;
+    height: auto;
+    margin: 0;
+    width: 100%;
+	background:#f7f7f7;
+	padding:10px 0;
+	display:none;
+	}
+	#top-header-menu > li:hover, #top-header-menu > li.active-item, #top-header-menu > li.active {
+    border-right: medium none;
+    border-top: medium none;
+    height: auto;
+    margin-top: 0;
+    padding-top: 7px;
+	}
+	.sub-nav-top { 
+    box-shadow: none;
+    display: none;
+    padding: 0;
+    position: static;
+	float:left;
+    width: 100%;
+    z-index: 99;
+	transition:0.4s;
+	}
+	#top-header-menu > li {
+    border-left: 0 none;
+    float: left;
+    height: auto;
+    padding: 7px 15px;
+    text-align: left;
+    width: 100%;
+	}
+	.sub-nav-top > li {
+    float: left;
+    margin-left: -15px;
+    width: 260px;
+	}
+	.second_in_mob_menu{
+	display:block;
+	}
+	.sidebar-nav-in-mob {
+    background: #fff none repeat scroll 0 0;
+    display: block;
+    float: left;
+    margin-bottom: 40px;
+    width: 100%;
+	}
+	.SdBr_main > a:hover, .SdBr_main.active > a {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-color: #eee;
+    box-shadow: none;
+    color: #333;
+    text-decoration: none;
+	}
+	.side_bar_box {
+	display:none;
+	}
+	.SdBr_main > a{
+	border-right:none;
+	border-left:none;
+	text-align:left;
+	padding:10px 10px 10px 30px;	
+	}
+	.SdBr_main > a i{
+	left: 10px;	
+	}
+	.moboverlay {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+	display:none;
+	}
+	.second_nav_br.act .moboverlay{
+	display:block;
+	}
+}
+@media(max-width:740px){
+	.second_in_mob_menu {
+    left: -51px;
+    top: 70px;
+	}
+}
+@media(max-width:640px){
+	.second_in_mob_menu {
+    left: -51px;
+    top: 57px;
+	}
+}
+@media(max-width:480px){
+	.second_in_mob_menu {
+    left: -48px;
+	}
+}
+
+@media(max-width:980px){
+	.SectionDGN h1{
+	font-size:24px;	
+	}
+	.SectionDGN h2{
+	font-size:16px;	
+	}
+}
+@media(max-width:768px){
+	.SectionDGN h1{
+	font-size:22px;	
+	}
+	.SectionDGN h2{
+	font-size:14px;	
+	}
+}
+@media(max-width:767px){
+	.breadcrombarc {
+    margin-bottom:20px;
+	}
+}
+@media(max-width:640px){
+	.SectionDGN h1{
+	font-size:20px;	
+	}
+	.SectionDGN h2{
+	font-size:14px;	
+	}
+}
+@media(max-width:480px){
+
+	.SectionDGN h1{
+	font-size:18px;	
+	}
+	.SectionDGN h2{
+	font-size:9px;	
+	}
+	.SectionDGN h3{
+	font-size:12px;	
+	}
+	.SectionDGN h4{
+	font-size:12px;	
+	}
+	.SectionDGN p{
+	font-size:12px;	
+	}
+}
+#side_nav_iner {
+    background: #fdfdfd none repeat scroll 0 0;
+    border: 1px solid #f7f7f7;
+    float: left;
+    padding: 0 10px;
+    width: 100%;
+	border-bottom:none;
+}
+.SdBr_iner {
+    float: left;
+    width: 100%;
+}
+.SdBr_iner > a {
+    border-bottom: 1px dashed #ccc;
+    float: left;
+    padding: 5px 0;
+    width: 100%;
+}
+.SdBr_iner > a:hover{
+	color:#000;
+	text-decoration:none;
+}
+.SdBr_iner:last-child > a {
+    border-bottom: none;
+}
+#side_nav_iner {
+    display: none;
+}
+.has_wrap_sub > ul {
+	display:none;
+}
+.has_wrap_sub.active > ul{
+	display:block;
+}
+.has_wrap_sub > ul {
+    background: #f8f8f8 none repeat scroll 0 0;
+    padding: 15px !important;
+}
+.mob_menu_sub > li > ul {
+    background: #f5f5f5 none repeat scroll 0 0 !important;
+    display: none;
+    float: left;
+    padding: 10px 0;
+    width: 100%;
+}
+.sub-nav-top.DROP-DOWN-POPS {
+    background: #fff none repeat scroll 0 0;
+    height: auto;
+    left: 0;
+    max-height: unset;
+    min-height: unset;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    width: 125%;
+}
+.sub-nav-top.DROP-DOWN-POPS .sub-menu-nav {
+    background: #f9f9f9 none repeat scroll 0 0;
+    box-shadow: 2px 2px 2px #ccc;
+    padding: 10px 15px 15px;
+    right: -100%;
+    top: -10px;
+}
+.Resources_item_li , .Company_item_li {
+	position:relative;
+}
+@media(max-width:1100px){
+	.sub-nav-top.DROP-DOWN-POPS .sub-menu-nav {
+    right:auto;
+	left:-100%;
+	}
+}
+@media(max-width:979px){
+
+	.sub-nav-top.DROP-DOWN-POPS {
+    top: 42px;
+	}
+
+}
+</style> 
+</head>
+    <body>
+    	<div class="btn_down" style="display:none;">
+        	<button onclick="scrollWin()" style="position:fixed;">need more information?</button>
+            <!--<a href="#smooth_scroll">need more information?</a>-->
+        </div>
+        <div id="smooth_scroll">
+            <div class="container-fluid top-hd">
+                <div class="row">
+                    <div class="top_bar">
+                        <div class="menu col-md-4 col-sm-4 col-xs-3">
+                            <nav>
+                                <div class="button">
+                                    <a class="btn-open" href="javascript:void(0)"><span>Menu</span></a>
+                                </div>
+                            </nav>
+                            <nav class="in_mob">
+                                <div class="button">
+                                    <div class="in-mob-btn-menu"><i class="fa fa-bars" aria-hidden="true"></i>
+</div>
+                                </div>
+                            </nav>
+                            <div class="mobile-menu-main">
+                            	<div class="mobile-menu-iner">
+                                	<ul class="mob_menu">
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="javascript:void(0);">Home Loans</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="v2.html#1">Purchase New Home</a></li>
+                                                <li><a href="v2.html#2">Refinance Home Loans</a></li>
+                                                <li><a href="v2.html#3">Consolidate Your Debts</a></li>
+                                                <li><a href="v2.html#4">Investor Loans</a></li>
+                                                <li><a href="v2.html#5">Self Employed Loan</a></li>
+                                                <li><a href="v2.html#6">Equity Loans</a></li>
+                                                <li><a href="v2.html#7">Construction Home Loans</a></li>
+                                                <li><a href="v2.html#8">Renovation Home Loans</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="javascript:void(0);">Calculators</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="#">Borrowing Power Calculator</a></li>
+                                                <li><a href="#">Home Loan Repayment Calculator</a></li>
+                                                <li><a href="#">Stamp Duty Calculator</a></li>
+                                                <li><a href="#">Buying and Selling Costs Calculator</a></li>
+                                                <li><a href="#">Lump Sum Calculator</a></li>
+                                                <li><a href="#">Extra Repayment Calculator</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="javascript:void(0);">Resourses</a>
+                                            <ul class="mob_menu_sub">
+                                                <li class="has_class_sub">
+                                                	<a href="javascript:void(0);">Home Buyer Learning Centre</a>
+                                                	<ul class="slideupdown-nav">
+                                                    	<li><a href="resources.html#13">This is deme text 1</a></li>
+                                                    	<li><a href="resources.html#1">Starting your home buying journey</a></li>
+                                                        <li><a href="resources.html#2">Getting ready to buy a home</a></li>
+                                                        <li><a href="resources.html#3">Choosing a House</a></li>
+                                                        <li><a href="resources.html#4">The Home Buying Process</a></li>
+                                                        <li><a href="resources.html#5">Settlement</a></li>
+                                                        <li><a href="resources.html#6">Glossary of Terms</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_class_sub">
+                                                	<a href="javascript:void(0);">Investor Learning Centre</a>
+                                                	<ul class="slideupdown-nav">
+                                                    	<li><a href="resources.html#14">This is deme text 2</a></li>
+                                                    	<li><a href="resources.html#7">Getting Started in Property investment</a></li>
+                                                        <li><a href="resources.html#8">Is Property investment right for you?</a></li>
+                                                        <li><a href="resources.html#9">Essential property investment Strategies</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_class_sub">
+                                                	<a href="javascript:void(0);">Home Loans and Their Features </a>
+                                                	<ul class="slideupdown-nav">
+                                                    	<li><a href="resources.html#15">This is deme text 3</a></li>
+                                                    	<li><a href="resources.html#10">Loan Types Explained</a></li>
+                                                        <li><a href="resources.html#11">Typical Homeloans features</a></li>
+                                                        <li><a href="resources.html#12">Which Loan type is right for me?</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                         </li>
+                                         <li class="m_menu_li has-menu close_menu">
+                                            <a href="javascript:void(0);">Company</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="company.html#1">About Us</a></li>
+                                                <li><a href="company.html#2">Contact Us</a></li>
+                                                <li><a href="company.html#3">Privacy Policy</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mobile-menu-iner-right"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="wrap">
+                                    <ul class="wrap-nav">
+                                        <li class="col-md-3 col-sm-6 col-xs-4">
+                                            <a href="javascript:void(0);">Home Loans</a>
+                                            <ul>
+                                                <li><a href="v2.html#1">Purchase New Home</a></li>
+                                                <li><a href="v2.html#2">Refinance Home Loans</a></li>
+                                                <li><a href="v2.html#3">Consolidate Your Debts</a></li>
+                                                <li><a href="v2.html#4">Investor Loans</a></li>
+                                                <li><a href="v2.html#5">Self Employed Loan</a></li>
+                                                <li><a href="v2.html#6">Equity Loans</a></li>
+                                                <li><a href="v2.html#7">Construction Home Loans</a></li>
+                                                <li><a href="v2.html#8">Renovation Home Loans</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="javascript:void(0);">Calculators</a>
+                                            <ul>
+                                                <li><a href="#">Borrowing Power Calculator</a></li>
+                                                <li><a href="#">Home Loan Repayment Calculator</a></li>
+                                                <li><a href="#">Stamp Duty Calculator</a></li>
+                                                <li><a href="#">Buying and Selling Costs Calculator</a></li>
+                                                <li><a href="#">Lump Sum Calculator</a></li>
+                                                <li><a href="#">Extra Repayment Calculator</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="javascript:void(0);">Resourses</a>
+                                            <ul>
+                                                <li class="has_wrap_sub"><a href="javascript:void(0);">Home Buyer Learning Centre</a>
+                                                	<ul>
+                                                    	<li><a href="resources.html#13">This is deme text 1</a></li>
+                                                    	<li><a href="resources.html#1">Starting your home buying journey</a></li>
+                                                        <li><a href="resources.html#2">Getting ready to buy a home</a></li>
+                                                        <li><a href="resources.html#3">Choosing a House</a></li>
+                                                        <li><a href="resources.html#4">The Home Buying Process</a></li>
+                                                        <li><a href="resources.html#5">Settlement</a></li>
+                                                        <li><a href="resources.html#6">Glossary of Terms</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_wrap_sub"><a href="javascript:void(0);">Investor Learning Centre</a>
+                                                	<ul>
+                                                    	<li><a href="resources.html#14">This is deme text 2</a></li>
+                                                    	<li><a href="resources.html#7">Getting Started in Property investment</a></li>
+                                                        <li><a href="resources.html#8">Is Property investment right for you?</a></li>
+                                                        <li><a href="resources.html#9">Essential property investment Strategies</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_wrap_sub"><a href="javascript:void(0);">Home Loans and Their Features </a>
+                                                	<ul>
+                                                    	<li><a href="resources.html#15">This is deme text 3</a></li>
+                                                    	<li><a href="resources.html#10">Loan Types Explained</a></li>
+                                                        <li><a href="resources.html#11">Typical Homeloans features</a></li>
+                                                        <li><a href="resources.html#12">Which Loan type is right for me?</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="#">Company</a>
+                                            <ul>
+                                                <li><a href="company#1">About Us</a></li>
+                                                <li><a href="company#2">Contact Us</a></li>
+                                                <li><a href="company#3">Privacy Policy</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="logo_top col-md-4 col-sm-4 col-xs-5">
+                            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+                        </div>
+                        <div class="apply_area col-md-4 col-sm-4 col-xs-4">
+                            <div class="phone_area">
+                                <div class="phone_nmbr">
+                                    <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div>
+                                    <h4>03&nbsp;8696&nbsp;6300</h4>
+                                </div>
+                                <div class="login_area">
+                                    <a href="http://connectedloans.com.au/home_loan.html">Apply</a>
+                                    <a href="http://connectedloans.com.au/login.html">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="second_nav_br">
+            
+            	<div class="container navcont">
+            		<ul id="top-header-menu">
+                        <li class="Home_item_li">
+                            <a class="MenuNavItem Home_item" href="#"><span><img src="images/icon_1.png"></span>Home</a>
+                        </li>
+                        <li class="Homeloans_item_li">
+                            <a class="MenuNavItem Homeloans_item" href="v2.html"><span><img src="images/icon_2.png"></span>Homeloans</a>
+                            <ul class="sub-nav-top">
+                                <li>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul">
+                                            <li><a class="SdBr_main_js_1" href="v2.html#1"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Purchase New Home</a></li>
+                                            <li><a class="SdBr_main_js_2" href="v2.html#2"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Refinance Your Home Loan </a></li>
+                                            <li><a class="SdBr_main_js_3" href="v2.html#3"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Consolidate your Debts </a></li>
+                                            <li><a class="SdBr_main_js_4" href="v2.html#4"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Investor Loans </a></li>
+                                            <li><a class="SdBr_main_js_5" href="v2.html#5"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Self Employed Loans </a></li>
+                                            <li><a class="SdBr_main_js_6" href="v2.html#6"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Equity Loans </a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul">
+                                            <li><a class="SdBr_main_js_7" href="v2.html#7"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Construction Home Loans </a></li>
+                                            <li><a class="SdBr_main_js_8" href="v2.html#8"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Renovation Home Loans </a></li>
+                                           <!-- <li><a class="SdBr_main_js_9" href="v2.html#9"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home Buyer Learning Centre </a></li>
+                                            <li><a class="SdBr_main_js_10" href="v2.html#10"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Investor Learning Centre </a></li>
+                                            <li><a class="SdBr_main_js_11" href="v2.html#11"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home Loans and Their Features (consolidate Different…loans & Home … features) </a></li>-->
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul img-nav-ul">
+                                            <li>
+                                                <!--<h2>How we can help you </h2>-->
+                                                <!--<img src="images/asct.png" class="how_we_img">
+                                                <span class="tolkto">Talk to our mortgage brokers</span>
+                                                <span class="tolphone">03-8696-6300</span>
+                                                <a class="get-afree-btn" href="#">Get a free assessment</a>-->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="Calculators_item_li">
+                            <a class="MenuNavItem Calculators_item" href="#"><span><img src="images/icon_3.png"></span>Calculators</a>
+                            <ul class="sub-nav-top">
+                                <li>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul">
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 1</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 2</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 3</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 4</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 5</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 6</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul">
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 1</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 2</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 3</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 4</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 5</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 6</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul img-nav-ul">
+                                            <li>
+                                                <!--<h2>How we can help you </h2>-->
+                                                <!--<img src="images/asct.png" class="how_we_img">
+                                                <span class="tolkto">Talk to our mortgage brokers</span>
+                                                <span class="tolphone">03-8696-6300</span>
+                                                <a class="get-afree-btn" href="#">Get a free assessment</a>-->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="Resources_item_li">
+                            <a class="MenuNavItem Resources_item" href="resources.html"><span><img src="images/icon_4.png"></span>Resources</a>
+                            <ul class="sub-nav-top DROP-DOWN-POPS">
+                                <li>
+                                    <ul class="col-nav-ul has-sub-menu">
+                                        <li>
+                                            <a href="resources.html#1">
+                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                                Home Buyer Learning Centre
+                                            </a>
+                                            <ul class="sub-menu-nav">
+                                                <li><a href="resources.html#13">This is deme text 1</a></li>
+                                                <li><a href="resources.html#1">Starting your home buying journey</a></li>
+                                                <li><a href="resources.html#2">Getting ready to buy a home</a></li>
+                                                <li><a href="resources.html#3">Choosing a House</a></li>
+                                                <li><a href="resources.html#4">The Home Buying Process</a></li>
+                                                <li><a href="resources.html#5">Settlement</a></li>
+                                                <li><a href="resources.html#6">Glossary of Terms</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="resources.html#1">
+                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                                Investor Learning Centre
+                                            </a>
+                                            <ul class="sub-menu-nav">
+                                                <li><a href="resources.html#14">This is deme text 2</a></li>
+                                                <li><a href="resources.html#7">Getting Started in Property investment</a></li>
+                                                <li><a href="resources.html#8">Is Property investment right for you?</a></li>
+                                                <li><a href="resources.html#9">Essential property investment Strategies</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="resources.html#1">
+                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                                Home Loans and Their Features
+                                            </a>
+                                            <ul class="sub-menu-nav">
+                                                <li><a href="resources.html#15">This is deme text 3</a></li>
+                                                <li><a href="resources.html#10">Loan Types Explained</a></li>
+                                                <li><a href="resources.html#11">Typical Homeloans features</a></li>
+                                                <li><a href="resources.html#12">Which Loan type is right for me?</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="Company_item_li active-item">
+                            <a class="MenuNavItem Company_item" href="company.html"><span><img src="images/icon_5.png"></span>Company</a>
+                            <ul class="sub-nav-top DROP-DOWN-POPS">
+                                <li>
+                                    <ul class="col-nav-ul">
+                                        <li><a href="company.html#1"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About Us</a></li>
+                                        <li><a href="company.html#2"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Contact Us</a></li>
+                                        <li><a href="company.html#3"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Privacy Policy</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                	</ul>
+                    
+                </div>
+            </div>
+            
+            <div class="container">
+            	<div class="breadcrombarc col-xs-12">
+                	<div class="row">
+                        <span>Home <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+                        <span><a href="#">Company</a></span>
+                    </div>
+                </div>
+                
+                <div class="container_box col-xs-12">
+                	<div class="row">
+                        <div class="side_bar_box col-xs-4 col-sm-3">
+                            <div class="row">
+                                <ul id="side_nav_main">
+                                    <li class="SdBr_main active">
+                                        <a class="SdBr_main_js_1 active" href="javascript:void(0);">About Us<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        
+                                    </li>
+                                    <li class="SdBr_main">
+                                        <a class="SdBr_main_js_2" href="javascript:void(0);">Contact Us<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        
+                                    </li>
+                                    <li class="SdBr_main">
+                                        <a class="SdBr_main_js_3" href="javascript:void(0);">Privacy Policy<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                      	</div>
+                        <div class="content_box col-xs-12 col-sm-9">
+                            <div class="section_part_1 SectionDGN active">
+                            	<div class="col-xs-12"> 
+                                  <h1>About Us</h1>
+                                  <p>Connected Loans is  an Australian owned business that was created to provide home owners with real  choice on how they experience their home loan journey. <br>
+                                    We offer people  then choice of getting the home loan online from the comfort of their home,  making an appointment to chat with someone over the phone or by booking an  appointment and meeting some face to face… the choice is yours on how you can  get access to our panel of over 40 lenders.<br>
+                                    We are available  to talk anyway you like… we are available on Skype, webchat or via phone  anytime you want.<br>
+                                    So what are you  waiting for? Get your next home loan now with Connected Loans.</p>
+                        		</div>
+                            </div>
+                            <div class="section_part_2 SectionDGN"> 
+								<div class="col-xs-12">
+
+                                    <h1>Contact Us</h1>
+                                    <p>If you have a question and cannot find the answer in our Help Center, please contact us and we'll respond shortly</p>
+    
+
+                            </div>
+                                <div class="col-xs-12 col-sm-8">
+    
+                                      <form class="form-horizontal col-xs-12" role="form">
+                                              <div class="form-group">
+                                                <label class="control-label col-sm-4">Name:</label>
+                                                <div class="col-sm-8">
+                                                  <input type="text" class="form-control" placeholder="Enter name">
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="control-label col-sm-4">Email:</label>
+                                                <div class="col-sm-8">
+                                                  <input type="email" class="form-control" placeholder="Enter email">
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="control-label col-sm-4">Phone:</label>
+                                                <div class="col-sm-8">
+                                                  <input type="tel" class="form-control" placeholder="Enter phone">
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label class="control-label col-sm-4" for="pwd">How can we help you?:</label>
+                                                <div class="col-sm-8">
+                                                  <textarea class="form-control" rows="4"></textarea>
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <div class="col-sm-offset-4 col-sm-8">
+                                                  <button type="submit" class="btn-default btn btn-info">Submit</button>
+                                                </div>
+                                              </div>
+                                            </form>
+        
+    
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <p>Contact Us</p>
+                                    
+                                    <p><strong>Email:</strong> help@connectedloans.com.au</p>
+                                    <p><strong>Phone:</strong> 03 8696 6300</p>
+                                    
+                                    <p><strong>Operating Hours:</strong></p>
+                                    <p>Monday – Friday</p>
+                                    <p>8:30am to 6:00pm</p>
+                                    
+                                    <p><strong>PO Box</strong> 6187</p>
+                                    <p><strong>Lane Cove NSW</strong> 2066</p>
+                                </div>
+                            </div>
+                            <div class="section_part_3 SectionDGN"> 
+								<div class="col-xs-12">
+                              <h1>Privacy Policy</h1>
+                              <p>We understand that the details you provide us are private and personal.  It&rsquo;s important that you feel secure whenever you deal with us. It&rsquo;s also  important that you understand how we protect your privacy, as well as how, when  and where we may use your details.<br>
+                                The following is our commitment to you, on what our policies towards  your privacy are. You can be confident in the fact that we abide by the  National Privacy Principles for the protection of personal information, as set  out in the Privacy Act 1988.<br>
+                                Please click here for our latest <strong><u>Privacy Policy</u></strong></p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container_box nosidebar_con col-xs-12">
+                	<div class="row">
+                        
+                        
+                        <div class="cop_p">
+                            
+                            
+                        </div>
+                	</div>
+              </div>
+            
+            </div>
+            
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="footer_content">
+                            <div class="col-md-6">
+                                <p>Connected Loans is the trading name of Connected Loans Pty Ltd (ACN XX XXX XXX XXX)<br>which holds an Australian Credit License (License Number XXXXXXX)<br><a href="http://connectedloans.com.au/privacy_policy.html">Privacy Policy</a></p>
+                            </div>
+                             <div class="col-md-6">
+                                <div class="footer_logo">
+                                    <a href="#"><img src="images/footer_logo.png" alt="footer logo"></a>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script>
+		var scrollPostion = 0;
+		function scrollWin() {
+				var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
+  			var isiPad = navigator.userAgent.toLowerCase().indexOf("ipad");
+  			var isiPod = navigator.userAgent.toLowerCase().indexOf("ipod");
+ 
+  			var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+ 
+  			var isBlackberry = navigator.userAgent.toLowerCase().indexOf("BlackBerry");
+ 
+  			var isOpera = /Opera/i.test(navigator.userAgent.toLowerCase());
+ 
+  			var isIE = navigator.userAgent.toLowerCase().indexOf("IEMobile");
+ 
+			if(isiPhone > -1){
+		      var scrollPostion2 = 410;
+			}
+			else if(isiPad > -1){
+				  var scrollPostion2 = 410;
+			  }
+			else if(isiPod > -1){
+				  var scrollPostion2 = 410;
+			  }
+			else if(isAndroid){
+				var scrollPostion2 = 410;
+			}
+			else if(isBlackberry > -1){
+				var scrollPostion2 = 410;
+			}
+			else if(isOpera){
+				var scrollPostion2 = 410;
+			}
+			else if(isIE > -1){
+				var scrollPostion2 = 410;
+			}
+			else{
+				var scrollPostion2 = 610;
+			}	
+				scrollPostion = scrollPostion + scrollPostion2;
+				var divHeight  = $("#smooth_scroll").height();
+				if ( divHeight <  scrollPostion) scrollPostion = 0;
+				$('html, body').animate({
+					scrollTop: scrollPostion
+				}, 1000);
+			}
+ 
+  	</script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.event.move.js"></script>
+    </body>
+    
+</html>

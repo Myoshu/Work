@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Connected Loans</title>
+
+    <!-- Bootstrap -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- bxSlider CSS file -->
+
+    <!-- Fonts Awesome -->
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+     <!-- Custome Css -->
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+     <!-- Responsive Css -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 9]>
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+	      $(document).ready(function(){
+
+                $(window).bind('scroll', function() {
+
+                    var navHeight = 40; // custom nav height
+
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
+
+                });
+
+            });
+
+            $(function() {
+
+                $('a[href*="#"]:not([href="#"])').click(function() {
+
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+                        var target = $(this.hash);
+
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+                        if (target.length) {
+
+                            $('html, body').animate({
+
+                                scrollTop: target.offset().top
+
+                            }, 1000);
+
+                            return false;
+
+                        }
+
+                    }
+
+                });
+
+            });
+
+        $(document).ready(function(){
+
+            $(".button a").click(function(){
+
+                $(".overlay").slideToggle(400);
+
+				
+
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+
+            });
+
+        });
+
+        $('.overlay').on('click', function(){
+
+            $(".overlay").slideToggle(400);   
+
+            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+
+            open = false;
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="notp-menu" class="container-fluid">
+        <div class="row">
+            <div class="top_bar">
+                <div class="top_logo col-md-8 col-sm-6 col-xs-8">
+                    <div class="logo2"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+                </div>
+                <div class="apply_area col-md-4 col-sm-6 col-xs-4">
+                    <div class="phone_area">
+                        <div class="phone_nmbr">
+                            <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div> <h4>03&nbsp;8696&nbsp;6300</h4>
+                      	</div>
+                        <div class="login_area logout">
+                            <a href="#">Logout</a>
+                        </div>
+                  	</div>
+              	</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services" class="services doc">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+
+                    <div class="home_loan_left doc">
+
+                    
+
+                    	<!--<p>Progress</p>
+
+                    	<div class="progress">
+
+                        	<div class="progress-bar" role="progressbar" aria-valuenow="70"
+
+                              aria-valuemin="0" aria-valuemax="100" style="width:70%">
+
+                                <span class="sr-only">75% Complete</span>
+
+                              </div>
+
+                            </div>-->
+
+                    
+
+                        <ul>
+
+                            <li><a class="document" href="document_center_step_1.html"><div class="img"></div><span>Document Centre</span></a></li>
+
+                            <li><a class="about" href="document_center_step_2.html"><div class="img"></div><span>About You</span></a></li>
+
+                            <li class="active"><a class="msg" href="document_center_step_3.html"><div class="img"></div><span>Messages</span></a></li>
+
+                            <li><a class="loan_set" href="document_center_step_4.html"><div class="img"></div><span>Your Loan Status</span></a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-9 col-sm-9 col-xs-12"> 
+
+                    <div class="home_loan_left doc msg_service">
+
+                    <ul>
+
+                    	<li class="col-md-3 active"><a class="inbox_msg msg_control" href="#"><span>Inbox</span><div class="img"></div></a></li>
+
+                        <li class="col-md-3" data-toggle="modal" data-target="#new_msg_modal"><a class="new_msg msg_control" href="#"><span>New Message</span><div class="img"></div></a></li>
+
+                        <li class="col-md-3"><a class="sent_msg msg_control" href="#"><span>Sent Message</span><div class="img"></div></a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="id_ref">  
+
+                	<div class="inbox_table">
+
+                        <table width="100%">
+
+                                    <tr class="top">
+
+                                        <th>Status</th>
+
+                                        <th>From</th>
+
+                                        <th>Subject</th>
+
+                                        <th>Date received</th> 
+
+                                    </tr>
+
+                                    <tr data-toggle="modal" data-target="#reply_modal">
+
+                                        <td class="left"><img src="images/unread.png"></td> 
+
+                                        <td>Lucas Loan</td>
+
+                                        <td>Lorem ipsum sit dolor amet</td>
+
+                                        <td><a href="#">17 / 02 / 2016</a></td>     
+
+                                   </tr>
+
+                                   <tr data-toggle="modal" data-target="#reply_modal">
+
+                                        <td class="left"><img src="images/unread.png"></td> 
+
+                                        <td>Lucas Loan</td>
+
+                                        <td>Lorem ipsum sit dolor amet</td>
+
+                                        <td><a href="#">17 / 02 / 2016</a></td>     
+
+                                   </tr>
+
+                                   <tr data-toggle="modal" data-target="#reply_modal">
+
+                                        <td class="left"><img src="images/read_msg.png"></td> 
+
+                                        <td>Lucas Loan</td>
+
+                                        <td>Lorem ipsum sit dolor amet</td>
+
+                                        <td><a href="#">17 / 02 / 2016</a></td>     
+
+                                   </tr>
+
+                                   <tr data-toggle="modal" data-target="#reply_modal">
+
+                                        <td class="left"><img src="images/read_msg.png"></td> 
+
+                                        <td>Lucas Loan</td>
+
+                                        <td>Lorem ipsum sit dolor amet</td>
+
+                                        <td><a href="#">17 / 02 / 2016</a></td>     
+
+                                   </tr>
+
+                         </table>
+
+                     </div>
+
+                     
+
+                     <div class="send_table">
+
+                        <table width="100%">
+
+                                    <tr class="top">
+
+                                        <th>Status</th>
+
+                                        <th>From</th>
+
+                                        <th>Subject</th>
+
+                                        <th>Date received</th> 
+
+                                    </tr>
+
+                                    <tr data-toggle="modal" data-target="#reply_modal">
+
+                                        <td class="left"><img src="images/send_icon.png"></td> 
+
+                                        <td>Lucas Loan</td>
+
+                                        <td>Lorem ipsum sit dolor amet</td>
+
+                                        <td><a href="#">17 / 02 / 2016</a></td>     
+
+                                   </tr>
+
+                                   <tr data-toggle="modal" data-target="#reply_modal">
+
+                                        <td class="left"><img src="images/send_icon.png"></td> 
+
+                                        <td>Lucas Loan</td>
+
+                                        <td>Lorem ipsum sit dolor amet</td>
+
+                                        <td><a href="#">17 / 02 / 2016</a></td>     
+
+                                   </tr>
+
+                                   <tr data-toggle="modal" data-target="#reply_modal">
+
+                                        <td class="left"><img src="images/send_icon.png"></td> 
+
+                                        <td>Lucas Loan</td>
+
+                                        <td>Lorem ipsum sit dolor amet</td>
+
+                                        <td><a href="#">17 / 02 / 2016</a></td>     
+
+                                   </tr>
+
+                                   <tr data-toggle="modal" data-target="#reply_modal">
+
+                                        <td class="left"><img src="images/send_icon.png"></td> 
+
+                                        <td>Lucas Loan</td>
+
+                                        <td>Lorem ipsum sit dolor amet</td>
+
+                                        <td><a href="#">17 / 02 / 2016</a></td>     
+
+                                   </tr>
+
+                         </table>
+
+                     </div>
+
+                </div>
+
+                
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+    <!-- -->
+
+    <div class="modal fade" id="reply_modal" role="dialog">
+
+    <div class="modal-dialog">
+
+    
+
+      <!-- Modal content-->
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Message Details</h4>
+
+        </div>
+
+        <div class="modal-body">
+
+          <table width="100%" class="tbl_message">
+
+          	<tr>
+
+            	<th width="30%">From:</th>
+
+                <td><span id="current_from">Lucas Loan</span></td>
+
+            </tr>
+
+            <tr>
+
+            	<th>Date received:</th>
+
+                <td><span id="current_date_received">17/02/2016 10:00PM</span></td>
+
+            </tr>
+
+             <tr>
+
+            	<th>Subject:</th>
+
+                <td><span id="current_subject">Lorem ipsum sit dolor amet</span></td>
+
+            </tr>
+
+             <tr>
+
+            	<th>Message:</th>
+
+                <td>
+
+                	<span id="current_message">
+
+                		<p>Lorem ipsum dolor sit amet, dicam postulant ut has, sed cu eius iriure, vix commune singulis ne. </p>
+
+                        <p>His ea dolores disputationi, et tollit soleat quodsi sit, reque choro tibique in pri. Mundi facilis eligendi ad mel. Ut pro falli melius accusam. 
+
+                        Pri in iudico platonem conceptam, eum detracto repudiare prodesset cu, an vis commodo denique scripserit.</p>
+
+					</span>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+            	<th></th>
+
+                <td><button class="btn btn-success mess_nav" data-dismiss="modal">Back</button>  <button class="btn btn-success mess_nav">Reply</button></td>
+
+            </tr>
+
+          </table>
+
+        </div>
+
+      </div>
+
+       <!-- -->
+
+    </div>
+
+  </div>
+
+  
+
+  <!-- -->
+
+    <div class="modal fade" id="new_msg_modal" role="dialog">
+
+    <div class="modal-dialog">
+
+    
+
+      <!-- Modal content-->
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Message Details</h4>
+
+        </div>
+
+        <div class="modal-body">
+
+          <table width="100%" class="tbl_message">
+
+          	<tr>
+
+            	<th width="30%">From:</th>
+
+                <td><span id="current_from"><input type="text" name="from_value" value="Lucas Loan" /></span></td>
+
+            </tr>
+
+            <tr>
+
+            	<th>Date received:</th>
+
+                <td><span id="current_date_received"><input type="text" name="date_value" value="17/02/2016 10:00PM" /></span></td>
+
+            </tr>
+
+             <tr>
+
+            	<th>Subject:</th>
+
+                <td><span id="current_subject"><input type="text" name="subject_value" value="Lorem ipsum sit dolor amet" /></span></td>
+
+            </tr>
+
+             <tr>
+
+            	<th>Message:</th>
+
+                <td>
+
+                	<span id="current_message">
+
+                    	<textarea id="message_value" rows="8">
+
+Lorem ipsum dolor sit amet, dicam postulant ut has, sed cu eius iriure, vix commune singulis ne.
+
+
+
+His ea dolores disputationi, et tollit soleat quodsi sit, reque choro tibique in pri. Mundi facilis eligendi ad mel. Ut pro falli melius accusam.
+
+
+
+Pri in iudico platonem conceptam, eum detracto repudiare prodesset cu, an vis commodo denique scripserit.
+
+						</textarea>
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+            	<th></th>
+
+                <td><button class="btn btn-success mess_nav" data-dismiss="modal">Back</button>  <button class="btn btn-success mess_nav">Send</button></td>
+
+            </tr>
+
+          </table>
+
+        </div>
+
+      </div>
+
+       <!-- -->
+
+    </div>
+
+  </div>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/jquery.event.move.js"></script>
+
+    <script type="text/javascript">
+
+    	jQuery(document).ready(function(e) {
+
+            function setModalMaxHeight(element) {
+
+			  this.$element     = $(element);  
+
+			  this.$content     = this.$element.find('.modal-content');
+
+			  var borderWidth   = this.$content.outerHeight() - this.$content.innerHeight();
+
+			  var dialogMargin  = $(window).width() < 768 ? 20 : 60;
+
+			  var contentHeight = $(window).height() - (dialogMargin + borderWidth);
+
+			  var headerHeight  = this.$element.find('.modal-header').outerHeight() || 0;
+
+			  var footerHeight  = this.$element.find('.modal-footer').outerHeight() || 0;
+
+			  var maxHeight     = contentHeight - (headerHeight + footerHeight);
+
+			
+
+			  this.$content.css({
+
+				  'overflow': 'hidden'
+
+			  });
+
+			  
+
+			  this.$element
+
+				.find('.modal-body').css({
+
+				  'max-height': maxHeight,
+
+				  'overflow-y': 'auto'
+
+			  });
+
+			}
+
+			
+
+			$('.modal').on('show.bs.modal', function() {
+
+			  $(this).show();
+
+			  setModalMaxHeight(this);
+
+			});
+
+			
+
+			$(window).resize(function() {
+
+			  if ($('.modal.in').length != 0) {
+
+				setModalMaxHeight($('.modal.in'));
+
+			  }
+
+			});
+
+			
+
+			$(".msg_service ul li").click(function(){
+
+				if($(this).find("a").hasClass("new_msg")){ return; }
+
+				
+
+				$(".msg_service ul li").removeClass("active");
+
+				$(this).addClass("active");
+
+				
+
+				if($(this).find("a").hasClass("inbox_msg")){
+
+					$(".inbox_table").show();
+
+					$(".send_table").hide(); 
+
+				}
+
+				else if($(this).find("a").hasClass("sent_msg")){
+
+					$(".inbox_table").hide();
+
+					$(".send_table").show(); 
+
+				}
+
+			});
+
+        });
+
+    </script>
+
+</body>
+
+</html>

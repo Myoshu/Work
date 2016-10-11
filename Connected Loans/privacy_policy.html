@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Connected Loans</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- bxSlider CSS file -->
+    <!-- Fonts Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <!-- Custome Css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+     <!-- Responsive Css -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	      $(document).ready(function(){
+                $(window).bind('scroll', function() {
+                    var navHeight = 40; // custom nav height
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
+                });
+            });
+            $(function() {
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        $(document).ready(function(){
+            $(".button a").click(function(){
+                $(".overlay").slideToggle(400);
+				
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+            });
+        });
+        $('.overlay').on('click', function(){
+            $(".overlay").slideToggle(400);   
+            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+            open = false;
+        });
+    </script>
+</head>
+    <body>
+        <div id="services" class="privacy_policy">
+            <div class="container">
+                
+                    <div class="heading">
+                        <h2>Privacy Policy</h2>
+                        <h4>WHO IS CONNECTED LOANS?</h4>
+                    </div>
+                    <p>Connected Loans is the trading name of Connected Loans Pty Ltd (ACN XX XXX XXX XXX) which holds an Australian Credit License (License Number XXXXXX). </p>
+                    <p>Connected Loans Pty Ltd known as “Connected Loans” and also referred to in this Policy as “us”, “we” and “our” provide the best possible service to its customers by providing a range of direct and broker services for financial products. These financial products are homeloans and car loans. </p>
+                    <div class="heading">
+                        <h4>OUR COMMITMENT TO PROTECT YOUR PRIVACY</h4>
+                    </div>
+                    <p>Connected Loans understands how important it is to protect your personal information. This document sets out our Privacy Policy commitment in respect of personal information that you may provide to us.</p>
+                    <p>We are committed to providing you with the highest levels of customer service which includes protecting your privacy. We recognise that any personal information we collect about you will only be used for the purposes indicated in our policy, where we have your consent to do so, or as otherwise required or authorised by law. It is important to us that you are confident that any personal information we collect from you or that is received by us will be treated with appropriate respect ensuring protection of your personal information.</p>
+                    <div class="heading">
+                        <h4>WHO IS CONNECTED LOANS?</h4>
+                    </div>
+                    <p>Connected Loans act as finance brokers on behalf of lenders for home loan, mortgage and car loan products. Connected Loans will provide you with information regarding the type and availability of credit contracts, finance products and loans. We will also assist you in the application for finance by arranging offers to be made to you by lenders. We do not advise you on the legal or financial implications of entering into credit arrangements or particular finance products.</p>
+                    <div class="heading">
+                        <h4>PERSONAL INFORMATION</h4>
+                    </div>
+                    <p>When we refer to personal information we mean information or an opinion about you, from which you are, or may reasonably be, identified.</p>
+                    <p>This information may include (but is not limited to) your name, date of birth, driver's licence number, marital status, phone number, email address, address, nationality, employment history, income, assets, liabilities and repayment history information.</p>
+                    <p>Personal information also includes credit information. Credit information is personal information or an opinion about you that has a bearing on credit that has been provided to you or that you have applied for. Credit information includes information about credit that was applied for or provided to you for domestic, household or personal purposes as well as information about you where you a guarantor of a loan.</p>
+                    <div class="heading">
+                        <h4>WHY WE COLLECT YOUR PERSONAL INFORMATION</h4>
+                    </div>
+                    <p>The main reason why we would collect personal information about you is to assess your financial and credit position when you apply for a product or service from us or from another financial institution with us acting on your behalf.</p>
+                    <p>From time to time we may offer other products and services and conduct direct marketing to you. These direct marketing offers and promotions are designed to make your life easier, not harder. If you do not want to receive them, just let us know when we contact you.</p>
+                    <div class="heading">
+                        <h4>HOW DO WE COLLECT YOUR PERSONAL INFORMATION?</h4>
+                    </div>
+                    <p>Personal information may be collected by us via directly from you via the telephone, Email, mail, fax or directly from our website.</p>
+                    <p>We will always aim to collect your personal information directly from you. If for some good reason, we are unable to do so, we may involve another organisation. For example, we may need to request a credit report from a credit reporting agency when you apply for a credit facility. Before doing so or prior to collecting the information we need, we will inform you of the type of organisations we intend to disclose your personal information to. </p>
+                    <p>However, we will also collect information about you from third parties such as from our contractors who supply services to us, recruiters, through our referrers (such as mortgage originators and brokers), from a publicly maintained record or from other individuals or companies as authorised by you. From time to time we may also purchase lists containing personal information about individuals from organisations offering such lists for marketing purposes.</p>
+                    <p>If you do not provide the information requested by us, we may not be able to provide you with our services.</p>
+                    <div class="heading">
+                        <h4>HOW DO WE USE YOUR PERSONAL INFORMATION?</h4>
+                    </div>
+                    <p>We use your personal information for the purpose for which it has been provided, for reasonably related secondary purposes, any other purpose you have consented to and any other purpose permitted under the Privacy Act. This may include using your personal information for the following purposes:</p>
+                    <ul>
+                        <li>•	verify your identity;</li>
+                        <li>•	assist you to gain approval or provision of a product or service;</li>
+                        <li>•	conduct appropriate checks for credit-worthiness and for fraud;</li>
+                        <li>•	research and develop our services provided, either directly or referred;</li>
+                        <li>•	gain an understanding of your information and credit or financial needs in order for us to provide you with a better service.</li>
+                    </ul>
+                    <div class="heading">
+                        <h4>TO WHOM WILL WE DISCLOSE YOUR PERSONAL INFORMATION?</h4>
+                    </div>
+                    <p>To enable us to maintain a successful business relationship with you, we may disclose your personal information to:</p>
+                    <ul>
+                        <li>•	organisations that provide products or services used or marketed by us, including other credit providers, mortgage intermediaries ( mortgage originators and mortgage managers), funders, lenders, valuers, trustee companies, financial institutions and securitisers, mortgage insurers and title insurers </li>
+                        <li>•	companies and contractors who we retain to provide services for us, such as IT contractors, call centres, payroll providers, stationery printing houses, mail houses, storage facilities, lawyers, accountants and auditors, who will need to have access to your personal information to provide those services;</li>
+                        <li>•	other comparison sites, mortgage brokers or providers of investment, financial or credit where legal for us to do so;</li>
+                        <li>•	government and regulatory authorities and other organisations under which we are governed, such as ASIC as required or authorised by law; and</li>
+                        <li>•	organisations who manage our business, loan processing, marketing and corporate strategies.</li>
+                    </ul>
+                    <p>Some of the above external organisations and entities may be located outside of Australia. You should note that while they will often be subject to confidentiality or privacy obligations, they may not always follow the particular requirements of Australian privacy laws. Overseas organisations may be required to disclose information we share with them under a foreign law. In those instances, we will not be responsible for that disclosure.</p>
+                    <div class="heading">
+                        <h4>TRANSFER OF INFORMATION OVERSEAS</h4>
+                    </div>
+                    <p>Personal information may be disclosed to our offshore company Connected Loans, located in Manila, Philippines.</p>
+                    <p>Your personal information will only be disclosed for the purpose for which it was disclosed to us or related purposes which would reasonably be expected without your permission. For example, we may use and disclose personal information to process applications, audit applications, communicate with you and deal with any complaints or enquiries.</p>
+                    <p>If you are a client with an active application and uou have any concerns regarding the use of our employees based in Manila please contact us at privacy@connectedloans.com.au or your point of contact within our business.</p>
+                    <div class="heading">
+                        <h4>DIRECT MARKETING</h4>
+                    </div>
+                    <p>From time to time we may use your personal information to provide you with current information about mortgage loans, special offers you may find of interest, changes to our organisation, or new products or services being offered by us or any company we are associated with. By providing us with your personal information, you consent to us using your information to contact you on an ongoing basis for this purpose, including by mail, email, SMS, social media and telephone.</p>
+                    <p>If you do not wish to receive marketing information, you may at any time decline to receive such information by contacting our Privacy Contacts using the contact details below. We will not charge you for giving effect to your request and will take all reasonable steps to meet your request at the earliest possible opportunity.</p>
+                    <div class="heading">
+                        <h4>OUR WEBSITE</h4>
+                        <h4>Advertising and tracking</h4>
+                    </div>
+                    <p>When you view our advertisements on a Third Party website, the advertising company uses 'cookies' and in some cases 'web beacons' to collect information such as:</p>
+                    <ul>
+                        <li>•	the server your computer is logged onto;</li>
+                        <li>•	your browser type;</li>
+                        <li>•	the date and time of your visit; and</li>
+                        <li>•	the performance of their marketing efforts.</li>
+                    </ul>
+                    <p>When you access our website after viewing one of our advertisements on a Third Party website, the advertising company collects information on how you utilise our website (eg which pages you view) and whether you complete an online application.</p>
+                    <div class="heading">
+                        <h4>Online applications</h4>
+                    </div>
+                    <p>When you send a completed online application to us, we retain the information contained in that application. We are able to then use that information to provide any services that you require.</p>
+                    <p>You may also be able to suspend and save online applications, so you can complete and send the applications at a later time. If you suspend or save your application, the information that you have entered will be retained in our systems so that you may recover the information when you resume your application. Online applications that have been suspended or saved may be viewed by us.</p>
+                </div>
+        </div>
+		<script type="text/javascript">
+            $(document).ready(function() {
+                $('#slideleft button').click(function() {
+                    var $lefty = $(this).next();
+                    $lefty.animate({
+                        left: parseInt($lefty.css('left'),10) == 0 ?
+                        -$lefty.outerWidth() :
+                        0
+                    });
+                });
+            });
+        </script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.event.move.js"></script>
+    </body>
+</html>

@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Connected Loans</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- bxSlider CSS file -->
+    <!-- Fonts Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <!-- Custome Css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+     <!-- Responsive Css -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	      $(document).ready(function(){
+                $(window).bind('scroll', function() {
+                    var navHeight = 40; // custom nav height
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
+                });
+            });
+            $(function() {
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+        $(document).ready(function(){
+            $(".button a").click(function(){
+                $(".overlay").slideToggle(400);
+				
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+            });
+        });
+        $('.overlay').on('click', function(){
+            $(".overlay").slideToggle(400);   
+            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+            open = false;
+        });
+		
+		
+		
+		    $(document).ready(function(){
+        //Check to see if the window is top if not then display button
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.scrollToTop').fadeIn();
+            } else {
+                $('.scrollToTop').fadeOut();
+            }
+        });
+        //Click event to scroll to top
+        $('.scrollToTop').click(function(){
+            $('html, body').animate({scrollTop : 0},1000);
+            return false;
+        });
+    });
+$(document).ready(function() {
+	var top_hd = $(".top-hd").height();
+	var heii =$(window).height();
+	var heigi = heii - top_hd;
+	$('.banner').height(heigi);
+	$(window).resize(function(){
+	var top_hd = $(".top-hd").height();
+    var heii =$(window).height();
+	var heigi = heii - top_hd;
+	$('.banner').height(heigi);
+	});
+	var scrn_height = $(window).height();
+	var scrn_width = $(window).width();
+	if(scrn_height > scrn_width){
+		$('.banner').css('background-image', 'url(images/index.jpg)');
+	}
+	$(window).resize(function(){
+		var scrn_height = $(window).height();
+		var scrn_width = $(window).width();
+		if(scrn_height > scrn_width){
+			$('.banner').css('background-image', 'url(images/index.jpg)');
+		}else{
+
+
+			$('.banner').css('background-image', 'url(images/banner_bg.jpg)');
+			}
+	});
+	
+});
+/*******************************************/
+$(document).ready(function(e) {
+    $('.m_menu_li > a').click(function(event) {
+	var menu_li =  $(this).closest(".m_menu_li").find('.mob_menu_sub');
+	if(menu_li.hasClass('active')){
+		menu_li.removeClass('active');
+		}else{
+			menu_li.addClass('active');
+			}
+	var has_li =  $(this).closest(".m_menu_li");
+	if(has_li.hasClass('close_menu')){
+		has_li.removeClass('close_menu');
+		has_li.addClass('open_menu');
+		}else{
+			has_li.removeClass('open_menu');
+			has_li.addClass('close_menu');
+			}
+  	});
+	
+	$(".in-mob-btn-menu").click(function(){
+		$('.mobile-menu-main').fadeIn(200);
+		setTimeout(function(){
+			$(".mobile-menu-iner").css({"margin-left":"0"});
+		},250);
+	});
+	$(".mobile-menu-iner-right").click(function(){
+		if($(window).width() > 500){
+		$(".mobile-menu-iner").css({"margin-left":"-50%"});
+		}else{
+			$(".mobile-menu-iner").css({"margin-left":"-60%"});
+			}
+		
+		setTimeout(function(){
+			$('.mobile-menu-main').fadeOut(200);
+		},550);
+	});
+});
+/*******************************************/
+$(document).ready(function(e) {
+    $("#top-header-menu > li").hover(function(){
+		$(this).addClass("active");
+		} , function(){
+		$(this).removeClass("active");	
+		});
+});
+/*******************************************fa-angle-double-right*/
+$(document).ready(function(e) {
+    /*$("body").on("click",".SdBr_main > a", function(e){
+		e.preventDefault();
+		$(".SdBr_main").removeClass("active");
+		$(".SdBr_main > a").removeClass("active");
+		$(this).addClass("active");
+		$(this).closest(".SdBr_main").addClass("active");
+		
+	});*/
+	$("body").on("click",".SdBr_main > a", function(e){
+		e.preventDefault();
+		if($(this).closest(".SdBr_main").hasClass("side_bar_has_sub")){
+			if($(this).closest(".SdBr_main").hasClass("active")){
+			
+			$(this).find("i").removeClass("fa-angle-double-down");
+			$(this).find("i").addClass("fa-angle-double-right");
+			
+			$(this).closest(".SdBr_main").find("#side_nav_iner").slideUp();
+			$(this).closest(".SdBr_main").removeClass("active");
+		}else{
+			
+			$(this).find("i").removeClass("fa-angle-double-right");
+			$(this).find("i").addClass("fa-angle-double-down");
+			
+			$(this).closest(".SdBr_main").find("#side_nav_iner").slideDown();
+			$(this).closest(".SdBr_main").addClass("active");
+			}	
+		}else{
+		$(".SdBr_main").removeClass("active");
+		$(".SdBr_main > a").removeClass("active");
+		$(this).addClass("active");
+		$(this).closest(".SdBr_main").addClass("active");	
+		}
+		
+		
+	});
+	///////////////////////*1*/
+	$("body").on("click",".SdBr_main_js_1", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_1").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_1").addClass("active");
+	});
+	///////////////////////*1*/
+	
+	///////////////////////*2*/
+	$("body").on("click",".SdBr_main_js_2", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_2").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_2").addClass("active");
+	});
+	///////////////////////*2*/
+	
+	///////////////////////*3*/
+	$("body").on("click",".SdBr_main_js_3", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_3").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_3").addClass("active");
+	});
+	///////////////////////*3*/
+	
+	///////////////////////*4*/
+	$("body").on("click",".SdBr_main_js_4", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_4").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_4").addClass("active");
+	});
+	///////////////////////*4*/
+	
+	///////////////////////*5*/
+	$("body").on("click",".SdBr_main_js_5", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_5").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_5").addClass("active");
+	});
+	///////////////////////*5*/
+	
+	///////////////////////*6*/
+	$("body").on("click",".SdBr_main_js_6", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_6").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_6").addClass("active");
+	});
+	///////////////////////*6*/
+	
+	///////////////////////*7*/
+	$("body").on("click",".SdBr_main_js_7", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_7").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_7").addClass("active");
+	});
+	///////////////////////*7*/
+	
+	///////////////////////*8*/
+	$("body").on("click",".SdBr_main_js_8", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_8").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_8").addClass("active");
+	});
+	///////////////////////*8*/
+	
+	///////////////////////*9*/
+	$("body").on("click",".SdBr_main_js_9", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_9").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_9").addClass("active");
+	});
+	///////////////////////*9*/
+	
+	///////////////////////*10*/
+	$("body").on("click",".SdBr_main_js_10", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_10").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_10").addClass("active");
+	});
+	///////////////////////*10*/
+	
+	///////////////////////*11*/
+	$("body").on("click",".SdBr_main_js_11", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_11").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_11").addClass("active");
+	});
+	///////////////////////*11*/
+	///////////////////////*12*/
+	$("body").on("click",".SdBr_main_js_12", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_12").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_12").addClass("active");
+	});
+	///////////////////////*12*/
+	///////////////////////*13*/
+	$("body").on("click",".SdBr_main_js_13", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_13").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_13").addClass("active");
+	});
+	///////////////////////*13*/
+	///////////////////////*14*/
+	$("body").on("click",".SdBr_main_js_14", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_14").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_14").addClass("active");
+	});
+	///////////////////////*14*/
+	///////////////////////*15*/
+	$("body").on("click",".SdBr_main_js_15", function(e){
+		$(".SectionDGN").removeClass("active");
+		$(".section_part_15").addClass("active");
+		
+		$(".SdBr_main > a").removeClass("active");
+		$(".SdBr_main_js_15").addClass("active");
+	});
+	///////////////////////*15*/
+	
+	$("body").on("click",".section_part_iner > h2",function(){
+
+		if($(this).closest(".section_part_iner").hasClass("active")){
+			$(".section_part_body").slideUp();
+			$(".section_part_iner").removeClass("active");
+			$(".section_part_iner > h2 .fa").removeClass("fa-minus").addClass("fa-plus");
+			
+			$(this).closest(".section_part_iner").find(".section_part_body").slideUp();
+			$(this).find(".fa").removeClass("fa-minus").addClass("fa-plus");
+			}
+			else{
+				
+			$(".section_part_body").slideUp();
+			$(".section_part_iner").removeClass("active");
+			$(".section_part_iner > h2 .fa").removeClass("fa-minus").addClass("fa-plus");	
+	
+			$(this).closest(".section_part_iner").addClass("active");
+			$(this).closest(".section_part_iner").find(".section_part_body").slideDown();
+			$(this).find(".fa").removeClass("fa-plus").addClass("fa-minus");
+			}
+	});
+	
+	$("body").on("click",".second_in_mob_menu .fa-bars",function(){
+		if($(".second_nav_br").hasClass("act")){
+			$(".second_nav_br").removeClass("act");
+			}else{
+				$(".second_nav_br").addClass("act");
+				}
+	});
+	$("body").on("click",".moboverlay",function(){
+		if($(".second_nav_br").hasClass("act")){
+			$(".second_nav_br").removeClass("act");
+			}
+	});
+	
+	if(window.location.hash === "#1"){
+    	$(".SdBr_main_js_1").trigger("click");
+ 	}
+	if(window.location.hash === "#2"){
+    	$(".SdBr_main_js_2").trigger("click");
+ 	}
+	if(window.location.hash === "#3"){
+    	$(".SdBr_main_js_3").trigger("click");
+ 	}
+	if(window.location.hash === "#4"){
+    	$(".SdBr_main_js_4").trigger("click");
+ 	}
+	if(window.location.hash === "#5"){
+    	$(".SdBr_main_js_5").trigger("click");
+ 	}
+	if(window.location.hash === "#6"){
+    	$(".SdBr_main_js_6").trigger("click");
+ 	}
+	if(window.location.hash === "#7"){
+    	$(".SdBr_main_js_7").trigger("click");
+ 	}
+	if(window.location.hash === "#8"){
+    	$(".SdBr_main_js_8").trigger("click");
+ 	}
+	if(window.location.hash === "#9"){
+    	$(".SdBr_main_js_9").trigger("click");
+ 	}
+	if(window.location.hash === "#10"){
+    	$(".SdBr_main_js_10").trigger("click");
+ 	}
+	if(window.location.hash === "#11"){
+    	$(".SdBr_main_js_11").trigger("click");
+ 	}
+	if(window.location.hash === "#12"){
+    	$(".SdBr_main_js_12").trigger("click");
+ 	}
+	if(window.location.hash === "#13"){
+    	$(".SdBr_main_js_13").trigger("click");
+ 	}
+	if(window.location.hash === "#14"){
+    	$(".SdBr_main_js_14").trigger("click");
+ 	}
+	if(window.location.hash === "#15"){
+    	$(".SdBr_main_js_15").trigger("click");
+ 	}
+	
+	$(".col-nav-ul.has-sub-menu > li").hover(function(){
+		$(this).addClass("active");
+	},function(){
+		$(this).removeClass("active");
+		});
+	
+	$("body").on("click",".has_wrap_sub > a",function(){
+		if($(this).closest(".has_wrap_sub").hasClass("active")){
+			$(this).closest(".has_wrap_sub").removeClass("active");
+			}else{
+				$(".has_wrap_sub").removeClass("active");
+				$(this).closest(".has_wrap_sub").addClass("active");
+				}
+		
+		
+	});
+	$(".has_class_sub > a").click(function(){
+		$(this).closest(".has_class_sub").find(".slideupdown-nav").slideToggle();	
+	});
+});
+    </script>
+<style>
+
+.col-nav-ul.has-sub-menu > li.active > .sub-menu-nav {
+	display:block;
+}
+.second_nav_br {
+    background-image: url("images/bgnavimg.png");
+	background-position: center bottom;
+	background-repeat:no-repeat;
+	background-position:center;
+    display: inline-block;
+    height: 147px;
+    width: 100%;
+	margin-top: -60px;
+}
+#top-header-menu {
+    float: left;
+    height: 53px;
+    margin-top: 94px;
+    position: relative;
+    width: 100%;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+13,e8e8e8+100 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 13%, rgba(232,232,232,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 13%,rgba(232,232,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 13%,rgba(232,232,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
+
+
+
+}
+#top-header-menu > li {
+    float: left;
+    height: 53px;
+    padding: 10px 25px;
+	border-left: 1px solid #eee;  
+}
+#top-header-menu > li:last-child {
+    border-right: 1px solid #eee;
+}
+.sub-nav-top {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 2px 6px 5px -3px #ccc;
+    display: none;
+    left: 0;
+    padding: 15px;
+    position: absolute;
+    top: 53px;
+    width: 100%;
+    z-index: 99;
+}
+.active .sub-nav-top{
+	display:block;
+}
+.navcont{
+	text-align:center;
+}
+#top-header-menu > li > a {
+    color: #6a7c84;
+    float: left;
+    font-size: 20px;
+    padding-top: 5px;
+    width: 100%;
+	
+}
+#top-header-menu > li > a:hover{
+	text-decoration:none;
+}
+
+
+.Home_item_li {
+    width: 180px;
+}
+.Homeloans_item_li {
+    width: 235px;
+}
+.Calculators_item_li {
+    width: 235px;
+}
+.Resources_item_li {
+    width: 225px;
+}
+.Company_item_li {
+    width: 205px;
+}
+#top-header-menu > li > a > span {
+    float: left;
+    margin-left: -5px;
+    margin-right: 5px;
+    margin-top: -5px;
+    position: relative;
+}
+#top-header-menu > li:hover , #top-header-menu > li.active-item {
+    background: #fff;
+    height: 61px;
+    margin-top: -8px;
+    padding-top: 17px;
+	border-top:1px solid #eee;
+	border-right:1px solid #eee;
+	border-bottom:1px solid #fff;
+}
+.sub-nav-top > li {
+    float: left;
+    width: 100%;
+}
+.col-nav-ul {
+    float: left;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+.sub-menu-nav {
+    display: none;
+    float: right;
+    padding-left: 15%;
+    position: absolute;
+    right: -95%;
+    top: 0;
+    width: 100%;
+	background:#fff;
+    z-index: 9;
+}
+.sub-menu-nav > li {
+    border-bottom: 1px dashed #ccc;
+    float: left;
+    padding: 5px 0;
+    width: 100%;
+}
+.col-nav-ul > li {
+    border-bottom: 1px dashed #ccc;
+    float: left;
+    padding: 5px;
+    width: 100%;
+	font-size:14px;
+}
+.col-nav-ul > li a:hover {
+     color:#000;
+	 text-decoration:none;
+}
+.col-nav-ul.img-nav-ul > li {
+    border-bottom: medium none;
+	position:relative;
+}
+#top-header-menu .img-nav-ul h2 {
+    float: left;
+    font-size: 17px;
+    font-weight: bold;
+    width: 100%;
+}
+.col-nav-ul > li a i {
+    margin-right: 10px;
+}
+.how_we_img {
+    float: left;
+    width: 100%;
+}
+.tolkto {
+    color: #fff;
+    float: right;
+    margin-right: 0;
+    margin-top: -110px;
+    padding-right: 10px;
+    text-align: right;
+    width: 100%;
+}
+.tolphone {
+    color: #fff;
+    float: right;
+    font-family: fantasy;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: -89px;
+    padding-right: 10px;
+    text-align: right;
+    text-shadow: 1px 1px 1px #7e7e7e;
+    width: 100%;
+}
+.get-afree-btn {
+    background: #f67837 none repeat scroll 0 0;
+    border-bottom: 3px solid #da5c1b;
+    border-radius: 5px;
+    color: #fff;
+    float: right;
+    font-size: 17px;
+    margin-right: 10px;
+    margin-top: -46px;
+    padding: 5px 15px;
+}
+.col-nav-ul > li a.get-afree-btn:hover {
+	background:#ff8443;
+    color: #fff;
+	text-decoration:none;
+}
+@media(max-width:1200px){
+	.Home_item_li {
+    width: 150px;
+	}
+	.Homeloans_item_li {
+    width: 205px;
+	}
+	.Calculators_item_li {
+    width: 200px;
+	}
+	.Resources_item_li {
+    width: 195px;
+	}
+	.Company_item_li {
+    width: 190px; 
+	}
+}
+@media(max-width:979px){
+	.tolkto{display:none;}
+	.second_nav_br {
+    height: 127px;
+	background-image:none;
+	}
+	#top-header-menu {
+    height: 42px;
+    margin-top: 78px;
+    position: relative;
+    width: 710px;
+	}
+	#top-header-menu > li:hover, #top-header-menu > li.active-item{
+    height: 50px;
+    margin-top: -6px;
+    padding-top: 12px;
+	}
+	#top-header-menu > li {
+    height: 42px;
+    padding: 7px 15px;
+	}
+	#top-header-menu > li > a {
+	font-size:15px;	
+	}
+	#top-header-menu > li > a img {
+    margin-top: 4px;
+    width: 20px;
+	}
+	.Home_item_li {
+    width: 105px;
+	}
+	.Homeloans_item_li {
+    width: 150px;
+	}
+	.Calculators_item_li {
+    width: 155px;
+	}
+	.Resources_item_li {
+    width: 155px;
+	}
+	.Company_item_li {
+    width: 145px;
+	}
+	#top-header-menu > li:hover {
+    height: 48px;
+    margin-top: -6px;
+    padding-top: 12px;
+	}
+	.sub-nav-top {
+    top: 40px;
+	}
+	.tolphone {
+    font-size: 17px;
+    margin-top: -71px;
+    padding-right: 12px;
+    width: 100%;
+	}
+	.get-afree-btn {
+    font-size: 14px;
+    margin-right: 10px;
+    margin-top: -40px;
+    padding: 5px 10px;
+	}
+	.tolkto {
+    font-size: 11px;
+    line-height: 1;
+    margin-right: 0;
+    margin-top: -85px;
+    padding-right: 10px;
+    width: 90%;
+	}
+}
+.second_in_mob_menu {
+    background: #f8f8f8;
+    border-radius: 5px;
+    color: #018fce;
+    cursor: pointer;
+
+    display: none;
+    font-size: 18px;
+    left: -51px;
+    line-height: 1;
+    padding: 5px 10px;
+    position: absolute;
+    top: 95px;
+}
+.breadcrombarc {
+    padding-top: 10px;
+	padding-bottom: 10px;
+}
+#side_nav_main {
+    background: #f9f9f9 none repeat scroll 0 0;
+    float: left;
+    width: 100%;
+}
+#side_nav_iner{
+	display:none;
+}
+.SdBr_main {
+    float: left;
+    width: 100%;
+}
+.SdBr_main > a {
+    border:1px solid #dfdfdf;
+	border-bottom:none;
+    float: left;
+    padding: 10px;
+    width: 100%;
+}
+.SdBr_main:last-child > a {
+    border-bottom: 1px solid #dfdfdf;
+}
+.SdBr_main > a i {
+    float: right;
+	margin-top:3px;
+}
+.SdBr_main > a:hover , .SdBr_main.active > a {
+    background: #26ade7 none repeat scroll 0 0;
+    border-color: #007db7;
+    box-shadow: 0 0 5px #007db7 inset;
+    color: #fff;
+    text-decoration: none;
+}
+.SdBr_main > a:focus {
+	text-decoration:none;
+}
+.container_box{
+	padding-bottom:20px;
+}
+#side_nav_iner {
+    background: #fdfdfd none repeat scroll 0 0;
+    border: 1px solid #f7f7f7;
+    float: left;
+    padding: 0 10px;
+    width: 100%;
+	border-bottom:none;
+}
+
+
+.SectionDGN {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px #eee;
+    float: left;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 100%;
+	display:none;
+	opacity:0;
+	transition:0.3s;
+}
+.SectionDGN.active{
+	display:block;
+	opacity:1;
+}
+.Section_iner_DGN {
+    float: left;
+    width: 100%;
+}
+.Section_iner_DGN > h2 {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+13,e8e8e8+100 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 13%, rgba(232,232,232,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 13%,rgba(232,232,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 13%,rgba(232,232,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
+    border-top: 1px solid #e9e9e9;
+    float: left;
+    font-size: 18px;
+    margin: 0;
+    padding: 11px 15px;
+    width: 100%;
+	cursor:pointer;
+}
+.Section_iner_DGN:last-child > h2{
+	border-bottom: 1px solid #ccc;
+}
+.Section_iner_DGN > h2 i {
+    float: right;
+}
+.section_part_body {
+    color: #929292;
+    display: none;
+    float: left;
+    padding: 10px;
+    width: 100%;
+}
+/*.Section_iner_DGN.active .section_part_body{
+	display:block; 
+}*/
+.Section_iner_DGN > h2:hover {
+    background: #f9f9f9 none repeat scroll 0 0;
+    color: #26ade8;
+}
+.Section_iner_DGN.active > h2 {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border-bottom: 1px solid #eee;
+    color: #26ade8;
+}
+/*----------------------------*/
+.container_box h1, .container_box h2, .container_box h3, .container_box h4, .container_box h5, .container_box h6 {
+    color: #22a7e1;
+}
+.nosidebar_con ul {
+    list-style: inside none disc;
+    margin: 20px;
+    padding-left: 15px;
+}
+.nosidebar_con ul li {
+    margin-bottom: 10px;
+}
+.nosidebar_con .form-horizontal{
+	margin-top:25px;
+}
+.SdBr_main > a{
+	padding:10px 20px 10px 10px;
+	position:relative;	
+	}
+	.SdBr_main > a i{
+	position:absolute;
+	top:10px;
+	right:10px;	
+	}
+.SectionDGN h1{
+	margin-top:0;	
+	}
+.sidebar-nav-in-mob { display:none;}
+@media(max-width:767px){
+	.second_nav_br {
+    background: #fff none repeat scroll 0 0;
+    height: 100%;
+    margin: 0;
+    position: fixed;
+    right: -270px;
+    top: 0;
+    width: 270px;
+    z-index: 99;
+	transition:0.4s;
+	}
+	.second_nav_br.act{ right:0;}
+	.second_nav_br .navcont {
+	border-left: 1px solid #eee;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+	padding: 25px 0;
+	overflow-y:auto;
+	background:#fff;
+	}
+	#top-header-menu {
+    border-left:none;
+    float: left;
+    height: auto;
+    margin: 0;
+    width: 100%;
+	background:#f7f7f7;
+	padding:10px 0;
+	display:none;
+	}
+	#top-header-menu > li:hover, #top-header-menu > li.active-item, #top-header-menu > li.active {
+    border-right: medium none;
+    border-top: medium none;
+    height: auto;
+    margin-top: 0;
+    padding-top: 7px;
+	}
+	.sub-nav-top { 
+    box-shadow: none;
+    display: none;
+    padding: 0;
+    position: static;
+	float:left;
+    width: 100%;
+    z-index: 99;
+	transition:0.4s;
+	}
+	#top-header-menu > li {
+    border-left: 0 none;
+    float: left;
+    height: auto;
+    padding: 7px 15px;
+    text-align: left;
+    width: 100%;
+	}
+	.sub-nav-top > li {
+    float: left;
+    margin-left: -15px;
+    width: 260px;
+	}
+	.second_in_mob_menu{
+	display:block;
+	}
+	.sidebar-nav-in-mob {
+    background: #fff none repeat scroll 0 0;
+    display: block;
+    float: left;
+    margin-bottom: 40px;
+    width: 100%;
+	}
+	.SdBr_main > a:hover, .SdBr_main.active > a {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-color: #eee;
+    box-shadow: none;
+    color: #333;
+    text-decoration: none;
+	}
+	.side_bar_box {
+	display:none;
+	}
+	.SdBr_main > a{
+	border-right:none;
+	border-left:none;
+	text-align:left;
+	padding:10px 10px 10px 30px;	
+	}
+	.SdBr_main > a i{
+	left: 10px;	
+	}
+	.moboverlay {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+	display:none;
+	}
+	.second_nav_br.act .moboverlay{
+	display:block;
+	}
+}
+@media(max-width:740px){
+	.second_in_mob_menu {
+    left: -51px;
+    top: 70px;
+	}
+}
+@media(max-width:640px){
+	.second_in_mob_menu {
+    left: -51px;
+    top: 57px;
+	}
+}
+@media(max-width:480px){
+	.second_in_mob_menu {
+    left: -48px;
+	}
+}
+
+@media(max-width:980px){
+	.SectionDGN h1{
+	font-size:24px;	
+	}
+	.SectionDGN h2{
+	font-size:16px;	
+	}
+}
+@media(max-width:768px){
+	.SectionDGN h1{
+	font-size:22px;	
+	}
+	.SectionDGN h2{
+	font-size:14px;	
+	}
+}
+@media(max-width:767px){
+	.breadcrombarc {
+    margin-bottom:20px;
+	}
+}
+@media(max-width:640px){
+	.SectionDGN h1{
+	font-size:20px;	
+	}
+	.SectionDGN h2{
+	font-size:14px;	
+	}
+}
+@media(max-width:480px){
+
+	.SectionDGN h1{
+	font-size:18px;	
+	}
+	.SectionDGN h2{
+	font-size:9px;	
+	}
+	.SectionDGN h3{
+	font-size:12px;	
+	}
+	.SectionDGN h4{
+	font-size:12px;	
+	}
+	.SectionDGN p{
+	font-size:12px;	
+	}
+}
+#side_nav_iner {
+    background: #fdfdfd none repeat scroll 0 0;
+    border: 1px solid #f7f7f7;
+    float: left;
+    padding: 0 10px;
+    width: 100%;
+	border-bottom:none;
+}
+.SdBr_iner {
+    float: left;
+    width: 100%;
+}
+.SdBr_iner > a {
+    border-bottom: 1px dashed #ccc;
+    float: left;
+    padding: 5px 0;
+    width: 100%;
+}
+.SdBr_iner > a:hover{
+	color:#000;
+	text-decoration:none;
+}
+.SdBr_iner:last-child > a {
+    border-bottom: none;
+}
+#side_nav_iner {
+    display: none;
+}
+.has_wrap_sub > ul {
+	display:none;
+}
+.has_wrap_sub.active > ul{
+	display:block;
+}
+.has_wrap_sub > ul {
+    background: #f8f8f8 none repeat scroll 0 0;
+    padding: 15px !important;
+}
+.mob_menu_sub > li > ul {
+    background: #f5f5f5 none repeat scroll 0 0 !important;
+    display: none;
+    float: left;
+    padding: 10px 0;
+    width: 100%;
+}
+.sub-nav-top.DROP-DOWN-POPS {
+    background: #fff none repeat scroll 0 0;
+    height: auto;
+    left: 0;
+    max-height: unset;
+    min-height: unset;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    width: 125%;
+}
+.sub-nav-top.DROP-DOWN-POPS .sub-menu-nav {
+    background: #f9f9f9 none repeat scroll 0 0;
+    box-shadow: 2px 2px 2px #ccc;
+    padding: 10px 15px 15px;
+    right: -100%;
+    top: -10px;
+}
+.Resources_item_li , .Company_item_li {
+	position:relative;
+}
+@media(max-width:1100px){
+	.sub-nav-top.DROP-DOWN-POPS .sub-menu-nav {
+    right:auto;
+	left:-100%;
+	}
+}
+@media(max-width:979px){
+
+	.sub-nav-top.DROP-DOWN-POPS {
+    top: 42px;
+
+	}
+
+}
+</style> 
+</head>
+    <body>
+    	<div class="btn_down" style="display:none;">
+        	<button onclick="scrollWin()" style="position:fixed;">need more information?</button>
+            <!--<a href="#smooth_scroll">need more information?</a>-->
+        </div>
+        <div id="smooth_scroll">
+            <div class="container-fluid top-hd">
+                <div class="row">
+                    <div class="top_bar">
+                        <div class="menu col-md-4 col-sm-4 col-xs-3">
+                            <nav>
+                                <div class="button">
+                                    <a class="btn-open" href="javascript:void(0)"><span>Menu</span></a>
+                                </div>
+                            </nav>
+                            <nav class="in_mob">
+                                <div class="button">
+                                    <div class="in-mob-btn-menu"><i class="fa fa-bars" aria-hidden="true"></i>
+</div>
+                                </div>
+                            </nav>
+                            <div class="mobile-menu-main">
+                            	<div class="mobile-menu-iner">
+                                	<ul class="mob_menu">
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="javascript:void(0);">Home Loans</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="v2.html#1">Purchase New Home</a></li>
+                                                <li><a href="v2.html#2">Refinance Home Loans</a></li>
+                                                <li><a href="v2.html#3">Consolidate Your Debts</a></li>
+                                                <li><a href="v2.html#4">Investor Loans</a></li>
+                                                <li><a href="v2.html#5">Self Employed Loan</a></li>
+                                                <li><a href="v2.html#6">Equity Loans</a></li>
+                                                <li><a href="v2.html#7">Construction Home Loans</a></li>
+                                                <li><a href="v2.html#8">Renovation Home Loans</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="javascript:void(0);">Calculators</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="#">Borrowing Power Calculator</a></li>
+                                                <li><a href="#">Home Loan Repayment Calculator</a></li>
+                                                <li><a href="#">Stamp Duty Calculator</a></li>
+                                                <li><a href="#">Buying and Selling Costs Calculator</a></li>
+                                                <li><a href="#">Lump Sum Calculator</a></li>
+                                                <li><a href="#">Extra Repayment Calculator</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="javascript:void(0);">Resourses</a>
+                                            <ul class="mob_menu_sub">
+                                                <li class="has_class_sub">
+                                                	<a href="javascript:void(0);">Home Buyer Learning Centre</a>
+                                                	<ul class="slideupdown-nav">
+                                                    	
+                                                    	<li><a href="resources.html#1">Starting your home buying journey</a></li>
+                                                        <li><a href="resources.html#2">Getting ready to buy a home</a></li>
+                                                        <li><a href="resources.html#3">Choosing a House</a></li>
+                                                        <li><a href="resources.html#4">The Home Buying Process</a></li>
+                                                        <li><a href="resources.html#5">Settlement</a></li>
+                                                        <li><a href="resources.html#6">Glossary of Terms</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_class_sub">
+                                                	<a href="javascript:void(0);">Investor Learning Centre</a>
+                                                	<ul class="slideupdown-nav">
+                                                    	<li><a href="resources.html#7">Getting Started in Property investment</a></li>
+                                                        <li><a href="resources.html#8">Is Property investment right for you?</a></li>
+                                                        <li><a href="resources.html#9">Essential property investment Strategies</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_class_sub">
+                                                	<a href="javascript:void(0);">Home Loans and Their Features </a>
+                                                	<ul class="slideupdown-nav">
+                                                    	
+                                                    	<li><a href="resources.html#10">Loan Types Explained</a></li>
+                                                        <li><a href="resources.html#11">Typical Homeloans features</a></li>
+                                                        <li><a href="resources.html#12">Which Loan type is right for me?</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                         </li>
+                                         <li class="m_menu_li has-menu close_menu">
+                                            <a href="javascript:void(0);">Company</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="company.html#1">About Us</a></li>
+                                                <li><a href="company.html#2">Contact Us</a></li>
+                                                <li><a href="company.html#3">Privacy Policy</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mobile-menu-iner-right"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="wrap">
+                                    <ul class="wrap-nav">
+                                        <li class="col-md-3 col-sm-6 col-xs-4">
+                                            <a href="javascript:void(0);">Home Loans</a>
+                                            <ul>
+                                                <li><a href="v2.html#1">Purchase New Home</a></li>
+                                                <li><a href="v2.html#2">Refinance Home Loans</a></li>
+                                                <li><a href="v2.html#3">Consolidate Your Debts</a></li>
+                                                <li><a href="v2.html#4">Investor Loans</a></li>
+                                                <li><a href="v2.html#5">Self Employed Loan</a></li>
+                                                <li><a href="v2.html#6">Equity Loans</a></li>
+                                                <li><a href="v2.html#7">Construction Home Loans</a></li>
+                                                <li><a href="v2.html#8">Renovation Home Loans</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="javascript:void(0);">Calculators</a>
+                                            <ul>
+                                                <li><a href="#">Borrowing Power Calculator</a></li>
+                                                <li><a href="#">Home Loan Repayment Calculator</a></li>
+                                                <li><a href="#">Stamp Duty Calculator</a></li>
+                                                <li><a href="#">Buying and Selling Costs Calculator</a></li>
+                                                <li><a href="#">Lump Sum Calculator</a></li>
+                                                <li><a href="#">Extra Repayment Calculator</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="javascript:void(0);">Resourses</a>
+                                            <ul>
+                                                <li class="has_wrap_sub"><a href="javascript:void(0);">Home Buyer Learning Centre</a>
+                                                	<ul>
+                                                    	<li><a href="resources.html#1">Starting your home buying journey</a></li>
+                                                        <li><a href="resources.html#2">Getting ready to buy a home</a></li>
+                                                        <li><a href="resources.html#3">Choosing a House</a></li>
+                                                        <li><a href="resources.html#4">The Home Buying Process</a></li>
+                                                        <li><a href="resources.html#5">Settlement</a></li>
+                                                        <li><a href="resources.html#6">Glossary of Terms</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_wrap_sub"><a href="javascript:void(0);">Investor Learning Centre</a>
+                                                	<ul>
+                                                    	<li><a href="resources.html#7">Getting Started in Property investment</a></li>
+                                                        <li><a href="resources.html#8">Is Property investment right for you?</a></li>
+                                                        <li><a href="resources.html#9">Essential property investment Strategies</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="has_wrap_sub"><a href="javascript:void(0);">Home Loans and Their Features </a>
+                                                	<ul>
+                                                    	
+                                                    	<li><a href="resources.html#10">Loan Types Explained</a></li>
+                                                        <li><a href="resources.html#11">Typical Homeloans features</a></li>
+                                                        <li><a href="resources.html#12">Which Loan type is right for me?</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="#">Company</a>
+                                            <ul>
+                                                <li><a href="company#1">About Us</a></li>
+                                                <li><a href="company#2">Contact Us</a></li>
+                                                <li><a href="company#3">Privacy Policy</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="logo_top col-md-4 col-sm-4 col-xs-5">
+                            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+                        </div>
+                        <div class="apply_area col-md-4 col-sm-4 col-xs-4">
+                            <div class="phone_area">
+                                <div class="phone_nmbr">
+                                    <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div>
+                                    <h4>03&nbsp;8696&nbsp;6300</h4>
+                                </div>
+                                <div class="login_area">
+                                    <a href="http://connectedloans.com.au/home_loan.html">Apply</a>
+                                    <a href="http://connectedloans.com.au/login.html">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="second_nav_br">
+            
+            	<div class="container navcont">
+            		<ul id="top-header-menu">
+                        <li class="Home_item_li">
+                            <a class="MenuNavItem Home_item" href="#"><span><img src="images/icon_1.png"></span>Home</a>
+                        </li>
+                        <li class="Homeloans_item_li active-item">
+                            <a class="MenuNavItem Homeloans_item" href="v2.html"><span><img src="images/icon_2.png"></span>Homeloans</a>
+                            <ul class="sub-nav-top">
+                                <li>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul">
+                                            <li><a class="SdBr_main_js_1" href="v2.html#1"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Purchase New Home</a></li>
+                                            <li><a class="SdBr_main_js_2" href="v2.html#2"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Refinance Your Home Loan </a></li>
+                                            <li><a class="SdBr_main_js_3" href="v2.html#3"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Consolidate your Debts </a></li>
+                                            <li><a class="SdBr_main_js_4" href="v2.html#4"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Investor Loans </a></li>
+                                            <li><a class="SdBr_main_js_5" href="v2.html#5"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Self Employed Loans </a></li>
+                                            <li><a class="SdBr_main_js_6" href="v2.html#6"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Equity Loans </a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul">
+                                            <li><a class="SdBr_main_js_7" href="v2.html#7"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Construction Home Loans </a></li>
+                                            <li><a class="SdBr_main_js_8" href="v2.html#8"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Renovation Home Loans </a></li>
+                                           <!-- <li><a class="SdBr_main_js_9" href="v2.html#9"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home Buyer Learning Centre </a></li>
+                                            <li><a class="SdBr_main_js_10" href="v2.html#10"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Investor Learning Centre </a></li>
+                                            <li><a class="SdBr_main_js_11" href="v2.html#11"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home Loans and Their Features (consolidate Differentâ€¦loans & Home â€¦ features) </a></li>-->
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul img-nav-ul">
+                                            <li>
+                                                <!--<h2>How we can help you </h2>-->
+                                                <!--<img src="images/asct.png" class="how_we_img">
+                                                <span class="tolkto">Talk to our mortgage brokers</span>
+                                                <span class="tolphone">03-8696-6300</span>
+                                                <a class="get-afree-btn" href="#">Get a free assessment</a>-->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="Calculators_item_li">
+                            <a class="MenuNavItem Calculators_item" href="#"><span><img src="images/icon_3.png"></span>Calculators</a>
+                            <ul class="sub-nav-top">
+                                <li>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul">
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 1</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 2</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 3</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 4</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 5</a></li>
+                                                <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 6</a></li>
+                                            </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul">
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 1</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 2</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 3</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 4</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 5</a></li>
+                                            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>home item 6</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <ul class="col-nav-ul img-nav-ul">
+                                            <li>
+                                                <!--<h2>How we can help you </h2>-->
+                                                <!--<img src="images/asct.png" class="how_we_img">
+                                                <span class="tolkto">Talk to our mortgage brokers</span>
+                                                <span class="tolphone">03-8696-6300</span>
+                                                <a class="get-afree-btn" href="#">Get a free assessment</a>-->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="Resources_item_li">
+                            <a class="MenuNavItem Resources_item" href="resources.html"><span><img src="images/icon_4.png"></span>Resources</a>
+                            <ul class="sub-nav-top DROP-DOWN-POPS">
+                                <li>
+                                    <ul class="col-nav-ul has-sub-menu">
+                                        <li>
+                                            <a href="resources.html#1">
+                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                                Home Buyer Learning Centre
+                                            </a>
+                                            <ul class="sub-menu-nav">
+                                                
+                                                <li><a href="resources.html#1">Starting your home buying journey</a></li>
+                                                <li><a href="resources.html#2">Getting ready to buy a home</a></li>
+                                                <li><a href="resources.html#3">Choosing a House</a></li>
+                                                <li><a href="resources.html#4">The Home Buying Process</a></li>
+                                                <li><a href="resources.html#5">Settlement</a></li>
+                                                <li><a href="resources.html#6">Glossary of Terms</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="resources.html#1">
+                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                                Investor Learning Centre
+                                            </a>
+                                            <ul class="sub-menu-nav">
+                                                
+                                                <li><a href="resources.html#7">Getting Started in Property investment</a></li>
+                                                <li><a href="resources.html#8">Is Property investment right for you?</a></li>
+                                                <li><a href="resources.html#9">Essential property investment Strategies</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="resources.html#1">
+                                                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                                Home Loans and Their Features
+                                            </a>
+                                            <ul class="sub-menu-nav">
+                                                
+                                                <li><a href="resources.html#10">Loan Types Explained</a></li>
+                                                <li><a href="resources.html#11">Typical Homeloans features</a></li>
+                                                <li><a href="resources.html#12">Which Loan type is right for me?</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="Company_item_li">
+                            <a class="MenuNavItem Company_item" href="company.html"><span><img src="images/icon_5.png"></span>Company</a>
+                            <ul class="sub-nav-top DROP-DOWN-POPS">
+                                <li>
+                                    <ul class="col-nav-ul">
+                                        <li><a href="company.html#1"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About Us</a></li>
+                                        <li><a href="company.html#2"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Contact Us</a></li>
+                                        <li><a href="company.html#3"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Privacy Policy</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                	</ul>
+                    
+                </div>
+            </div>
+            
+            <div class="container">
+            	<div class="breadcrombarc col-xs-12">
+                	<div class="row">
+                        <span>Home <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+                        <span><a href="#">How Much Can I Borrow?</a></span>
+                    </div>
+                </div>
+                
+                <div class="container_box col-xs-12">
+                	<div class="row">
+                        <div class="side_bar_box col-xs-4 col-sm-3">
+                                    <div class="row">
+                                        <ul id="side_nav_main">
+                                            <li class="SdBr_main active">
+                                                <a class="SdBr_main_js_1 active" href="javascript:void(0);">Purchase New Home <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <li class="SdBr_main">
+                                                <a class="SdBr_main_js_2" href="javascript:void(0);">Refinance Your Home Loan <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <li class="SdBr_main">
+                                                <a class="SdBr_main_js_3" href="javascript:void(0);">Consolidate your Debts <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <li class="SdBr_main">
+                                                <a class="SdBr_main_js_4" href="javascript:void(0);">Investor Loans <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <li class="SdBr_main">
+                                                <a class="SdBr_main_js_5" href="javascript:void(0);">Self Employed Loans <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <li class="SdBr_main">
+                                                <a class="SdBr_main_js_6" href="javascript:void(0);">Equity Loans <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <li class="SdBr_main">
+                                                <a class="SdBr_main_js_7" href="javascript:void(0);">Construction Home Loans <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <li class="SdBr_main">
+                                                <a class="SdBr_main_js_8" href="javascript:void(0);">Renovation Home Loans <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <!--<li class="SdBr_main">
+                                                <a class="SdBr_main_js_9" href="javascript:void(0);">Home Buyer Learning Centre <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <li class="SdBr_main">
+                                                <a class="SdBr_main_js_10" href="javascript:void(0);">Investor Learning Centre <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>
+                                            <li class="SdBr_main">
+                                                <a class="SdBr_main_js_11" href="javascript:void(0);">Home Loans and Their Features (consolidate Differentâ€¦loans & Home â€¦ features) <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                
+                                            </li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                        <div class="content_box col-xs-12 col-sm-9">
+            <div class="section_part_1 SectionDGN active">                    	
+                <h1><a name="_Toc457406054" id="_Toc457406054">Purchase New Home</a></h1>
+                <p>If you are ready to  buy your first home, Connected Loans can help! Not only can we provide you with  access to an extensive range of home loans available to homebuyers, but we can  cut through the mortgage jargon and simplify the process. <br />
+                  To purchase a new home in Australia is  not something you should take lightly. A house is probably the biggest expense  that you will make in a lifetime. You want to make sure that you understand  everything that you need to know about this financial transaction before you  proceed with it. </p>
+                <p>This website will educate you on the  basics of buying a house. Because of the costs needed to buy a home, it is common  for homebuyers to help with a home loan. </p>
+            	
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How Much I can Borrow <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Knowing how much you can borrow on your  home loan will depend on the following: </p>
+                        <ul type="disc">
+                          <li>Your       disposable income. This is the money that is left from your income after       you remove your monthly expenses.</li>
+                          <li>Your       current debt load. Too much debt balance can compromise the amount that       you will be approved to borrow.</li>
+                          <li>Your deposit. Obviously, whatever you cannot       save as the deposit will have to be borrowed.</li>
+                        </ul>
+                        <p>Click <u>here</u> for calculating how much you can  borrow. </p>
+                    </div>
+                </div>
+                
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Loan Repayment Calculator <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>A loan repayment calculator is a great  tool to help you plan how you can repay your home loan. It will tell you how  much you need to pay for the loan amount that you want to borrow. It will also  inform you how much and the monthly payment will go to the interest and  principal amount of the loan. It will help you make a smart decision about the  home loan that you will borrow. <br />
+                      Click <u>here</u> to use the Loan Repayment Calculator  of Connected Loans. </p>
+                    </div>
+                </div>
+                
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What is the Application Process <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Applying for a home loan will depend on  the actual lender. It is usually a long process that is oftentimes made complex  - depending on your credit and financial situation. The usual process goes  through the following steps: </p>
+                        <ul type="disc">
+                          <li>Set       an appointment with the mortgage lender.</li>
+                          <li>Fill       out forms and receive the list of documents needed.</li>
+                          <li>Choose       the type of home loan you will borrow (they differ in the type of       interest, terms, etc)</li>
+                          <li>An       assessment is made by the lender if the loan is suitable for you.</li>
+                          <li>Acquire       conditional approval - this will lead to the property valuation and credit       check.</li>
+                          <li>Full       approval of the home loan.</li>
+                          <li>Submission       of Loan Agreementdocuments.</li>
+                          <li>Settlement of the loan.</li>
+                        </ul>
+                        <p>If things go well, the mortgage loan  application process usually takes 4 to 8 weeks to complete. It will take longer  if your documents are incomplete. <br />
+                          Here are usual requirements that will  be expected from you to fully process the mortgage application. </p>
+                        <ul type="disc">
+                          <li>Personal       information, including current and past address, etc.</li>
+                          <li>Valid       IDs (passport, government IDs, employment IDs)</li>
+                          <li>Income       and other sources (salary records)</li>
+                          <li>Letter       of employment (from employer)</li>
+                          <li>Tax       returns or notice of assessment (for self-employed, you need 2 or 3years&rsquo;       worth of tax returns)</li>
+                          <li>Employment       history</li>
+                          <li>List       of current assets (e.g. other properties, cars, etc)</li>
+                          <li>Recent       credit (credit documents should indicate credit limit) and bank statements       (six months&rsquo; worth to show saving pattern)</li>
+                          <li>Sales contract</li>
+                        </ul>
+                        <p>To find out more about the mortgage  application process contact a home loan expert today on 03 8696 6300 or enquire  online.</p>
+                    </div>
+                </div>
+                
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How much Deposit do I need <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p><strong>&nbsp;</strong></p>
+                        <p>Ideally,  you should be able to give a 5-10% deposit on the purchase price of the house.  If you intend on buying a house that costs $500,000, you should save at least $25,000  for the deposit and then another 5% to allow for costs. The bigger the deposit,  the less you have to borrow on the mortgage. </p>
+                        <p>If  you cannot provide a deposit of 20% of the home&rsquo;s value, you need to pay for a  lender&rsquo;s mortgage insurance. </p>
+                        <p>Lenders  Mortgage Insurance is a type of insurance that lenders take to protect them  from losses in the event that you default on your loan. Lenders will arrange  the LMI on your behalf but you will need to pay premium at settlement. The  premium is paid once per loan.</p>
+                        <p>For more  information about your deposit please contact one of homeloan specialists on 03  8696 6300 or <u>enquire online</u>.</p>
+                    </div>
+                </div>
+                
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What is a Pre-approval loan <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Before you start your search, it is  also important to secure a pre-approval for a home loan. That way, the process  will be faster after you find the right property to buy. In your application,  you will be required to provide the following documents: proof of deposit, proof  of income and credit history. <br />
+                      A pre-approval is a great way to  determine how much home loan you can be approved for. It is usually valid for 3  months - which is enough time for you to find a house to buy. Once you have  found a house, you can go back to the same lender to process the actual home  loan. <br />
+                      Getting a pre-approval is also proof to  the seller that you are serious about buying the house. Sometimes, this can  work in your favour when there are other buyers pinning for the same property. <br />
+                      Click <u>here</u> to get started on the pre-approval  process. </p>
+                    </div>
+                </div>
+
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Choosing a house to buy <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>There are many types of houses for sale  in Australia. </p>
+                        <ul type="disc">
+                          <li>Apartments.       These are usually called &ldquo;units.&rdquo; This is a modern dwelling that has       multiple units on one plot of land. It is characterised by common areas       that are shared with other occupants. It is common in locations that are       densely populated like major cities or business districts because a lot of       people can live in one land area. It is ideal for those who prefer to be       near the city and their office. It is further classified into two       different types.</li>
+                          <li>Single-Family Homes. This is a       single detached house that is on a single plot of land. This is       independently owned and there is usually no shared space between different       owners. It is usually found in the suburbs and outskirts of the city or       business district. Because one plot of land has only one ownership, the       population is usually lower in density </li>
+                          <li>In choosing a house to buy, make       sure you consider the following: </li>
+                        </ul>
+                        <ul>
+                          <li>Lifestyle. If you need to be near your  workplace, an apartment is ideal for you. If you want to start a family, a  bigger dwelling place like a single-family home is a better option.</li>
+                          <li>Number of dwellers. Even if you are a  couple, you can buy a single-family home if you plan on having children in the  near future. But if you are single and you have no plans to get married or  start a family in 5 to 10 years, you can buy a smaller place.</li>
+                          <li>Purpose. If you intend to live in it,  your choice will depend on your lifestyle and the number of people who will  live in it. But if you intend to use the property for rental income, you can  probably make do with a smaller house near the city or business district.</li>
+                          <li>Financial capabilities. There are two  considerations here. First, you have to consider the amount that you can afford  in terms of the home price. This can easily be determined by looking at the  pre-approval of your mortgage. The second consideration is the upkeep of the  house. There are several expenses like the property tax, insurance, repair, and  maintenance - all of these add up. The bigger the home, the more expensive the  upkeep.</li>
+                        </ul>
+                        <p>For more  information about your buying a new home refer to our New Home Buyer Learning  Centreor contact one of home loan specialists on 03 8696 6300 or <u>enquire  online</u>.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="section_part_2 SectionDGN">
+                <h1><a name="_Toc457406061" id="_Toc457406061">Refinance Your Home Loan</a></h1>
+                <p>If you are tired of  the old terms of your home loan and you feel like the interest rate is dragging  your finances down, Connected Loans can offer a great solution. <br />
+                  This page will help  you understand the benefits of refinancing your mortgage and the important  details that will help you make a smart decision about this financial move. </p>
+            	
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Why should you refinance your  mortgage? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>There are many reasons to refinance  your mortgage - most of which will revolve around improving your current financial  situation. </p>
+                        <ul type="disc">
+                          <li>You       want to refinance Â to achieve a       lower interest rate.A lower interest means that customers can reduce their       repayments or pay their loan off sooner. </li>
+                          <li>Refinancing       will allow you to change a variable interest rate into a fixed-rate and vice       versa. </li>
+                          <li>You       want to lower your monthly payments. Refinancing your loan may allow you       to increase your loan term. This will allow you to reduce your repayments â€“</li>
+                          <li>You       want to use the equity in the house. The equity of the house refers to the       value of the house less your loan balance. For instance, if your house was       valued at $500,000 and your mortgage loan balance was $400,000, the equity       that you have is $100,000. You can use that equity, refinance and increase       your loan. This can be used in several ways:</li>
+                          <ul type="circle">
+                            <li>To        renovate or upgrade your house.</li>
+                            <li>To        repair or maintain certain parts of the property.</li>
+                            <li>For        other personal, investment and business use.</li>
+                          </ul>
+                          <li>You       want to consolidate your debts. Since refinancing can help you borrow       against the value of your house, you refinance all your existing debts -       not just your mortgage. Of course, this will depend on the equity in your       house. If the equity can cover your credit cards, car loans, and even tax       debt, you can pay them all off and be left with one big loan. By       refinancing these loans, typically your monthly repayment will decrease.</li>
+                          <li>You want to avail of new features in your       loan. Sometimes, other mortgage lenders provide better features like lower       fees and more flexible payment terms.</li>
+                        </ul>
+                        <p>For more information about refinancing your loan,contact  one of our home loan specialists on 03 8696 6300 or <u>enquire online</u>.</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What should I consider before  refinancing <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Before you refinance, it is important  to ask yourself the following questions: <br />
+                      <em>Why am I refinancing?</em> It&rsquo;s important to ensure that if you  refinance that you are better off. It might be that your current mortgage is  the best type of loan for you. <br />
+                      <em>Will you live in the property for a  long time?</em> If you have plans to sell the property in the near future, it does not make  sense to refinance as you&rsquo;ll need to take into account any upfront fees and  ongoing costs associated with a refinance.<br />
+                      <em>What is important to you?</em>You need to consider what you are  looking for â€“ do you want a lower rate, better features, a fixed rate or better  service? <br />
+                      <em>What is the current interest rate?</em> It only makes sense to refinance a  mortgage if you will get a lower interest rate in return. Otherwise, you are  better off staying with your current mortgage<br />
+                      <em>Will there be penalties if you  refinance?</em> If your original mortgage will charge a prepayment penalty, do not be too quick  to skip refinancing. Sometimes, the penalty is nothing compared to the amount  that you will save if you get the low-interest rate on the new loan. You should  also consider the transaction fees that will be charged to shift your mortgage  and any tax implications of this financial move. <br />
+                      For more  information about refinancing your loan,contact one of our home loan  specialists on 03 8696 6300 or <u>enquire online</u>.</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What is the refinance process? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>If you are sure about refinancing and  you have studied your financial situation, you can proceed to look for your  options for a new loan. The refinancing process will depend on who your lender  is. To give you an idea, here are the general procedures of refinancing in  Australia: </p>
+                        <ol start="1" type="1">
+                          <li>Make       a list of the qualities that you want from the new loan. This can be       low-interest rates, a longer payment term, fewer fees, etc.</li>
+                          <li>Find       the lender that can give you the closest mortgage according to your list.       Take note that you can refinance with the same lender as the original       loan. This is why you need to check with them first before you search       elsewhere. The process is usually simpler and a lot faster if your current       lender can accommodate your refinancing requirements. Feel free to set a       meeting with them to discuss what you want out of the loan. Be thorough in       asking about fees and charges.</li>
+                          <li>Submit       your application. This is usually similar to the original mortgage process       wherein you will complete a form and submit it to the lender with updated       documents (e.g. income changes, etc).</li>
+                          <li>Go       through a pre-approval. The new lender will check your application and       initial documents to see if you qualify for the loan. They will check your       credit report and make sure that you can pay off the loan you will borrow.</li>
+                          <li>Standby       for the valuation process. The new lender will assess your property to       check its current value. If you have more than one property, you may be       charged for the valuation of the others. Only the first property valuation       is free.</li>
+                          <li>Get       the finance approval. Once everything is in order, you will receive your       loan approval in writing. This is usually called the unconditional or       formal finance approval. The loan documents will soon follow.</li>
+                          <li>Inform       the old lender. This is unnecessary if you will refinance with the same       lender. If not, you need to let them know that you have plans to refinance       with another company. This will give them time to prepare the information       and requirements that the new lender will request.</li>
+                          <li>Receive       the loan documents. Thesearethe legally binding documents that you need to       review thoroughly and carefully before you sign. Make sure it is as close       as the list that you drafted at the beginning of this process (to ensure       that your targets are met). If there is anything that you do not       understand or agree to, call the lender to clarify your queries.</li>
+                          <li>Wait       for the settlement to be completed. This is when the old loan will be       settled and the new one established. The exchange of the titles and the       registration of the mortgage over the property will also happen during       this time.</li>
+                          <li>Learn       how to manage the new loan. Since this is a new loan with new terms, you       have to learn the details to ensure that you will not miss on any payments       or incur charges or penalties.</li>
+                        </ol>
+                        <p>For more  information about refinancing your loan,contact one of our home loan  specialists on 03 8696 6300 or <u>enquire online</u>.</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How much does it cost to  refinance? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>The cost to refinance will depend on  whether you will apply with the same mortgage lender or with a new one. The  state where the property is will also be a factor when calculating the cost.You  need to ask the mortgage lender for the actual details but you can expect it to  have the following fees: </p>
+                        <ul type="disc">
+                          <li>Application       fee. This is for the new lender so they can process the loan application       for the refinancing loan.</li>
+                          <li>Valuation       fee. This is also paid to the new lender. Most of the time, the first       valuation is free - but some lenders may charge this.</li>
+                          <li>Land       registration fees. This is paid to the new lender for the transfer of the       mortgage registration from the old lender to the new one.</li>
+                          <li>Discharge       fee. This is paid to the current lender to prepare the documents required       for the refinancing and as pay-out to the existing loan.</li>
+                          <li>Contract break cost. This is also known as the       prepayment penalty. Not all home loans have this but you need to check       your mortgage contract if you will be charged with this penalty.</li>
+                        </ul>
+                        <p>For more information about refinancing your loan,  contact one of our home loan specialists on 03 8696 6300 or <u>enquire online</u>.</p>
+                        <br clear="all" />
+                    </div>
+                </div>
+            </div>
+            <div class="section_part_3 SectionDGN">
+                <h1><a name="_Toc457406066" id="_Toc457406066">Consolidate  your Debts</a></h1>
+                <p>If  you have multiple debts and you want to simplify your situation, consolidating  may be the key to your financial troubles. It is common for Australians to have  multiple credit cards, a car loan, and personal loans. If you add a mortgage, your  total repayments can be quite overwhelming. <br />
+                  Consolidating  your debts may Â be the suitable option  for that will allow you to reduce your monthly repayment and Connected Loans  can help you find the right strategy to make your finances easier. </p>
+            	
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What is Debt Consolidation? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>This is a debt solution that will allowyou  to refinance all your debts into 1manageable repayment. It involves obtaining a  loan that is large enough to refinance all of your debts. <br />
+                      Oftentimes, debt consolidation is  confused with refinancing. In essence, they have the same qualities. But here  are a few differences between the two. <br />
+                      Refinancing is only one way to  consolidate debt. Refinancing is when you refinance your home loan to take  advantage of the equity in your house. You can use the equity in your house to  consolidate debt. However, you also have the freedom to use it on something  else like spending on the renovation of your house, a vacation, or even as a  down payment for another home purchase. Also, refinancing does not necessarily  require you to have multiple debts. <br />
+                      Debt consolidation can be done by  borrowing a personal loan to pay off the other debts. This loan is called a  debt consolidation loan. You can also use a new credit card to pay off  high-interest credit cards - a process usually known as a balance transfer. <br />
+                      Also, debt consolidation loans will  only pay off your debts. Sometimes, the new lender will coordinate with your  old lender. <br />
+                      For more  information about debt consolidation loans,contact one of our home loan  specialists on 03 8696 6300 or <u>enquire online</u>.</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Why should I do debt  consolidation? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Debt consolidation has three important  qualities that can benefit your finances. <br />
+                      <em>It simplifies your loan.</em> Multiple debts can be confusing and  debt consolidation can help you simplify things by combining your debts into  one loan. When you settle the loan, the lender typically will consolidate the  other debts and close them. Once they are closed, you are left with one debt to  pay each month. <br />
+                      <em>It helps you take advantage of lower  rates.</em> Another quality of debt consolidation is it allows you to convert your interest  rate into a lower one. As mortgages are secured against a house, the interest  rate is typically cheaper in comparison to credit cards and personal loan. By  taking a lower rate, you will decrease your monthly repayments.<br />
+                      <em>It allows you to get better terms.</em> You can also enjoy lower monthly  payments if your loan is stretched over a longer payment period. Not only that,  you can also choose a loan that offers better fees and charges compared to your  existing debts but you can choose a term that is more suitable for your  situation. <br />
+                      For more information about debt consolidation loans,contact  one of our home loan specialists on 03 8696 6300 or <u>enquire online</u></p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What types of debts can you  consolidate? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p><em>Credit cards:</em> Access to credit cards is quick and  easy but the associated interest rate and fees typically are much higher than  mortgages. By refinancing your credit cards, you will be able to save yourself  money and pay of your loans faster.<br />
+                      <em>Personal Loans: </em>Personal loans quite often are financed  over very short repayment terms and have very high interest rate. Refinancing  your personal loans can help you manage your finances by obtaining a lower  interest or help manage your finances by having a longer payment term.<br />
+                      Car Loans: Car Loans are typically  similar to personal loans and typically financed over short repayment periods.<br />
+                      Other debts are considered on a case by  case basis and for more  information about debt consolidation loans,contact one of our home loan  specialists on 03 8696 6300 or <u>enquire online.</u></p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What if my debts are more than the  value of my home? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>If your combined debt is higher than  the value of your home, that means using the equity of your home to consolidate  debt will not be enough. Here are tips that you can follow. </p>
+                        <ul type="disc">
+                          <li>Choose       the high-interest debts that you will include in the consolidation. Using       your home in debt consolidation will make it a secured loan - which is       usually given with a lower interest rate. In effect, your high-interest       debts will have a lower interest.</li>
+                          <li>Create       a payment plan for the debts left out of the consolidation. Do not forget       about the other debts. Make sure you plan how you will pay them off.</li>
+                          <li>Talk       to the creditors or lenders of the debts left out of the consolidation       loan. You can negotiate to lower the interest rate so you will have a       lower monthly payment.</li>
+                          <li>Stop acquiring more debt. You need to work on       the debts that you have at the moment and lower the balance before you       think about using credit again.</li>
+                        </ul>
+                        <p>For more information about debt consolidation loans,  contact one of our home loan specialists on 03 8696 6300 or <u>enquire online</u></p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What types of Loans are available? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Consolidating debts can be done in  several ways. Here are the options that you have when it comes to the loans  that you can use. </p>
+                        <ul type="disc">
+                          <li>Home       Equity Loans. This is when you apply for a new home loan, pay off the       balance of your mortgage and then use whatever is left to pay off your       other debts. If the value of your house increased, you get to enjoy more       extra money for your other debts. Since your house is used as a collateral       for the loan, you can expect to enjoy a low-interest rate. It will even be       lower if you have a good credit score.</li>
+                          <li>Personal       Loans. Another option to consolidate debts is to borrow a personal loan.       In case you do not have a collateral, you can use this to pay off whatever       debt it can cover. Unlike the home equity loan, the loan amount is smaller       and the interest higher. To get a low interest, you need to have a good       credit score.</li>
+                          <li>Balance Transfer. This is not really a loan       but it is one option that you can use to consolidate your debts. You can       look for a balance transfer card that offers a low-interest or 0% interest       introductory rate. This will help you pay off your debt without worrying       about the interest bloating your balance.</li>
+                        </ul>
+                        <p>For more information about debt consolidation loans,  contact one of our home loan specialists on 03 8696 6300 or <u>enquire online</u></p>
+                        <br clear="all" />
+                    </div>
+                </div>
+            </div>
+            <div class="section_part_4 SectionDGN">
+                <h1><a name="_Toc457406072" id="_Toc457406072">Investor  Loans</a></h1>
+                <p>Investing is a great  way to make your money work for you. <br />
+                  An investment loan is a loan that is  used to buy real estate that will become an investment property. </p>
+                <p>An investment loan is a solution for  people who want to buy a property and rent it out to receive income, but need a  loan to help with the purchase.</p>
+                <p>Investment loans are different to other  loan types and it&rsquo;s important to understand the different Lender requirements  for these loans to ensure that you get the right one for you. </p>
+            	
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What is the difference between  interest only loans, lines of credit and offset facilities? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>There are different types of investor  loans. Let us define them one by one to understand which type of loan suits  your purpose. <br />
+                      <em>Interest-only loans.</em> This is a type of loan wherein the  investor or borrower will only pay the interest on the loan for the first few  years of the loan. This is usually 1-5 years after the loan is disbursed. This  can be subject to negotiation if you want to make it longer. Since interest  payments are tax deductible, this will give you time to adjust and strengthen your  finances and your investment. You can use the extra money wisely by increasing  the value of your house so you can charge a higher rent. It is advised that you  use this period wisely because after the interest-only phase, the monthly  payment will be a lot higher as the principal payments are added. Not only  that, you should expect that you will pay more interest over the course of the  loan. <br />
+                      <em>Lines of credit.</em> This is like a home equity and a  credit card rolled into one. When you borrow a home loan and pay off a portion  of it, that payment becomes the equity that you can use. Or you can use the  home equity if this is your primary house. This will allow them to use an  existing equity as capital for an investment property. Once you repay the loan,  that can be a line of credit that you can redraw - as long as you can keep  track of it for tax purposes. If you do not want any repayment, you can choose  not to withdraw this. The bottom line is, the equity of the house can easily be  liquidated if there is a need to do so. Lines of credit Â are something that investors can use to  purchase another property for investment. <br />
+                      <em>Offset facilities loan.</em> For this loan, you will be required to  borrow a standard home loan and then link it to an offset facilities loan. It  can be likened to a savings account. You will receive a bank card that will  allow you to make electronic transfers or withdrawals from an ATM. Now the key  to benefit from this, lies in how much money is in the offset account. If, for  instance, your mortgage is $300,000 and you have $25,000 in your offset  account, the interest that will be charged to you will only be based on  $275,000. The more money you have in your offset account, the less interest  will be charged to you. <br />
+                      Click <u>here</u> to compare investor loans. </p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How much can I borrow? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>The amount that you can borrow on your  investor loan will depend on a couple of factors. </p>
+                        <ul type="disc">
+                          <li>Your       income. Your regular salary will play an important role in determining how       much the lender will allow you to borrow. After all, this is the source of       money where the loan payments will be coming from.</li>
+                          <li>Your       expenses. This will also come into play because some people earn a high       income but if they have a lot of expenses, you can be sure that their       ability to repay the loan will be limited.</li>
+                          <li>Your debts. The lender will also take into       consideration your credit situation. If you have a lot of debts, those will       eat up the disposable income that you have left to pay the loan.</li>
+                        </ul>
+                        <p>Use our calculator to help calculate  how much you should borrow. Click <u>here</u>. </p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What is the typical investor loan  interest rate? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>In choosing your investor loan, you  have three options when it comes to the interest rate. </p>
+                        <ul type="disc">
+                          <li>Fixed       interest rate. This is a type of interest wherein you have only one rate       for the whole term of the loan. You will use the existing interest rate at       the time of the loan application. This is actually the most popular among       the other types because it allows the borrower to plan their payments more       efficiently.</li>
+                          <li>Variable       interest rate. This means your rate will go up or down - depending on the       market index. It will make your monthly payments different from time to       time. Because of the flexible interest, it also offers flexible features       like being allowed to redraw. Since the interest rate is tax deductible,       you need to continually update your information so you can enjoy this tax       benefit.</li>
+                          <li>Split-interest rate. This is when you combine       a fixed and variable rate in your loan. You can opt to use a fixed rate       first and then get a variable interest rate after a few years. Or you can       have it the other way around.</li>
+                        </ul>
+                        <p>Choose the interest rate that can help  you meet your payments. If the variable interest rate is low when you get the  investor loan, you can choose this type of loan. Or you can opt to choose the  split-interest rate that allows you to use the variable rate and then switch to  a fixed rate in the future. <br />
+                          Click <u>here</u> to know more about interest rates. </p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What are the benefits of investing  in Property? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Investing in a property is beneficial  in so many ways. Here are some of them. <br />
+                      <em>The investment property mayincrease in  value.</em>Overtime  the value of the investment property could increase. This is called capital  appreciation and is a key part of investing in real estate.<br />
+                      <em>Best example of a passive income.</em> A passive income means you only work  on something in the beginning and it will continue generating revenue long  after the effort. <br />
+                      <em>Real estate provides a secure,  low-risk, and long-term investment.</em> Unless something adverse happens in  the location where you bought the house or in the economy, you can expect it to  continue to receive rental income for a long time. The real estate market is  considered to have low volatility â€“ this means that the movement in property  value and rental income is relatively stable and should not change in value  materially over a short time. <br />
+                      <em>Rental rates can provide a sizable  income over the long term. </em>Once a homeloan has been paid in full, the rental  income will be continue to be paid. This can provide people with a steady  income stream. <br />
+                      <em>Negative gearing can reduce your  taxable income.</em> It is natural for you to pay taxes, not just on the property, but also on the  rental income that you are generating. Â Depending on your personal circumstances, you  might be able to use negative gearing to help reduce your personal income tax. <br />
+                      Find out more about investing. Click <u>here</u> to access to access our Investor  Learning Centre or contact one  of our home loan specialists on 03 8696 6300 or <u>enquire online.</u></p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What are the risks of investing in  property? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>All forms of investment come with a  risk. Although there are several benefits, there are also risks when investing  in a real estate property. <br />
+                      <em>The mortgage comes with other costs.</em> Before you concentrate on the investor  loan, make sure you calculate the other costs required to complete this  transaction. Just like a traditional home loan, a property investor loan will  require a deposit, stamp duty, property appraisal charges, and legal fees -  among others. <br />
+                      <em>Owning the property entails costs.</em> You need to pay for the insurance,  property taxes, and the regular repair and maintenance of the house. This can  be taken from the rental income but nevertheless, it will reduce the income  that the property will generate for you. <br />
+                      <em>Income may not be enough.</em> The housing market will define how  much money you can charge for the lease of your property. While you have the  option to charge as high as possible, a high rental rate can turn off potential  tenants. <br />
+                      <em>Rental income will depend on occupancy.</em> A rental property is only useful when  it is being leased. You may encounter financial difficulties when you are in  between tenants. The property taxes, insurance, and other upkeep costs will not  stop even if you do not have a tenant. <br />
+                      <em>Property values can go down.</em> While this is never permanent, the  housing market can force you to lower your rental income. It could make  homeownership costs quite a burden. <br />
+                      <em>Damage to the property can make you  lose your investment.</em> A fire or a natural disaster that is significant enough to destroy the  structure can make you lose a lot of money. This is true even if you have the  house insured. <br />
+                      <em>Liquidating this investment will take  time.</em> In case there is a need for fast cash, this is one investment that you will  have a hard time liquidating. It can take months and even a year to find the  right buyer that you can sell the house to for profit. <br />
+                      Find out more about investing. Click <u>here</u> to access to access our Investor  Learning Centre or contact one  of our home loan specialists on 03 8696 6300 or <u>enquire online.</u></p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What is negative gearing? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>This is when the cost of owning the  rental property is higher than the income it generates. It is factor that an  investor takes into consideration whether to invest as it can provide  additional benefits. <br />
+                      For instance, let&rsquo;s consider the  scenario that you bought a house for $500,000 and used an investment loan of $400,000  to help purchase the property.Â  Â Let us assume that your annual interest repayments  each year amount to $24,000. If the property is earning a rental income of  $25,000 a year, you have a shortfall of $5,000. <br />
+                      If in that 1 year, the property value  rose by 10%, that means it is already valued at $550,000. That is a growth of  $50,000. Even with the $5,000 shortfall on rental income, you still gained  $45,000 in one year. <br />
+                      Of course, there is a risk here because  not having a tenant or a small capital growth can compromise the overall gain  from your investment. However, there are other ways to benefit from this  investment strategy. <br />
+                      Negative gearing will also generate a  tax loss which can be offset by the other income that you are earning, which in  turn will allow you to generate savings. For example, the rental income is  $20,000 but interest payments, property costs (rates, strata and insurance),  letting fee and property depreciation cost $28,000. Â That means you have a tax loss of $8,000 and  that can be used to reduce the taxes you will pay on your other income sources.  It is important to gauge your losses in a financial year so you can leverage  your rental property losses and turn it into something that your other sources  of income can benefit from. <br />
+                      Find out more about investing. Click <u>here</u> to access to access our Investor  Learning Centre or contact one  of our home loan specialists on 03 8696 6300 or <u>enquire online.</u></p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How can I learn more about  investing in property? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Find out more about investing. Click <u>here</u> to access to access our Investor Learning  Centre or contact one  of our home loan specialists on 03 8696 6300 or <u>enquire online.</u></p>
+                    	<br clear="all" />
+                    </div>
+                </div>
+            </div>
+            <div class="section_part_5 SectionDGN">
+                <h1><a name="_Toc457406080" id="_Toc457406080">Self  Employed Loans</a></h1>
+                <p>Self-employed individuals play an  important role in the economy of Australia and Connected Loans understand your  homeownership aspirations and can even help you get the best deal when it comes  to self-employed loans. </p>
+            	
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How will the lender assess my  income? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>In most cases, lenders will use the  last 2 years tax returns and add back things like depreciation to assess your  available income. Each lender has a different method to calculate your  available income and what expenses they will add back.<br />
+                      Some lenders will take an average of  the last 2 years, whilst some will use the most recent year. Some will allow  depreciation to be added back along with superannuation and one-off expenses,  whilst others may only use a portion.</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How will a lender verify my  self-employed income? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Lenders will use different types of  documents to verify your self-employed income. Document requirements are  typically put into 2 categories which are often referred to as Full  Documentation and Alt Documentation.<br />
+                      For a Full Documentation Loan a lender  may ask for:</p>
+                        <ul type="disc">
+                          <li>Last       2 years Tax Returns for borrowers and their associated business entities,</li>
+                          <li>Last       2 years Notice of Assessments</li>
+                          <li>Last       2 years P&amp;L, Balance Sheet and Statement of Owners Equity (if       applicable) </li>
+                        </ul>
+                        <p>For an Alt Documentation Loan a lender  may ask for:</p>
+                        <ul type="disc">
+                          <li>Income       Declaration. This is a statement that you will sign to verify that the       amount you will declare as your income is true.</li>
+                          <li>Between       6 and 12 month Business Activity Statements (BAS). This should be from an       ATO portal and will show your financial transactions.</li>
+                          <li>Letter       from Accountant. This letter will serve as an income verification form       that has to be signed by your accountant. It will validate the income that       you declared.</li>
+                          <li>Between 6-12 months Bank       Statements. These should come from your primary business bank account. </li>
+                        </ul>
+                        <p>Find out more about Self-employed loans  by contacting one of our  home loan specialists on 03 8696 6300 or <u>enquire online.</u></p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What Loans are available? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Although you are self-employed,if you can  satisfy the Full Documentation requirements, you can still borrow almost all  types of loan - in the same way as PAYG borrower can. The only difference will  lie in the requirements you will provide.<br />
+                      For an Alt Documentation Loan, you will  need to apply for a specific type of loan. These types of loans have different  interest rates, feeÂ  and lending criteria. <br />
+                      Find out more about Self-employed loans  by contacting one of our  home loan specialists on 03 8696 6300 or <u>enquire online</u>. </p>
+                    	<br clear="all" />
+                    </div>
+                </div>
+            </div>
+            <div class="section_part_6 SectionDGN">
+                <h1><a name="_Toc457406084" id="_Toc457406084">Equity  Loans</a></h1>
+                <p>Equity refers to the  difference between the current value of a property and Â the amount that is still owed on it. <br />
+                  Equity loans are a  great way to access money using your existing home. Connected Loans can help  you find the best equity loan that suits your needs. </p>
+            	
+                
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What are equity loans? <i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>An equity loan or home equity loan, is  a type of loan that will let you borrow against the equity of your property. <br />
+                      Customers can increase  their existing mortgage and get access to additional money by using the equity  accumulated on their home. Unlocking equity is common in Australia as the rates  on mortgages are one of the cheapest ways to access additional borrowing.<br />
+                      <a name="_Toc457406086" id="_Toc457406086">Find out more about Equity loans by  contacting </a>one of our home loan specialists  on 03 8696 6300 or <u>enquire online</u>.</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What are the Pros  and Cons of Equity Loans?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>There are many advantages to borrowing  equity loans. </p>
+                        <ul type="disc">
+                          <li>Lower       interest rate. This is a secured loan so the interest rate is already low       to begin with. </li>
+                          <li>Flexibility.       This loan can offer flexibility in how they access and spend their money.       In the event of emergency, people can quickly access money for a car       expense or urgent building repair. In the event that it&rsquo;s not needed, it       can stay in their mortgage as redraw.</li>
+                          <li>Stability.       Mortgages are typically long term and whilst their balance will be paid       down over time, they are not subject to annual reviews and their loan       terms are much more favourable compared to personal loans and business       loans which normally have much shorter loan term frames. </li>
+                        </ul>
+                        <p>Here are thedisadvantages of an equity  loan. </p>
+                        <ul type="disc">
+                          <li>Puts       the house at risk. The property or house is your security. You are putting       that on the line by borrowing money against its equity.</li>
+                          <li>Paying for loan fees and charges. Borrowing on       equity loan incurs fees and charges. All of these are costs which you will       need to consider if an equity loan is the right loan for you.</li>
+                        </ul>
+                        <p>Find out more about Equity loans by  contacting one of our home loan specialists  on 03 8696 6300 or <u>enquire online</u>.</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What can I use the money for?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Each lender has different rules for  what they will allow equity loans to be used for and how they will verify the  purpose. The most common uses for equity loans are: </p>
+                        <ul type="disc">
+                          <li>Debt consolidation. If you have a       high-interest credit card, using equity loan to pay for it is a good idea.       It will not only simplify your payments by consolidating multiple accounts       under one loan, it will also lower your interest rate. Equity loans are       secured - it naturally has a lower interest rate compared to unsecured       debts like credit cards. If the equity can pay for your car loan or other       personal loans, you can also consolidate all of them to simplify your       debts.</li>
+                          <li>Minor Home renovations. Another way that you       can use this loan is to renovate your house. This is a great way to       increase the value of your home. If the house is really in need of repairs       and you do not have an emergency fund to pay it off, the equity of the       house can be a great way to finance that need. It is important to note       that the type of renovations will be at the lenders discretion as a       construction loan was be deemed more appropriate.</li>
+                          <li>Personal Investments. You can use this to       finance an investment such as buying shares, add into your super fund or       towards an investment property purchase.</li>
+                          <li>Business Use. It can even be used as a capital       to fund your business, buy inventory or as working capital. </li>
+                        </ul>
+                        <p>Find out more about Equity loans by  contacting one of our home loan specialists  on 03 8696 6300 or <u>enquire online</u>.</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What loan types  are available?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Almost all products  are available for equity loans but the most common loan types available are: </p>
+                        <ul type="disc">
+                          <li>Line of credit. This is a       type of equity loan that is a revolving loan. If you apply for a $20,000       equity loan, that will be placed in an account that you can control. You       do not have to use that right away. If you only need $5,000, you can       borrow that amount. Whatever you borrow, that is the only amount that you       need to pay off. It works just like a credit card in the sense that you do       not pay for the money that you did not touch. The amount borrowed will be       repaid in monthly instalments. </li>
+                          <li>Reverse mortgage. This type       of equity loan is usually offered to seniors (60 years and above). If you       need funds for retirement and you have a substantial amount of equity,       that can be used to give you the funds to finance your living expenses.       The amount you get will depend on your age and the current value of the       house. You have the freedom to decide how you want to get the funds (e.g. instalment,       lump sum, etc). The interest will be calculated depending on the       outstanding balance. If you haven&rsquo;t taken the whole amount, you will not       be charged interest for it. No repayment is required but the interest will       continue to accrue and will be capitalized into the balance. This balance       will only be repaid if you decide to sell your home, move into a health       care facility (for the aged), or when you pass away. Usually, the sale of       the house is payment for the balance. </li>
+                        </ul>
+                        <p>Find out more about Equity loans by  contacting one of our  home loan specialists on 03 8696 6300 or <u>enquire online</u>.</p>
+                        <strong><br clear="all" />
+                        </strong>
+                        <p><strong>&nbsp;</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="section_part_7 SectionDGN">
+                <h1><a name="_Toc457406089" id="_Toc457406089">Construction  Home Loans</a></h1>
+                <p>Building and renovating your own home can be a  fantastic experience â€“ but it can also be a long and expensive process. Most  people are unable to pay for the cost of home construction up front, and  getting a standard mortgage can be a tricky process. <br />
+                  Whilst there are many loans currently available  for construction, major renovations or purchase of vacant land, they are  complicated and without previous experience, it is recommended that you use an  expert to help guide you through the process. <br />
+                  Connected loans can help you find the  best Construction Home Loan that will allow you to build your dream home. </p>
+            	
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What are construction loans?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>As the name suggests, a Construction  Home Loan will allow you to build your new home. If you have a specific  building in mind, this is a great loan option for you. <br />
+                      A construction loan can be used to buy for  the vacant land and then fund the construction. The amount to be borrowed will  depend on the total cost of the build and it will be provided in progress  payments. Progress payments are when the lender release funds directly to the  builder as different phases of the construction progress. With each draw, your repayment  will increase. <br />
+                      Click <u>here</u> to know more about building  properties. </p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How do construction loans work?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>When you apply for this loan, one of  the many documents you will need to provide the lender with is a Fixed Price  Contract which will showthe total construction costs. The lender will then use  this value and the land value to establish a security value. They will use this  value to confirm their loan amount. <br />
+                      This type of loan is not like a regular  mortgage wherein the entire loan is funded at settlement. This loan is released  via progress payments. The lender will assist with your land purchase (or  refinance) and then assist with construction. As the builder completes each  phase, the lender will then release part of your loan to the builder. It&rsquo;s  important to understand that each lender has different progress payments  structures and criteria but normally progress payment will look the below: </p>
+                        <ol start="1" type="1">
+                          <li>The       first release will happen during the foundation or footings phase. This is       when the site is being prepared and the slab is laid.</li>
+                          <li>The       second fund release will include the frame or the brickwork. </li>
+                          <li>The       third release is for the lock-up phase. It is when the windows, doors,       walls, and insulation will be added to the home. It is called lock-up       because the house can be locked up already because the enclosure is       complete.</li>
+                          <li>The       fourth release will be during the second fix or the phase when the       electrical, fixtures, cabinets, tiling, etc will be done.</li>
+                          <li>The last release will be the       completion. This is the painting and finishing touches, </li>
+                        </ol>
+                        <p>These loans will ensure that the loan  will only pay for construction that is being done. It is a great way to ensure  that your funds are available to complete construction. <br />
+                          To find out more about construction  loans,click <u>here</u>. </p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What are the costs?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>What are the costs?</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How do I learn more about  construction loans?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>The details of  construction loans will vary depending on who you will borrow it from. Usually,  the general steps are the same. You need to have a professional building plan  drawn up with costs from the builder before you can be approved for a  construction loan. Some lenders will allow you to convert a construction loan  into a regular mortgage - but only after you have reached a payment milestone  or fulfilled a clause in the contract. <br />
+                      The difference will  depend on who the lender is and your specific credit and financial situation.  Even if it is the same lender, you may be given different terms because you  have a high or low credit score. It is important to understand the details of  the construction loan before you decide on the lender you will borrow from. <br />
+                      Read about the pros  and cons of construction loans to understand if it is the perfect loan for you.  You may even have to get a builders risk insurance policy so you can be  protected from any natural disaster or fire that can compromise the building  process. This is separate from the commercial liability insurance that usually  comes with a professional builder. The extra coverage can help you with  unexpected costs caused by calamities and accidents. <br />
+                      To talk with a  construction loan specialist call  on 03 8696  6300 or <u>enquire online</u>.</p>
+                    	<strong><br clear="all" />
+                    </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="section_part_8 SectionDGN">
+                <h1><a name="_Toc457406094" id="_Toc457406094">Renovation  Home Loans</a></h1>
+                <p>There are some great benefits to  getting your home renovated. <br />
+                  Renovating your home can be an  expensive process and tricky process. If you do not have the money to pay for  the renovation of your property, you can rely on a Renovation Home Loan to help  you get this done. <br />
+                  There are various options when it comes  to financing this project. Connected Loans can help you find the right loan and  lender depending on your credit and financial situation. </p>
+            	
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What is a Renovation Home Loan?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>A Renovation Home Loan is actually a  standard home loan that is specifically used to finance any improvement that  you want to do with your home. Most of the time, it can be borrowed against the  equity in your home. <br />
+                      Depending on the type of renovations  you want to do, a construction loan may be more suitable but if your  renovations are minor and non-structural, most lenders will allow you to use  existing equity in your home to pay for renovations.Â  If you don&rsquo;t have sufficient equity then a  construction is probably a more suitable type of loan.</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What are my Renovation Loan options?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>What are my Renovation Loan options?</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What type of renovations can I use  the loan on?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>The lender will need to approve the  type of renovation you would like to do but as a guide, if they are minor and  non-structural, they will allow this without doingÂ  construction loans. Examples include  upgrading certain parts of your home like the kitchen, bathroom or any external  part of the house. <br />
+                      Know when a renovation is necessary for  your property. Click <u>here</u>. </p>
+                    </div>
+                </div> 
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What are the requirements to apply?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>What are the requirements to apply?</p>
+                    </div>
+                </div>                     
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>What if I need more funds to complete the renovation?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>What if I need more funds to complete the renovation?</p>
+                    </div>
+                </div>
+            </div>                         
+            <div class="section_part_9 SectionDGN">
+            <h1><a name="_Toc457406097772" id="_Toc457406097772">Home Buyer Learning Centre</a></h1>
+             	
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Getting ready to buy a house<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Getting ready to buy a house</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Choosing a House<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Choosing a House</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>The Home Buying Process<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>The Home Buying Process</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Settlement<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Settlement</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Glossary of Terms<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Glossary of Terms</p>
+                    </div>
+                </div>   
+            </div>   
+            <div class="section_part_10 SectionDGN">
+            <h1><a name="_Toc4574060977720" id="_Toc4574060977720">Investor Learning Centre </a></h1>
+             	
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Preparing to Buy<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Preparing to Buy</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Tips for Choosing the Right property?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Tips for Choosing the Right property?</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Essential property investment Strategies<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Essential property investment Strategies</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>How to Manage your Property<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>How to Manage your Property</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Glossary of Terms<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Glossary of Terms</p>
+                    </div>
+                </div>
+            </div>                     
+            <div class="section_part_11 SectionDGN">
+            <h1><a name="_Toc45740609777201" id="_Toc45740609777201">Home Loans and Their Features (consolidate Differentâ€¦loans & Home â€¦ features)  </a></h1>
+            
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Loan Types Explained<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Loan Types Explained</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Typical Homeloans features<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Typical Homeloans features</p>
+                    </div>
+                </div>
+                <div class="section_part_iner Section_iner_DGN">
+                    <h2>Which Loan type is right for me?<i class="fa fa-plus" aria-hidden="true"></i></h2>
+                    <div class="section_part_body">
+                        <p>Which Loan type is right for me?</p>
+                    </div>
+                </div>
+            </div>                     
+                                </div>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="footer_content">
+                            <div class="col-md-6">
+                                <p>Connected Loans is the trading name of Connected Loans Pty Ltd (ACN XX XXX XXX XXX)<br>which holds an Australian Credit License (License Number XXXXXXX)<br><a href="http://connectedloans.com.au/privacy_policy.html">Privacy Policy</a></p>
+                            </div>
+                             <div class="col-md-6">
+                                <div class="footer_logo">
+                                    <a href="#"><img src="images/footer_logo.png" alt="footer logo"></a>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script>
+		var scrollPostion = 0;
+		function scrollWin() {
+				var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
+  			var isiPad = navigator.userAgent.toLowerCase().indexOf("ipad");
+  			var isiPod = navigator.userAgent.toLowerCase().indexOf("ipod");
+ 
+  			var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+ 
+  			var isBlackberry = navigator.userAgent.toLowerCase().indexOf("BlackBerry");
+ 
+  			var isOpera = /Opera/i.test(navigator.userAgent.toLowerCase());
+ 
+  			var isIE = navigator.userAgent.toLowerCase().indexOf("IEMobile");
+ 
+			if(isiPhone > -1){
+		      var scrollPostion2 = 410;
+			}
+			else if(isiPad > -1){
+				  var scrollPostion2 = 410;
+			  }
+			else if(isiPod > -1){
+				  var scrollPostion2 = 410;
+			  }
+			else if(isAndroid){
+				var scrollPostion2 = 410;
+			}
+			else if(isBlackberry > -1){
+				var scrollPostion2 = 410;
+			}
+			else if(isOpera){
+				var scrollPostion2 = 410;
+			}
+			else if(isIE > -1){
+				var scrollPostion2 = 410;
+			}
+			else{
+				var scrollPostion2 = 610;
+			}	
+				scrollPostion = scrollPostion + scrollPostion2;
+				var divHeight  = $("#smooth_scroll").height();
+				if ( divHeight <  scrollPostion) scrollPostion = 0;
+				$('html, body').animate({
+					scrollTop: scrollPostion
+				}, 1000);
+			}
+ 
+  	</script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.event.move.js"></script>
+    </body>
+    
+</html>
