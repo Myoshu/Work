@@ -55,12 +55,185 @@
             $(".button a").toggleClass('btn-open').toggleClass('btn-close');
             open = false;
         });
+
+        /*******************************************/
+$(document).ready(function(e) {
+    $('.m_menu_li').click(function(event) {
+    var menu_li =  $(this).find('.mob_menu_sub');
+    if(menu_li.hasClass('active')){
+        menu_li.removeClass('active');
+        }else{
+            menu_li.addClass('active');
+            }
+    var has_li =  $(this);
+    if(has_li.hasClass('close_menu')){
+        has_li.removeClass('close_menu');
+        has_li.addClass('open_menu');
+        }else{
+            has_li.removeClass('open_menu');
+            has_li.addClass('close_menu');
+            }
+    });
+    $(".in-mob-btn-menu").click(function(){
+        $('.mobile-menu-main').fadeIn(200);
+        setTimeout(function(){
+            $(".mobile-menu-iner").css({"margin-left":"0"});
+        },250);
+    });
+    $(".mobile-menu-iner-right").click(function(){
+        if($(window).width() > 500){
+        $(".mobile-menu-iner").css({"margin-left":"-50%"});
+        }else{
+            $(".mobile-menu-iner").css({"margin-left":"-60%"});
+            }
+        
+        setTimeout(function(){
+            $('.mobile-menu-main').fadeOut(200);
+        },550);
+    });
+});
+/*******************************************/
+
     </script>
 </head>
     <body>
+    <div class="container-fluid top-hd">
+        <div class="row">
+            <div class="top_bar">
+                <div class="menu col-md-4 col-sm-4 col-xs-3">
+                    <nav>
+                        <div class="button">
+                            <a class="btn-open" href="javascript:void(0)"><span>Menu</span></a>
+                        </div>
+                    </nav>
+                    <nav class="in_mob">
+                        <div class="button">
+                            <div class="in-mob-btn-menu"><i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="mobile-menu-main">
+                        <div class="mobile-menu-iner">
+                            <ul class="mob_menu">
+                                <li class="m_menu_li has-menu close_menu">
+                                    <a href="#">Home Loans</a>
+                                    <ul class="mob_menu_sub">
+                                        <li><a href="#">Purchase New Home</a></li>
+                                        <li><a href="#">Refinance Home Loans</a></li>
+                                        <li><a href="#">Consolidate Your Debts</a></li>
+                                        <li><a href="#">Investor Loans</a></li>
+                                        <li><a href="#">Self Employed Loan</a></li>
+                                        <li><a href="#">Equity Loans</a></li>
+                                        <li><a href="#">Construction Home Loans</a></li>
+                                        <li><a href="#">Renovation Home Loans</a></li>
+                                    </ul>
+                                </li>
+                                <li class="m_menu_li has-menu close_menu">
+                                    <a href="#">Calculators</a>
+                                    <ul class="mob_menu_sub">
+                                        <li><a href="#">Borrowing Power Calculator</a></li>
+                                        <li><a href="#">Home Loan Repayment Calculator</a></li>
+                                        <li><a href="#">Stamp Duty Calculator</a></li>
+                                        <li><a href="#">Buying and Selling Costs Calculator</a></li>
+                                        <li><a href="#">Lump Sum Calculator</a></li>
+                                        <li><a href="#">Extra Repayment Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li class="m_menu_li has-menu close_menu">
+                                    <a href="#">Resourses</a>
+                                    <ul class="mob_menu_sub">
+                                        <li><a href="#">Home Buyer Learning Centre</a></li>
+                                        <li><a href="#">Investor Learning Cente</a></li>
+                                        <li><a href="#">Home Loans and Their Features</a></li>
+                                    </ul>
+                                 </li>
+                                 <li class="m_menu_li has-menu close_menu">
+                                    <a href="#">Company</a>
+                                    <ul class="mob_menu_sub">
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mobile-menu-iner-right"></div>
+                    </div>
+                    <div class="overlay">
+                        <div class="wrap">
+                            <ul class="wrap-nav">
+                                <li class="col-md-3 col-sm-6 col-xs-4">
+                                    <a href="#">Home Loans</a>
+                                    <ul>
+                                        <li><a href="#">Purchase New Home</a></li>
+                                        <li><a href="#">Refinance Home Loans</a></li>
+                                        <li><a href="#">Consolidate Your Debts</a></li>
+                                        <li><a href="#">Investor Loans</a></li>
+                                        <li><a href="#">Self Employed Loan</a></li>
+                                        <li><a href="#">Equity Loans</a></li>
+                                        <li><a href="#">Construction Home Loans</a></li>
+                                        <li><a href="#">Renovation Home Loans</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-md-3 col-sm-6 col-xs-12">
+                                    <a href="#">Calculators</a>
+                                    <ul>
+                                        <li><a href="#">Borrowing Power Calculator</a></li>
+                                        <li><a href="#">Home Loan Repayment Calculator</a></li>
+                                        <li><a href="#">Stamp Duty Calculator</a></li>
+                                        <li><a href="#">Buying and Selling Costs Calculator</a></li>
+                                        <li><a href="#">Lump Sum Calculator</a></li>
+                                        <li><a href="#">Extra Repayment Calculator</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-md-3 col-sm-6 col-xs-12">
+                                    <a href="#">Resourses</a>
+                                    <ul>
+                                        <li><a href="#">Home Buyer Learning Centre</a></li>
+                                        <li><a href="#">Investor Learning Cente</a></li>
+                                        <li><a href="#">Home Loans and Their Features</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-md-3 col-sm-6 col-xs-12">
+                                    <a href="#">Company</a>
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo_top col-md-4 col-sm-4 col-xs-5">
+                    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+                </div>
+                <div class="apply_area col-md-4 col-sm-4 col-xs-4">
+                    <div class="phone_area">
+                        <div class="phone_nmbr">
+                            <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div>
+                            <h4>1300 iConnect &amp; 1300 266 643</h4>
+                        </div>
+                        <div class="login_area">
+                            <a href="http://connectedloans.com.au/home_loan.html">Apply</a>
+                            <a href="http://connectedloans.com.au/login.html">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="breadcrombarc col-xs-12">
+            <div class="row">
+                <span>Home <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+                <span><a href="#">Company</a></span>
+            </div>
+        </div>
+    </div>
         <div id="services" class="privacy_policy">
-            <div class="container">
-                
+            <div class="container">                
                     <div class="heading">
                         <h2>Privacy Policy</h2>
                         <h4>WHO IS CONNECTED LOANS?</h4>
