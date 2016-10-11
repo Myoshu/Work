@@ -1,152 +1,303 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Connected Loans</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <!-- bxSlider CSS file -->
-    <!-- Fonts Awesome -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-     <!-- Custome Css -->
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-     <!-- Responsive Css -->
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-	      $(document).ready(function(){
-                $(window).bind('scroll', function() {
-                    var navHeight = 40; // custom nav height
-                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
-                });
-            });
-            $(function() {
-                $('a[href*="#"]:not([href="#"])').click(function() {
-                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                        var target = $(this.hash);
-                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                        if (target.length) {
-                            $('html, body').animate({
-                                scrollTop: target.offset().top
-                            }, 1000);
-                            return false;
-                        }
-                    }
-                });
-            });
-        $(document).ready(function(){
-            $(".button a").click(function(){
-                $(".overlay").slideToggle(400);
-				
-                $(this).toggleClass('btn-open').toggleClass('btn-close');
-            });
-        });
-        $('.overlay').on('click', function(){
-            $(".overlay").slideToggle(400);   
-            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
-            open = false;
-        });
-    </script>
-</head>
-    <body>
-        <div id="notp-menu" class="container-fluid no-login">
-            <div class="row">
-            	<div class="top_bar login">
-                <div class="top_logo col-md-8 col-sm-6 col-xs-10">
-                    <div class="logo2"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
-                </div>
-                <div class="apply_area col-md-4 col-sm-6 col-xs-2">
-                    <div class="phone_area">
-                        <div class="phone_nmbr">
-                            <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div> <h4>03&nbsp;8696&nbsp;6300</h4>
-                      	</div>
-                        <!--<div class="login_area">
-                            <a href="#">Apply</a>
-                            <a href="#">Login</a>
-                        </div>-->
-                  	</div>
-              	</div>
-            </div>
-          	</div>
-       	</div>
-        <div id="services" class="services home_loan">
-        	<div class="lef-div hidden-xs hidden-sm hidden-md">
-            		<div class="progress-bar-div">
-                         <p>Progress</p>
-                         <div class="progress">
-                                <div style="width:100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar" class="progress-bar">
-                                    <span class="sr-only">100% Complete</span>
-                                  </div>
-                                </div>
-                     </div>
-                    
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                        	<div class="home_loan_left home_loan">
-                                <ul>
-                                    <li><a class="complete" href="home_loan.html">Home Loan <span><img src="images/tick.png"></span></a></li>
-                                    <li><a class="complete" href="applicants.html">Applicants<span><img src="images/tick.png"></span></a></li>
-                                    <li><a class="complete" href="income.html">Income<span><img src="images/tick.png"></span></a></li>
-                                    <li><a class="complete" href="liabilities.html">Liabilities<span><img src="images/tick.png"></span></a></li>
-                                    <li><a class="active" href="confirm.html">Confirm<span><img src="images/arrow-right.png"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-        	<div class="container-fluid">
-            	
-            	<div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-12"></div>
-                    <div class="col-md-8 col-sm-8 col-xs-12" style="min-height:350px;">
-                    	<div class="progress-bar-div hidden-lg">
-                         <p>Progress</p>
-                         <div class="progress">
-                                <div style="width:100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar">
-                                    <span class="sr-only">25% Complete</span>
-                                  </div>
-                                </div>
-                     </div>
-                    	<div class="loan_form conferm_pg">
-                        	<h2>Confirm application</h2>
-                            <br>
-                            <p>
-                            Please click 'Confirm' to send your application to Connected Loans
-You will then receive an invite to:
-
-                            </p>
-                            <h3>Book a meeting with a Home loan Expert</h3>
-                            <p>The Home loans Expert will confirm the details in your application and discuss the steps to obtain the right approval of you.</p>
-                            <h3>Join YouConnect</h3>
-                            <p>YouConnect is our online portal that allows you to track your loan from application right through to settlement, with the ability to:</p>
-                            <ul class="confer-ul">
-                            	<li>Upload the supporting documents that we need for your loan application.</li>
-                                <li>Access important documents to read or sign for your loan application.</li>
-                                <li>Send and receive messages</li>
-                                <li>Access a copy of your loan approvals.</li>
-                            </ul>
-                            <p>If you have any questions please contact us on 03 8696 6300 or by email at <a href="mailto:customercare@connectedloans.com.au">customercare@connectedloans.com.au</a></p>
-                            <p>I/WE confirm that I have read and agree to the Connected Loans <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy.</a></p>
-                        	<form>
-                            	
-                                <div class="submit">
-                                	<input type="submit" value="Back">
-                                    <input type="submit" value="Confirm" onClick="document.location='confirmation.html';">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.event.move.js"></script>
-    </body>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Connected Loans</title>
+
+    <!-- Bootstrap -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- bxSlider CSS file -->
+
+    <!-- Fonts Awesome -->
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+     <!-- Custome Css -->
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+     <!-- Responsive Css -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+    <!--[if lt IE 9]>
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+	      $(document).ready(function(){
+
+                $(window).bind('scroll', function() {
+
+                    var navHeight = 40; // custom nav height
+
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
+
+                });
+
+            });
+
+            $(function() {
+
+                $('a[href*="#"]:not([href="#"])').click(function() {
+
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+                        var target = $(this.hash);
+
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+                        if (target.length) {
+
+                            $('html, body').animate({
+
+                                scrollTop: target.offset().top
+
+                            }, 1000);
+
+                            return false;
+
+                        }
+
+                    }
+
+                });
+
+            });
+
+        $(document).ready(function(){
+
+            $(".button a").click(function(){
+
+                $(".overlay").slideToggle(400);
+
+				
+
+                $(this).toggleClass('btn-open').toggleClass('btn-close');
+
+            });
+
+        });
+
+        $('.overlay').on('click', function(){
+
+            $(".overlay").slideToggle(400);   
+
+            $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+
+            open = false;
+
+        });
+
+    </script>
+
+</head>
+
+    <body>
+
+        <div id="notp-menu" class="container-fluid no-login">
+
+            <div class="row">
+
+            	<div class="top_bar login">
+
+                <div class="top_logo col-md-8 col-sm-6 col-xs-10">
+
+                    <div class="logo2"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+
+                </div>
+
+                <div class="apply_area col-md-4 col-sm-6 col-xs-2">
+
+                    <div class="phone_area">
+
+                        <div class="phone_nmbr">
+
+                            <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div> <h4>1300 iConnect & 1300 266 643</h4>
+
+                      	</div>
+
+                        <!--<div class="login_area">
+
+                            <a href="#">Apply</a>
+
+                            <a href="#">Login</a>
+
+                        </div>-->
+
+                  	</div>
+
+              	</div>
+
+            </div>
+
+          	</div>
+
+       	</div>
+
+        <div id="services" class="services home_loan">
+
+        	<div class="lef-div hidden-xs hidden-sm hidden-md">
+
+            		<div class="progress-bar-div">
+
+                         <p>Progress</p>
+
+                         <div class="progress">
+
+                                <div style="width:100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar" class="progress-bar">
+
+                                    <span class="sr-only">100% Complete</span>
+
+                                  </div>
+
+                                </div>
+
+                     </div>
+
+                    
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+
+                        	<div class="home_loan_left home_loan">
+
+                                <ul>
+
+                                    <li><a class="complete" href="home_loan.html">Home Loan <span><img src="images/tick.png"></span></a></li>
+
+                                    <li><a class="complete" href="applicants.html">Applicants<span><img src="images/tick.png"></span></a></li>
+
+                                    <li><a class="complete" href="income.html">Income<span><img src="images/tick.png"></span></a></li>
+
+                                    <li><a class="complete" href="liabilities.html">Liabilities<span><img src="images/tick.png"></span></a></li>
+
+                                    <li><a class="active" href="confirm.html">Confirm<span><img src="images/arrow-right.png"></span></a></li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+        	<div class="container-fluid">
+
+            	
+
+            	<div class="row">
+
+                    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+
+                    <div class="col-md-8 col-sm-8 col-xs-12" style="min-height:350px;">
+
+                    	<div class="progress-bar-div hidden-lg">
+
+                         <p>Progress</p>
+
+                         <div class="progress">
+
+                                <div style="width:100%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar">
+
+                                    <span class="sr-only">25% Complete</span>
+
+                                  </div>
+
+                                </div>
+
+                     </div>
+
+                    	<div class="loan_form conferm_pg">
+
+                        	<h2>Confirm application</h2>
+
+                            <br>
+
+                            <p>
+
+                            Please click 'Confirm' to send your application to Connected Loans
+
+You will then receive an invite to:
+
+
+
+                            </p>
+
+                            <h3>Book a meeting with a Home loan Expert</h3>
+
+                            <p>The Home loans Expert will confirm the details in your application and discuss the steps to obtain the right approval of you.</p>
+
+                            <h3>Join YouConnect</h3>
+
+                            <p>YouConnect is our online portal that allows you to track your loan from application right through to settlement, with the ability to:</p>
+
+                            <ul class="confer-ul">
+
+                            	<li>Upload the supporting documents that we need for your loan application.</li>
+
+                                <li>Access important documents to read or sign for your loan application.</li>
+
+                                <li>Send and receive messages</li>
+
+                                <li>Access a copy of your loan approvals.</li>
+
+                            </ul>
+
+                            <p>If you have any questions please contact us on 03 8696 6300 or by email at <a href="mailto:customercare@connectedloans.com.au">customercare@connectedloans.com.au</a></p>
+
+                            <p>I/WE confirm that I have read and agree to the Connected Loans <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy.</a></p>
+
+                        	<form>
+
+                            	
+
+                                <div class="submit">
+
+                                	<input type="submit" value="Back">
+
+                                    <input type="submit" value="Confirm" onClick="document.location='confirmation.html';">
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="js/bootstrap.min.js"></script>
+
+        <script src="js/jquery.event.move.js"></script>
+
+    </body>
+
 </html>
