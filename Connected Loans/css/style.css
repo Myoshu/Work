@@ -653,6 +653,9 @@ footer {
 .footer_logo {
     float: right;
 }
+.footer_logo img {
+	width: 255px;
+}
 .content {
     width: 100%;
     margin-top: 200px;
