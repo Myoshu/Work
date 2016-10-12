@@ -28,8 +28,8 @@
     <![endif]-->
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="js/modernizr.custom.79639.js"></script>
-	<script type="text/javascript">
-	      $(document).ready(function(){
+    <script type="text/javascript">
+          $(document).ready(function(){
                 $(window).bind('scroll', function() {
                     var navHeight = 40; // custom nav height
                     ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop') : $('.top_nav_bar').removeClass('goToTop');
@@ -52,7 +52,7 @@
         $(document).ready(function(){
             $(".button a").click(function(){
                 $(".overlay").slideToggle(400);
-				
+                
                 $(this).toggleClass('btn-open').toggleClass('btn-close');
             });
         });
@@ -64,38 +64,66 @@
 /*******************************************/
 $(document).ready(function(e) {
     $('.m_menu_li').click(function(event) {
-	var menu_li =  $(this).find('.mob_menu_sub');
-	if(menu_li.hasClass('active')){
-		menu_li.removeClass('active');
-		}else{
-			menu_li.addClass('active');
-			}
-	var has_li =  $(this);
-	if(has_li.hasClass('close_menu')){
-		has_li.removeClass('close_menu');
-		has_li.addClass('open_menu');
-		}else{
-			has_li.removeClass('open_menu');
-			has_li.addClass('close_menu');
-			}
-  	});
-	$(".in-mob-btn-menu").click(function(){
-		$('.mobile-menu-main').fadeIn(200);
-		setTimeout(function(){
-			$(".mobile-menu-iner").css({"margin-left":"0"});
-		},250);
-	});
-	$(".mobile-menu-iner-right").click(function(){
-		if($(window).width() > 500){
-		$(".mobile-menu-iner").css({"margin-left":"-50%"});
-		}else{
-			$(".mobile-menu-iner").css({"margin-left":"-60%"});
-			}
-		
-		setTimeout(function(){
-			$('.mobile-menu-main').fadeOut(200);
-		},550);
-	});
+    var menu_li =  $(this).find('.mob_menu_sub');
+    if(menu_li.hasClass('active')){
+        menu_li.removeClass('active');
+        }else{
+            menu_li.addClass('active');
+            }
+    var has_li =  $(this);
+    if(has_li.hasClass('close_menu')){
+        has_li.removeClass('close_menu');
+        has_li.addClass('open_menu');
+        }else{
+            has_li.removeClass('open_menu');
+            has_li.addClass('close_menu');
+            }
+    });
+    $(".in-mob-btn-menu").click(function(){
+        $('.mobile-menu-main').fadeIn(200);
+        setTimeout(function(){
+            $(".mobile-menu-iner").css({"margin-left":"0"});
+        },250);
+    });
+    $(".mobile-menu-iner-right").click(function(){
+        if($(window).width() > 500){
+        $(".mobile-menu-iner").css({"margin-left":"-50%"});
+        }else{
+            $(".mobile-menu-iner").css({"margin-left":"-60%"});
+            }
+        
+        setTimeout(function(){
+            $('.mobile-menu-main').fadeOut(200);
+        },550);
+    });
+});
+/*******************************************/
+$(document).ready(function() {
+    var top_hd = $(".top-hd").height();
+    var heii =$(window).height();
+    var heigi = heii - top_hd;
+    $('.banner').height(heigi);
+    $(window).resize(function(){
+    var top_hd = $(".top-hd").height();
+    var heii =$(window).height();
+    var heigi = heii - top_hd;
+    $('.banner').height(heigi);
+    });
+    var scrn_height = $(window).height();
+    var scrn_width = $(window).width();
+    if(scrn_height > scrn_width){
+        $('.banner').css('background-image', 'url(images/index.jpg)');
+    }
+    $(window).resize(function(){
+        var scrn_height = $(window).height();
+        var scrn_width = $(window).width();
+        if(scrn_height > scrn_width){
+            $('.banner').css('background-image', 'url(images/index.jpg)');
+        }else{
+            $('.banner').css('background-image', 'url(images/banner_bg.jpg)');
+            }
+    });
+    
 });
 /*******************************************/
     </script>
@@ -117,8 +145,8 @@ $(document).ready(function(e) {
                                 </div>
                             </nav>
                             <div class="mobile-menu-main">
-                            	<div class="mobile-menu-iner">
-                                	<ul class="mob_menu">
+                                <div class="mobile-menu-iner">
+                                    <ul class="mob_menu">
                                         <li class="m_menu_li has-menu close_menu">
                                             <a href="#">Home Loans</a>
                                             <ul class="mob_menu_sub">
@@ -255,7 +283,7 @@ $(document).ready(function(e) {
                             <div class="phone_area">
                                 <div class="phone_nmbr">
                                     <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon"></div>
-                                    <h4>1300 iConnect & 1300 266 643</h4>
+                                    <h4>03&nbsp;8696&nbsp;6300</h4>
                                 </div>
                                 <div class="login_area">
                                     <a href="http://connectedloans.com.au/home_loan.html">Apply</a>
@@ -266,17 +294,18 @@ $(document).ready(function(e) {
                     </div>
                 </div>
             </div>
-        <div class="banner banner_two select_page">
+        <div class="banner select_page">
+            <div class="mask green"></div>
             <div class="container">
                 <div class="row">
                     <div class="banner_text two">
                         <h2>Compare Home Loan Offers</h2>
                         <p>How much will you borrow?</p>
                         <div class="input_area select" id="btnzzz">
-                        	<div class="back_btn back-btn">
-		                    	<a class="back" href="compare_home_loan_offers_1_2.html"></a>
-		                    </div>
-	                   
+                            <div class="back_btn back-btn">
+                                <a class="back" href="compare_home_loan_offers_1_2.html"></a>
+                            </div>
+                       
                         <section class="main">
                             <div class="wrapper-demo">
                                 <div id="dd" class="wrapper-dropdown-3" tabindex="1">
@@ -295,54 +324,54 @@ $(document).ready(function(e) {
                          </div>
                     </div>
                 </div>
-    		</div>
+            </div>
             
-       	</div>
+        </div>
         <script type="text/javascript">
-			function DropDown(el) {
-				this.dd = el;
-				this.placeholder = this.dd.children('span');
-				this.opts = this.dd.find('ul.dropdown > li');
-				this.val = '';
-				this.index = -1;
-				this.initEvents();
-			}
-			DropDown.prototype = {
-				initEvents : function() {
-					var obj = this;
+            function DropDown(el) {
+                this.dd = el;
+                this.placeholder = this.dd.children('span');
+                this.opts = this.dd.find('ul.dropdown > li');
+                this.val = '';
+                this.index = -1;
+                this.initEvents();
+            }
+            DropDown.prototype = {
+                initEvents : function() {
+                    var obj = this;
 
-					obj.dd.on('click', function(event){
-						$(this).toggleClass('active');
-						return false;
-					});
+                    obj.dd.on('click', function(event){
+                        $(this).toggleClass('active');
+                        return false;
+                    });
 
-					obj.opts.on('click',function(){
-						var opt = $(this);
-						obj.val = opt.text();
-						obj.index = opt.index();
-						obj.placeholder.text(obj.val);
-					});
-				},
-				getValue : function() {
-					return this.val;
-				},
-				getIndex : function() {
-					return this.index;
-				}
-			}
-			$(function() {
+                    obj.opts.on('click',function(){
+                        var opt = $(this);
+                        obj.val = opt.text();
+                        obj.index = opt.index();
+                        obj.placeholder.text(obj.val);
+                    });
+                },
+                getValue : function() {
+                    return this.val;
+                },
+                getIndex : function() {
+                    return this.index;
+                }
+            }
+            $(function() {
 
-				var dd = new DropDown( $('#dd') );
+                var dd = new DropDown( $('#dd') );
 
-				$(document).click(function() {
-					// all dropdowns
-					$('.wrapper-dropdown-3').removeClass('active');
-				});
-			});
-		</script>
-	<!-- custom scrollbar plugin -->
-		<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-		<script>
+                $(document).click(function() {
+                    // all dropdowns
+                    $('.wrapper-dropdown-3').removeClass('active');
+                });
+            });
+        </script>
+    <!-- custom scrollbar plugin -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script>
             (function($){
                 $(window).load(function(){
                     $(".dropdown").mCustomScrollbar({

@@ -94,6 +94,35 @@ $(document).ready(function(e) {
 	});
 });
 /*******************************************/
+$(document).ready(function() {
+    var top_hd = $(".top-hd").height();
+    var heii =$(window).height();
+    var heigi = heii - top_hd;
+    $('.banner').height(heigi);
+    $(window).resize(function(){
+    var top_hd = $(".top-hd").height();
+    var heii =$(window).height();
+    var heigi = heii - top_hd;
+    $('.banner').height(heigi);
+    });
+    var scrn_height = $(window).height();
+    var scrn_width = $(window).width();
+    if(scrn_height > scrn_width){
+        $('.banner').css('background-image', 'url(images/index.jpg)');
+    }
+    $(window).resize(function(){
+        var scrn_height = $(window).height();
+        var scrn_width = $(window).width();
+        if(scrn_height > scrn_width){
+            $('.banner').css('background-image', 'url(images/index.jpg)');
+        }else{
+            $('.banner').css('background-image', 'url(images/banner_bg.jpg)');
+            }
+    });
+    
+});
+/*******************************************/
+
     </script>
 </head>
     <body>
@@ -262,7 +291,8 @@ $(document).ready(function(e) {
                     </div>
                 </div>
             </div>
-        <div class="banner banner_two">
+            <div class="banner"> <!--banner_two-->
+                <div class="mask green"></div>
                 <div class="container">
                     <div class="row">
                         <div class="banner_text two compare">
@@ -273,8 +303,7 @@ $(document).ready(function(e) {
                                 <a href="compare_home_loan_offers_1_4.html" id="rr">Refinance</a>
                                 <a href="compare_home_loan_offers_1_4.html" id="bb">Build A House</a>
                             </div>
-                        </div>
-                        
+                        </div>                    
                     </div>
                 </div>
             </div>
