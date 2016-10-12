@@ -454,7 +454,7 @@ a:focus {
 }
 .banner_text {
     margin: -150px auto 0;
-    max-width: 1200px;
+    *max-width: 1200px;
     position: absolute;
     right: 0;
     text-align: center;
