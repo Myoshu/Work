@@ -1,0 +1,706 @@
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Connected Loans</title>
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <!-- bxSlider CSS file -->
+        <!-- Fonts Awesome -->
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- Data table -->
+        <link href="css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+        <!-- Custome Css -->
+        <link href="css/style2.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <!-- Responsive Css -->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style type="text/css">
+            /* 
+            Max width before this PARTICULAR table gets nasty
+            This query will take effect for any screen smaller than 760px
+            and also iPads specifically.*/
+            @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 979px) {
+                table,
+                thead,
+                tbody,
+                th,
+                td,
+                tr {
+                    display: block;
+                }
+                .lenders_table thead tr {
+                    position: absolute;
+                    top: -9999px;
+                    left: -9999px;
+                }
+                .lenders_table tr {
+                    border: 1px solid #ccc;
+                    float: left;
+                    width: 100%;
+                }
+                .lenders_table tr td {
+                    border: none;
+                    border-bottom: 1px solid #eee;
+                    position: relative;
+                }
+                .lenders_table tr td::before {
+                    float: left;
+                    left: 6px;
+                    padding-right: 10px;
+                    position: static;
+                    text-align: left;
+                    top: 6px;
+                    white-space: nowrap;
+                }
+                .lenders_table td {
+                    text-align: right;
+                }
+                .lenders_table tr.top {
+                    display: none
+                }
+                .lenders_table tr td:nth-of-type(1)::before {
+                    content: "Lender";
+                    float: left;
+                    padding-right: 50%;
+                }
+                .lenders_table tr td:nth-of-type(2)::before {
+                    content: "Home Loan";
+                    width: 40%;
+                }
+                .lenders_table tr td:nth-of-type(3):before {
+                    content: "Current Rate";
+                }
+                .lenders_table tr td:nth-of-type(4):before {
+                    content: "Comparison Rate";
+                }
+                .lenders_table tr td:nth-of-type(5):before {
+                    content: "Upfront Fee";
+                }
+                .lenders_table tr td:nth-of-type(6):before {
+                    content: "Monthly Repayment";
+                }
+                .lenders_table tr td.e_button:nth-of-type(7):before {
+                    content: " ";
+                }
+                .lenders_table td.left {
+                    text-align: right;
+                }
+                .lenders_table td.e_button > a {
+                    margin: 5px 0 5px 10px;
+                }
+            }
+        </style>
+        
+        <!-- jQuery -->
+        <script src="js/jquery-latest.min.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <div id="wrapper">
+        
+            <!-- HEADER -->
+            <div class="container-fluid top-hd">
+                <div class="row">
+                    <div class="top_bar">
+                        <div class="menu col-md-4 col-sm-4 col-xs-3">
+                            <nav>
+                                <div class="button">
+                                    <a class="btn-open" href="javascript:void(0)"><span>Menu</span></a>
+                                </div>
+                            </nav>
+                            <nav class="in_mob">
+                                <div class="button">
+                                    <div class="in-mob-btn-menu"><i class="fa fa-bars" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </nav>
+                            <div class="mobile-menu-main">
+                                <div class="mobile-menu-iner">
+                                    <ul class="mob_menu">
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="#">Home Loans</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="#">Purchase New Home</a>
+                                                </li>
+                                                <li><a href="#">Refinance Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Consolidate Your Debts</a>
+                                                </li>
+                                                <li><a href="#">Investor Loans</a>
+                                                </li>
+                                                <li><a href="#">Self Employed Loan</a>
+                                                </li>
+                                                <li><a href="#">Equity Loans</a>
+                                                </li>
+                                                <li><a href="#">Construction Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Renovation Home Loans</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="#">Specialities</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="#">No Deposit Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Property Types</a>
+                                                </li>
+                                                <li><a href="#">Company and Trust Borrowers</a>
+                                                </li>
+                                                <li><a href="#">Unusual Employment</a>
+                                                </li>
+                                                <li><a href="#">Low Doc / Alt Doc Loans</a>
+                                                </li>
+                                                <li><a href="#">Guarantor Loans</a>
+                                                </li>
+                                                <li><a href="#">Bad Credit Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Commercial Property Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Bridging Loans</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="#">Calculators</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="#">Borrowing Power Calculator</a>
+                                                </li>
+                                                <li><a href="#">Home Loan Repayment Calculator</a>
+                                                </li>
+                                                <li><a href="#">Stamp Duty Calculator</a>
+                                                </li>
+                                                <li><a href="#">Buying and Selling Costs Calculator</a>
+                                                </li>
+                                                <li><a href="#">Lump Sum Calculator</a>
+                                                </li>
+                                                <li><a href="#">Extra Repayment Calculator</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="#">Resourses</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="#">Testimonials</a>
+                                                </li>
+                                                <li><a href="#">New Home Buyer Learning Centre</a>
+                                                </li>
+                                                <li><a href="#">Investor Learning Cente</a>
+                                                </li>
+                                                <li><a href="#">Different Types of Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Home Loans and Their Features</a>
+                                                </li>
+                                                <li><a href="#">Interest Rates</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="m_menu_li has-menu close_menu">
+                                            <a href="#">Company</a>
+                                            <ul class="mob_menu_sub">
+                                                <li><a href="#">About Us</a>
+                                                </li>
+                                                <li><a href="#">Contact Us</a>
+                                                </li>
+                                                <li><a href="#">Privacy Policy</a>
+                                                </li>
+                                                <li><a href="#">Credit Guide</a>
+                                                </li>
+                                                <li><a href="#">No Further Contact</a>
+                                                </li>
+                                                <li><a href="#">Site Map</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mobile-menu-iner-right"></div>
+                            </div>
+                            <div class="overlay">
+                                <div class="wrap">
+                                    <ul class="wrap-nav">
+                                        <li class="col-md-3 col-sm-6 col-xs-4">
+                                            <a href="#">Home Loans</a>
+                                            <ul>
+                                                <li><a href="#">Purchase New Home</a>
+                                                </li>
+                                                <li><a href="#">Refinance Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Consolidate Your Debts</a>
+                                                </li>
+                                                <li><a href="#">Investor Loans</a>
+                                                </li>
+                                                <li><a href="#">Self Employed Loan</a>
+                                                </li>
+                                                <li><a href="#">Equity Loans</a>
+                                                </li>
+                                                <li><a href="#">Construction Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Renovation Home Loans</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="#">Specialities</a>
+                                            <ul>
+                                                <li><a href="#">No Deposit Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Property Types</a>
+                                                </li>
+                                                <li><a href="#">Company and Trust Borrowers</a>
+                                                </li>
+                                                <li><a href="#">Unusual Employment</a>
+                                                </li>
+                                                <li><a href="#">Low Doc / Alt Doc Loans</a>
+                                                </li>
+                                                <li><a href="#">Guarantor Loans</a>
+                                                </li>
+                                                <li><a href="#">Bad Credit Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Commercial Property Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Bridging Loans</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="#">Calculators</a>
+                                            <ul>
+                                                <li><a href="#">Borrowing Power Calculator</a>
+                                                </li>
+                                                <li><a href="#">Home Loan Repayment Calculator</a>
+                                                </li>
+                                                <li><a href="#">Stamp Duty Calculator</a>
+                                                </li>
+                                                <li><a href="#">Buying and Selling Costs Calculator</a>
+                                                </li>
+                                                <li><a href="#">Lump Sum Calculator</a>
+                                                </li>
+                                                <li><a href="#">Extra Repayment Calculator</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3 col-sm-6 col-xs-12">
+                                            <a href="#">Resourses</a>
+                                            <ul>
+                                                <li><a href="#">Testimonials</a>
+                                                </li>
+                                                <li><a href="#">New Home Buyer Learning Centre</a>
+                                                </li>
+                                                <li><a href="#">Investor Learning Cente</a>
+                                                </li>
+                                                <li><a href="#">Different Types of Home Loans</a>
+                                                </li>
+                                                <li><a href="#">Home Loans and Their Features</a>
+                                                </li>
+                                                <li><a href="#">Interest Rates</a>
+                                                </li>
+                                            </ul>
+                                            <a href="#">Company</a>
+                                            <ul>
+                                                <li><a href="#">About Us</a>
+                                                </li>
+                                                <li><a href="#">Contact Us</a>
+                                                </li>
+                                                <li><a href="#">Privacy Policy</a>
+                                                </li>
+                                                <li><a href="#">Credit Guide</a>
+                                                </li>
+                                                <li><a href="#">No Further Contact</a>
+                                                </li>
+                                                <li><a href="#">Site Map</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="logo_top col-md-4 col-sm-4 col-xs-5">
+                            <div class="logo">
+                                <a href="index.html"><img src="images/logo.png" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="apply_area col-md-4 col-sm-4 col-xs-4">
+                            <div class="phone_area">
+                                <div class="phone_nmbr">
+                                    <div class="phone_icon"><img src="images/phone_icon.png" alt="phone_icon">
+                                    </div>
+                                    <h4>1300 iConnect</h4>
+                                </div>
+                                <div class="login_area">
+                                    <a href="home_loan.html">Apply</a>
+                                    <a href="login.html">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CONTENT -->
+            <div id="services" class="services loans">
+                <div class="container">
+                    <div class="row">
+                        
+                        <!-- Left Panel -->
+                        <div class="left_menu_wrap col-xs-12 col-sm-12 col-md-4">
+                            
+                            <!-- mobile menu -->
+                            <div class="mobile_left_menu visible-xs visible-sm" id="mobile_left_menu">
+                                <div class="mobile_sort">
+                                    <button type="button" id="mobile-sort-button">
+                                        <span class="fa fa-sort-amount-desc"></span>
+                                        <span class="button-text">Sort</span>
+                                    </button>
+                                    <div class="dropdown_menu">
+                                        <ul>
+                                            <li><a href="#" data-type="lender">Lender: A-Z</a></li>
+                                            <li><a href="#" data-type="current_rate">Current Rate: lowest first</a></li>
+                                            <li><a href="#" data-type="comparison_rate">Comparison Rate: lowest first</a></li>
+                                            <li><a href="#" data-type="upfront_fee">Upfront Fee: lowest first</a></li>
+                                            <li><a href="#" data-type="monthly_repayment">Monthly Repayment: lowest first</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mobile_filter">
+                                    <button type="button" id="mobile-filter-button">
+                                        <span class="fa fa-filter"></span>
+                                        <span class="button-text">Filter</span>
+                                    </button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            
+                            <!-- main filter container -->
+                            <div class="left_menu" id="left_menu">
+                                
+                                <!-- * loan details -->
+                                <a href="#" class="slide_link visible-xs visible-sm active" data-id="slide_tab_details">
+                                    Loan Details
+                                    <span class="fa fa-chevron-down"></span>
+                                    <span class="fa fa-chevron-up"></span>
+                                    <div class="clearfix"></div>
+                                </a>
+                                <div class="slide_tab active" id="slide_tab_details" style="display: block;">
+                                    <form>
+                                        <ul>
+                                            <li>
+                                                <label>Loan Amount</label><span class="currencyinput">$<input type="text" id="l_amount" class="money" placeholder=""></span>
+                                            </li>
+                                            <li>
+                                                <label>Home Value</label><span class="currencyinput">$<input type="text" id="h_value" class="money" placeholder=""></span>
+                                            </li>
+                                            <li>
+                                                <label>Purpose</label>
+                                                <div class="loan_buttons">
+                                                    <a class="active ipurpose" href="" data="">Purchase</a>
+                                                    <a href="#" class="ipurpose" data="">Refinance</a>
+                                                    <a href="#" class="ipurpose" data="Construction">Build a Home</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <label>Rate Types</label>
+                                                <div class="loan_buttons">
+                                                    <a href="#" class="r_type active" data="any">Any</a>
+                                                    <a href="#" class="r_type" data="var">Variable</a>
+                                                    <a href="#" class="r_type" data="fixed">Fixed</a>
+                                                </div>
+                                                <div id="fixed_year">
+                                                    <ul class="feature">
+                                                        <li>
+                                                            <input type="checkbox" class="lyears" value="1" id="feature_lyears_1">
+                                                            <label for="feature_lyears_1">1 Year</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" class="lyears" value="2" id="feature_lyears_2">
+                                                            <label for="feature_lyears_2">2 Years</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" class="lyears" value="3" id="feature_lyears_3">
+                                                            <label for="feature_lyears_3">3 Years</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" class="lyears" value="4" id="feature_lyears_4">
+                                                            <label for="feature_lyears_4">4 Years</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" class="lyears" value="5" id="feature_lyears_5">
+                                                            <label for="feature_lyears_5">5 Years</label>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </li>
+                                            <li class="terms">
+                                                <label>Occupancy</label>
+                                                <div class="loan_buttons">
+                                                    <a class="active iterm" href="#" data="oo">Live-in</a>
+                                                    <a href="#" class="iterm" data="inv">Investment</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                    <div class="clearfix"></div>
+                                    
+                                    <a class="search_loan" href="#">Search</a>
+                                </div>
+                                
+                                <!-- * loan features -->
+                                <div id="features_fixed_tab" class="fixed">
+                                    <a href="#" class="slide_link visible-xs visible-sm" data-id="slide_tab_features">
+                                        Loan Features
+                                        <span class="fa fa-chevron-down"></span>
+                                        <span class="fa fa-chevron-up"></span>
+                                        <div class="clearfix"></div>
+                                    </a>
+                                    <div class="slide_tab" id="slide_tab_features">
+                                        <ul class="feature">
+                                            <li class="hidden-xs hidden-sm">
+                                                <label>Features</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="ltypes" value="intro rate">
+                                                <p>Introductory Rate Available</p>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="lfeats" value="Offset,Partial Offset">
+                                                <p>Mortgage Offset Account</p>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="lfeats" value="Extra Repay">
+                                                <p>Lump Sum Repayments</p>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="lfeats" value="Redraw">
+                                                <p>Redraw Facility</p>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="proPack" value="true">
+                                                <p>Pro Pack</p>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="lfeats" value="Interest Only">
+                                                <p>Interest Only</p>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="ltypes" value="loc">
+                                                <p>Line of Credit</p>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                        
+                                        <a class="search_loan" href="#">Search</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Table -->
+                        <div class="lenders_table_wrap col-xs-12 col-sm-12 col-md-8">
+                            <div class="lenders_table_inner">
+                                <h2 class="visible-xs visible-sm">Loan Results</h2>
+                                <div class="load_screen" id="load_sc">
+                                    <img src="images/load.gif">
+                                    <span>Finding Homeloans that match your search!</span>
+                                </div>
+                                <div class="lenders_table" id="lender_res">
+                                    <div id="lenders_wrapper" class="dataTables_wrapper no-footer"><div class="top"></div><table width="100%" id="lenders" class="dataTable no-footer" role="grid" style="width: 100%;">
+                                        <thead>
+                                            <tr class="top" role="row"><th class="sorting_asc" tabindex="0" aria-controls="lenders" rowspan="1" colspan="1" style="width: 73px;" aria-sort="ascending" aria-label="lender: activate to sort column descending">lender</th><th class="sorting" tabindex="0" aria-controls="lenders" rowspan="1" colspan="1" style="width: 106px;" aria-label="home loan: activate to sort column ascending">home loan</th><th class="sorting" tabindex="0" aria-controls="lenders" rowspan="1" colspan="1" style="width: 88px;" aria-label="current
+                                                    rate
+                                                : activate to sort column ascending">current
+                                                    <br>rate
+                                                </th><th class="sorting" tabindex="0" aria-controls="lenders" rowspan="1" colspan="1" style="width: 119px;" aria-label="comparison
+                                                    rate
+                                                : activate to sort column ascending">comparison
+                                                    <br>rate
+                                                </th><th class="sorting" tabindex="0" aria-controls="lenders" rowspan="1" colspan="1" style="width: 87px;" aria-label="upfront
+                                                    fee
+                                                : activate to sort column ascending">upfront
+                                                    <br>fee
+                                                </th><th class="sorting" tabindex="0" aria-controls="lenders" rowspan="1" colspan="1" style="width: 107px;" aria-label="monthly
+                                                    repayment
+                                                : activate to sort column ascending">monthly
+                                                    <br>repayment
+                                                </th><th class="sorting" tabindex="0" aria-controls="lenders" rowspan="1" colspan="1" style="width: 14px;" aria-label="&amp;nbsp;: activate to sort column ascending">&nbsp;</th></tr>
+                                        </thead>
+                                        <tbody><tr class="odd"><td valign="top" colspan="7" class="dataTables_empty">Enter Your Loan Details to Start Your Search!</td></tr></tbody>
+                                    </table><div class="bottom"><div class="dataTables_length" id="lenders_length"><label>Show <select name="lenders_length" aria-controls="lenders" class=""><option value="20">20</option><option value="50">50</option><option value="70">70</option><option value="100">100</option></select> entries</label></div></div><div class="clear"></div></div>
+                                    <div class="lenders_wrap">
+                                        <div class="scroll-fix" id="scroll-header">
+                                            <div class="scroll-fix-wrap">
+                                                <div class="lenders_headers">
+                                                    <div class="lenders_header">current
+                                                        <br>rate</div>
+                                                    <div class="lenders_header">comparison
+                                                        <br>rate</div>
+                                                    <div class="lenders_header">upfront
+                                                        <br>fee</div>
+                                                    <div class="lenders_header">monthly
+                                                        <br>repayment</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="lenders_body">
+                                            <div class="lenders_viewmore text-center">Enter Your Loan Details to Start Your Search!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FOOTER -->
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="footer_content">
+                            <div class="col-md-6">
+                                <p>Connected Loans is the trading name of the Connected Loans Discretionary Trust<br>which holds an Australian Credit License (12345)<br><a href="http://connectedloans.com.au/company.html#3">Privacy Policy</a> <a href="">Terms and Conditions</a></p>
+                            </div>
+                             <div class="col-md-6">
+                                <div class="footer_logo">
+                                    <a href="#"><img src="images/logo.png" alt="footer logo"></a>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+            <!-- mobile filter popup -->
+            <div class="popup" id="filter_popup">
+                <a href="#" class="popup_close"></a>
+            </div>
+            
+            <!-- popup fade -->
+            <div class="fading" id="wp_fade"></div>
+        
+        </div>
+        
+        <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.event.move.js"></script>
+        <script src="js/wp-custom.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(window).bind('scroll', function() {
+                    var navHeight = 40; // custom nav height
+                    ($(window).scrollTop() > navHeight) ? $('.top_nav_bar').addClass('goToTop'): $('.top_nav_bar').removeClass('goToTop');
+                });
+            
+                
+            });
+            $(function() {
+                $('a[href*="#"]:not([href="#"])').click(function() {
+                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        if (target.length) {
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                });
+            });
+            $(document).ready(function() {
+                $(".button a").click(function() {
+                    $(".overlay").slideToggle(400);
+                    $(this).toggleClass('btn-open').toggleClass('btn-close');
+                });
+            });
+            $('.overlay').on('click', function() {
+                $(".overlay").slideToggle(400);
+                $(".button a").toggleClass('btn-open').toggleClass('btn-close');
+                open = false;
+            });
+            /*******************************************/
+            $(document).ready(function(e) {
+                $('.m_menu_li').click(function(event) {
+                    var menu_li = $(this).find('.mob_menu_sub');
+                    if (menu_li.hasClass('active')) {
+                        menu_li.removeClass('active');
+                    } else {
+                        menu_li.addClass('active');
+                    }
+                    var has_li = $(this);
+                    if (has_li.hasClass('close_menu')) {
+                        has_li.removeClass('close_menu');
+                        has_li.addClass('open_menu');
+                    } else {
+                        has_li.removeClass('open_menu');
+                        has_li.addClass('close_menu');
+                    }
+                });
+                $(".in-mob-btn-menu").click(function() {
+                    $('.mobile-menu-main').fadeIn(200);
+                    setTimeout(function() {
+                        $(".mobile-menu-iner").css({
+                            "margin-left": "0"
+                        });
+                    }, 250);
+                });
+                $(".mobile-menu-iner-right").click(function() {
+                    if ($(window).width() > 500) {
+                        $(".mobile-menu-iner").css({
+                            "margin-left": "-50%"
+                        });
+                    } else {
+                        $(".mobile-menu-iner").css({
+                            "margin-left": "-60%"
+                        });
+                    }
+            
+                    setTimeout(function() {
+                        $('.mobile-menu-main').fadeOut(200);
+                    }, 550);
+                });
+            });
+            /*******************************************/
+        </script>
+        <script type="text/javascript">
+            $(window).load(function() {
+            
+                $(".same_heigh_a").each(function() {
+            
+                    var max_h = 0;
+            
+                    $(this).find("a").each(function(index) {
+            
+                        var cur_h = $(this).height();
+            
+                        //console.log(cur_h);fda
+            
+                        if (cur_h > max_h) {
+                            max_h = cur_h;
+                        }
+            
+                    });
+            
+                    $(this).find("a").height(max_h);
+            
+                });
+            
+            });
+        </script>
+    
+<div id="spoon-plugin-kncgbdglledmjmpnikebkagnchfdehbm-2" style="display:none"></div><div id="window-resizer-tooltip"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>
