@@ -655,6 +655,8 @@ hr.extraspace{
 	background-color: #1b6b93;
 	font-family: 'work_sanslight';
 	color: #fff;
+	position: absolute;
+	bottom: 0;
 }
 .disclaimer .title{
 	margin: 0 0 6px 0;
