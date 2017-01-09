@@ -5,6 +5,7 @@ $main-background: #eff3f6;
 $section-color: #fff;
 $text-color: #404041;
 $footer-line: #6d6e70;
+$page-text-color: #231e20;
 
 $font: "Droid Sans";
 
@@ -95,7 +96,7 @@ nav {
   }
 }
 
-.home-page {
+.home-page, main {
   position: relative;
   overflow: hidden;
   background: $main-background;
@@ -133,6 +134,7 @@ nav {
       width: 100%;
     }
   }
+
   .smaller-section {
     width: calc(34% - 20px);
 
@@ -150,6 +152,53 @@ nav {
     text-transform: uppercase;
     font-size: 2vw;
     margin-left: 2vw;
+  }
+}
+
+.page-sections {
+  margin-top: 20px;
+
+  .bigger-section, .smaller-section {
+    height: 470px;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px;
+  }
+  .bigger-section {
+    width: 70%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .smaller-section {
+    width: calc(30% - 20px);
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .smaller-section:nth-child(even) {
+    text-align: right;
+  }
+
+  .section-margin {
+    margin-right: 20px;
+  }
+
+  h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: $page-text-color;
+    padding-top: 50px;
+  }
+
+  p {
+    font-size: 21px;
+    line-height: 34px;
+    color: $page-text-color;
   }
 }
 

@@ -65,7 +65,7 @@ nav {
       display: block;
       border-right: 0; }
 
-.home-page {
+.home-page, main {
   position: relative;
   overflow: hidden;
   background: #eff3f6; }
@@ -104,6 +104,35 @@ nav {
     text-transform: uppercase;
     font-size: 2vw;
     margin-left: 2vw; }
+
+.page-sections {
+  margin-top: 20px; }
+  .page-sections .bigger-section, .page-sections .smaller-section {
+    height: 470px;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px; }
+  .page-sections .bigger-section {
+    width: 70%; }
+    .page-sections .bigger-section img {
+      width: 100%; }
+  .page-sections .smaller-section {
+    width: calc(30% - 20px); }
+    .page-sections .smaller-section img {
+      height: 100%; }
+  .page-sections .smaller-section:nth-child(even) {
+    text-align: right; }
+  .page-sections .section-margin {
+    margin-right: 20px; }
+  .page-sections h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #231e20;
+    padding-top: 50px; }
+  .page-sections p {
+    font-size: 21px;
+    line-height: 34px;
+    color: #231e20; }
 
 footer {
   position: relative;
