@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "Droid Sans";
+  src: url("../fonts/DroidSans.ttf"); }
+@font-face {
+  font-family: "Droid Sans";
+  src: url("../fonts/DroidSans-Bold.ttf");
+  font-weight: bold; }
+html {
+  font-size: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Droid Sans"; }
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+  box-sizing: border-box; }
+
+header {
+  padding-top: 20px;
+  border-top: 5px solid #473162;
+  border-bottom: 1px solid #ddd; }
+
+.logo {
+  width: 250px; }
+
+nav {
+  background: #f7f9fb;
+  margin-top: 20px;
+  padding: 0px 20px;
+  font-size: 15px;
+  color: #8d8d8d; }
+  nav ul, nav li {
+    margin: 0;
+    padding: 0; }
+  nav li {
+    width: 150px;
+    list-style: none;
+    display: inline-block;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    padding: 10px 0px; }
+    nav li :last-child {
+      border-right: 0; }
+  nav .dropdown {
+    background: url("../images/dropdown.svg") no-repeat;
+    background-size: 12px;
+    background-position: 90% 16px; }
+    nav .dropdown ul {
+      width: 153px;
+      position: absolute;
+      display: none;
+      z-index: 1;
+      margin-top: 10px;
+      margin-left: -4px;
+      background: #f7f9fb;
+      border: 1px solid #ddd; }
+    nav .dropdown li {
+      text-align: left;
+      padding-left: 10px;
+      display: block;
+      border-right: 0; }
+
+.home-page {
+  position: relative;
+  overflow: hidden;
+  background: #eff3f6; }
+
+.main-image img {
+  width: 100%; }
+
+.main-text {
+  position: absolute;
+  margin-top: 80px; }
+  .main-text h1, .main-text h3 {
+    font-size: 5vw;
+    color: #473162;
+    line-height: 40px; }
+
+.main-sections {
+  margin-top: 20px; }
+  .main-sections .bigger-section, .main-sections .smaller-section {
+    height: 470px;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px; }
+  .main-sections .bigger-section {
+    width: 66%; }
+    .main-sections .bigger-section img {
+      width: 100%; }
+  .main-sections .smaller-section {
+    width: calc(34% - 20px); }
+    .main-sections .smaller-section img {
+      height: 100%; }
+  .main-sections .section-margin {
+    margin-right: 20px; }
+  .main-sections h4 {
+    color: #fff;
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 2vw;
+    margin-left: 2vw; }
+
+footer {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px solid #473162; }
+  footer .footer-section {
+    position: relative;
+    width: 25%;
+    color: #404041;
+    float: left;
+    margin-top: 20px; }
+    footer .footer-section h4 {
+      position: relative;
+      font-weight: normal; }
+    footer .footer-section .content {
+      font-size: 14px;
+      line-height: 24px;
+      padding-top: 10px; }
+    footer .footer-section .content::before {
+      content: " ";
+      position: absolute;
+      width: 35px;
+      height: 1px;
+      background: #6d6e70;
+      margin-top: -10px; }
+    footer .footer-section .kontakt div {
+      margin-top: 10px; }
+    footer .footer-section .kontakt svg {
+      width: 15px;
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: top;
+      margin-top: 3px; }
+      footer .footer-section .kontakt svg path {
+        fill: #473162; }
+    footer .footer-section .kontakt p {
+      display: inline-block;
+      -webkit-margin-after: 0em;
+      -webkit-margin-before: 0em; }
+    footer .footer-section .social {
+      padding-top: 10px;
+      float: left;
+      margin-right: 25px; }
+      footer .footer-section .social svg {
+        width: 24px; }
+      footer .footer-section .social path, footer .footer-section .social polygon {
+        fill: #473162; }
+  footer .footer-section:first-child {
+    text-transform: uppercase; }
+    footer .footer-section:first-child a {
+      color: #404041;
+      text-decoration: none; }
+  footer .footer-section:nth-child(2) .content {
+    width: 50%; }
+  footer .end-section {
+    font-size: 13px;
+    float: right;
+    clear: both; }
+    footer .end-section a {
+      color: #404041;
+      text-decoration: none; }
+    footer .end-section p {
+      display: inline-block; }
+
+/*# sourceMappingURL=style.css.map */

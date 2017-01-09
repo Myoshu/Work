@@ -1,0 +1,253 @@
+$primary-color: #473162;
+$secondary-color: #f7f9fb;
+$menu-font-color: #8d8d8d;
+$main-background: #eff3f6;
+$section-color: #fff;
+$text-color: #404041;
+$footer-line: #6d6e70;
+
+$font: "Droid Sans";
+
+@font-face {
+  font-family: "Droid Sans";
+  src: url("../fonts/DroidSans.ttf");
+}
+@font-face {
+  font-family: "Droid Sans";
+  src: url("../fonts/DroidSans-Bold.ttf");
+  font-weight: bold;
+}
+html {
+  font-size: 100%;
+}
+body {
+  margin: 0;
+  font-family: $font;
+}
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+header {
+  padding-top: 20px;
+  border-top: 5px solid $primary-color;
+  border-bottom: 1px solid #ddd;
+}
+.logo {
+  width: 250px;
+}
+
+nav {
+  background: $secondary-color;
+  margin-top: 20px;
+  padding: 0px 20px;
+  font-size: 15px;
+  color: $menu-font-color;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    width: 150px;
+    list-style: none;
+    display: inline-block;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    padding: 10px 0px;
+
+    :hover {
+
+    }
+
+    :last-child {
+      border-right: 0;
+    }
+  }
+
+  .dropdown {
+    background: url("../images/dropdown.svg") no-repeat;
+    background-size: 12px;
+    background-position: 90% 16px;
+
+    ul {
+      width: 153px;
+      position: absolute;
+      display: none;
+      z-index: 1;
+      margin-top: 10px;
+      margin-left: -4px;
+      background: $secondary-color;
+      border: 1px solid #ddd;
+    }
+
+    li {
+      text-align: left;
+      padding-left: 10px;
+      display: block;
+      border-right: 0;
+    }
+  }
+}
+
+.home-page {
+  position: relative;
+  overflow: hidden;
+  background: $main-background;
+}
+
+.main-image {
+  img {
+    width: 100%;
+  }
+}
+.main-text {
+  position: absolute;
+  margin-top: 80px;
+
+  h1, h3 {
+    font-size: 5vw;
+    color: $primary-color;
+    line-height: 40px;
+  }
+}
+
+.main-sections {
+  margin-top: 20px;
+
+  .bigger-section, .smaller-section {
+    height: 470px;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px;
+  }
+  .bigger-section {
+    width: 66%;
+
+    img {
+      width: 100%;
+    }
+  }
+  .smaller-section {
+    width: calc(34% - 20px);
+
+    img {
+      height: 100%;
+    }
+  }
+  .section-margin {
+    margin-right: 20px;
+  }
+
+  h4 {
+    color: $section-color;
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 2vw;
+    margin-left: 2vw;
+  }
+}
+
+footer {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px solid $primary-color;
+
+  .footer-section {
+    position: relative;
+    width: 25%;
+    color: $text-color;
+    float: left;
+    margin-top: 20px;
+
+    h4 {
+      position: relative;
+      font-weight: normal;
+    }
+    .content {
+      font-size: 14px;
+      line-height: 24px;
+      padding-top: 10px;
+    }
+
+    .content::before {
+      content: " ";
+      position: absolute;
+      width: 35px;
+      height: 1px;
+      background: $footer-line;
+      margin-top: -10px;
+    }
+
+    .kontakt {
+
+      div {
+        margin-top: 10px;
+      }
+
+      svg {
+        width: 15px;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: top;
+        margin-top: 3px;
+
+        path {
+          fill: $primary-color;
+        }
+      }
+
+      p {
+        display: inline-block;
+        -webkit-margin-after: 0em;
+        -webkit-margin-before: 0em;
+      }
+    }
+
+    .social {
+      padding-top: 10px;
+      float: left;
+      margin-right: 25px;
+
+      svg {
+        width: 24px;
+      }
+      path, polygon {
+        fill: $primary-color;
+      }
+    }
+  }
+
+  .footer-section:first-child {
+    text-transform: uppercase;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+
+  .footer-section:nth-child(2) .content {
+    width: 50%;
+  }
+
+  .end-section {
+    font-size: 13px;
+    float: right;
+    clear: both;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+    }
+
+    p {
+      display: inline-block;
+    }
+  }
+}
